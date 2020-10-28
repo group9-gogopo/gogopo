@@ -1,9 +1,10 @@
 import React ,{Component} from 'react'
+import { Profile } from './profile/index.jsx'
 
 export default class App extends Component{
     render(){
         return(
-            <div>檀旭在喝水</div>
+            <Profile></Profile>
         )
     }
 }
