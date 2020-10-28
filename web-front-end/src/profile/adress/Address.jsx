@@ -1,59 +1,70 @@
-import React,{ Component } from 'react'
+import React, { Component } from 'react'
 import { AddressStyled } from './AddressStyled'
 
-class Address extends Component{
-    render(){
-        return(
+class Address extends Component {
+    state = {
+        data: [{
+            adressId:1,
+            name: '李云祥',
+            tel: '15022581580',
+            state: '默认',
+            location: '北京市 昌平区 北京科技职业学院'
+        },
+        {
+            adressId:2,
+            name: '李腾飞',
+            tel: '15022587784',
+            state: '默认',
+            location: '北京市 昌平区 北京科技职业学院'
+        },
+        {
+            adressId:3,
+            name: '檀旭',
+            tel: '15022584567',
+            state: '默认',
+            location: '北京市 昌平区 北京科技职业学院'
+        }
+        ]
+    }
+
+    handleClick=(id)=>{
+        return ()=>{
+            console.log(id);
+        }
+    }
+    render() {
+        return (
             <AddressStyled>
                 <header>地址管理</header>
                 <ul>
-                    <li>
-                        <div className='msgBox'>
-                            <div className='title'>
-                                <p>李云祥</p>
-                            </div>
-                            <div className='msg'>
-                                <div className='userMsg'>
-                                    <span className='name'>李云祥</span>
-                                    <span className='tel'>15022581580</span>
-                                </div>
-                                <div className='adressMsg'>
-                                    <div className='bgc'>
-                                        <span className='state'>默认</span>
+                    {
+                        this.state.data.map((value) => {
+                            return (
+                                <li key={value.adressId}>
+                                    <div className='msgBox'>
+                                        <div className='title'>
+                                            <p>{value.name}</p>
+                                        </div>
+                                        <div className='msg'>
+                                            <div className='userMsg'>
+                                                <span className='name'>{value.name}</span>
+                                                <span className='tel'>{value.tel}</span>
+                                            </div>
+                                            <div className='adressMsg'>
+                                                <div className='bgc'>
+                                                    <span className='state'>{value.state}</span>
+                                                </div>
+                                                <span className='location'>{value.location}</span>
+                                            </div>
+                                        </div>
+                                        <div className='edit'>
+                                            <p onClick={this.handleClick(value.adressId)}>编辑</p>
+                                        </div>
                                     </div>
-                                    <span className='location'>北京市昌平区北京科技职业学院</span>
-                                </div>
-                            </div>
-                            <div className='edit'>
-                                <p>编辑</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className='msgBox'>
-                            <div className='title'>
-                                <p>李云祥</p>
-                            </div>
-                            <div className='msg'>
-                                <div className='userMsg'>
-                                    <span className='name'>李云祥</span>
-                                    <span className='tel'>15022581580</span>
-                                </div>
-                                <div className='adressMsg'>
-                                    <div className='bgc'>
-                                        <span className='state'>默认</span>
-                                    </div>
-                                    <span className='location'>北京市昌平区北京科技职业学院</span>
-                                </div>
-                            </div>
-                            <div className='edit'>
-                                <p>编辑</p>
-                            </div>
-                        </div>
-                    </li>
-                    {/* {
-
-                    } */}
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </AddressStyled>
         )
