@@ -39,11 +39,11 @@ class LoginTab extends Component {
     history.push('/register')
   }
 
-
-  componentDidMount() {
-  
+  gotoChangePwd = () => {
+    let { history } = this.props
+    history.push('/changepwd')
   }
-
+  
   render() {
     return (
       <LoginTabWrap>
@@ -63,7 +63,10 @@ class LoginTab extends Component {
               onChange={this.handleChange2()}
             />
           </p>
-          <h2>忘记密码？</h2>
+          <span>
+            <p>用户名错误</p>
+            <h2 onClick={this.gotoChangePwd}>忘记密码？</h2>
+          </span>
           <button type="submit" >登录</button>
         </form>
         <div>

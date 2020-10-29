@@ -1,60 +1,66 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  width: 722px;
   margin: ${props => props.margin};
 
   .searchBox {
-    display: flex;
-    flex-direction: row;
-
+    width: 700px;
+    height: 60px;
     .search{
-      width: 4.8rem;
-      height: 0.46rem;
-      line-height: 0.3rem;
-      display: flex;
-      flex-direction: row;
+      width: 500px;
+      height: 60px;
+      line-height: 60px;
       background: #009a44;
+      padding-left: 3px;
+      position: relative;
+      float:left;
       > input {
-        width: 3.98rem;
-        height: 0.4rem;
+        width: 398px;
+        height: 54px;
         background: #fff;
-        line-height: 0.54rem;
+        line-height: 54px;
+        font-size: 16px;
         color: #999999;
         margin: 0.03rem 0 0 0.03rem;
-        padding-left: 0.14rem;
+        padding-left: 14px;
         border: 0;
+        outline: none;
       }
       .img {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 0.8rem;
-        height: 0.4rem;
-        background: #009a44;
+        width: 88px;
+        height: 60px;
+        float: right;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor:pointer;
         svg {
-          width: 0.3rem;
-          height: 0.3rem;
+          width: 38px;
+          height: 38px;
           fill: #fff;
         }
       }
     }
 
     .shopcarButton {
-      width: 1.6rem;
-      height: .46rem;
+      width: 160px;
+      height: 60px;
+      float: right;
       background: #009a44;
-      font-size: 0.2rem;
+      font-size: 18px;
       color: #fff;
       font-weight: 100;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-left: .6rem;
+      margin-left: 6px;
       svg{
-        width: .3rem;
-        height: .4rem;
+        width: 30px;
+        height: 30px;
         fill: #fff;
       }
       > span {
@@ -67,11 +73,11 @@ const Container = styled.div`
   .hotSearch {
     display: flex;
     flex-direction: row;
-    height: 0.2rem;
-    font-size: 0.16rem;
-    margin-top: 0.08rem;
+    height: 20px;
+    font-size: 16px;
+    margin-top: 8px;
     color: #999999;
-    padding-left: 0.11rem;
+    padding-left: 11px;
     p {
       width: 52px;
       &.active {

@@ -18,8 +18,8 @@ class HeadNav extends Component {
       <Container>
         <div className="header-left">
             <p>欢迎光临果果铺</p>
-            <div >[ <span >登录</span> ]</div>
-            <div onClick={this.handleRegister}>[ <span>注册</span>]</div>
+            <div > <span >[ 登录 ]</span> </div>
+            <div onClick={this.handleRegister}> <span> [ 注册 ]</span> </div>
         </div>
         <div className="header-right">
             <p>返回首页</p>

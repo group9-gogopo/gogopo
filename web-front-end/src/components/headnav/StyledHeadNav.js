@@ -2,35 +2,39 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     width: 100%;
-    height: 0.38rem;
+    height: 37px;
     background: #e3e4e5;
-    display: flex;
-    flex-direction: row;
     .header-left {
-        display: flex;
-        margin-left: 15%;
-        line-height: .38rem;
-        color: #999999;
         width: 240px;
+        margin-left: 15%;
+        line-height: 37px;
+        color: #999999;
+        float: left;
         >p {
             margin-right: 2px;
+            float: left;
         }
         > div {
-            margin-left: .13rem;
+            width: 55px;
+            margin-left: 5px;
+            float: right;
             > span:hover {
                 color: #0e9b50;
             }
         }
     }   
     .header-right {
-        display: flex;
-        margin-left: 40%;
+        width: 284px;
+        float: right;
         line-height: 38px;
         font-size: 14px;
         color: #999999;
+        display: flex;
+        flex-direction: row;
+        margin-right: 130px;
         >p {
-            margin-right: .31rem;
-            width: 0.63rem;
+            margin-right: 32px;
+            width: 63px;
         }
     }
 `

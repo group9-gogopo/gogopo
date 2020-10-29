@@ -3,28 +3,29 @@ import styled from 'styled-components'
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  margin-left: 1px;
   display: flex;
   flex-direction: column;
   border: 2px solid #000;
   background: #fff;
   header {
-    height: 0.9rem;
+    height: 91px;
     border-bottom: 2px solid #000;
     display: flex;
     flex-direction: row;
     img {
-      width: 2.63rem;
-      height: 0.84rem;
-      margin-left: 0.5rem;
+      width: 263px;
+      height: 84px;
+      margin-left: 26px;
     }
     h1 {
-      font-size: 0.16rem;
+      font-size: 16px;
       font-weight: 500;
       flex: 1;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding-right: 0.5rem;
+      padding-right: 82px;
       span {
         margin-left: 0.1rem;
         &:hover {
@@ -36,17 +37,13 @@ const Container = styled.div`
 `
 
 const FormWrap = styled.form`
-  flex: 1;
+  height: 100%;
   p {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    margin-top: 0.41rem;
+    margin: 30px 0 0 350px;
     &: nth-of-type(1) {
       position: relative;
-      svg {
-        visibility: hidden;
-      }
     }
     
     &: nth-of-type(2) {
@@ -56,77 +53,90 @@ const FormWrap = styled.form`
     &: nth-of-type(5) {
       margin-top: 0;
     }
+    span {
+      width: 200px;
+      height: 35px;
+      margin-left: 5px;
+      line-height: 35px;
+    }
     svg {
-      width: 0.3rem;
-      height: 0.3rem;
+      width: 40px;
+      height: 40px;
       position: absolute;
-      top: 0.02rem;
-      right: 3.85rem;
-      margin-left: 0.1rem;
+      right: 340px;
+      visibility: hidden;
     }
     .forCode {
-      width: 1.3rem;
-      height: 0.32rem;
-      padding-left: 0.1rem;
-      font-size: 0.16rem;
-      line-height: 0.32rem;
-      border-radius: 0.05rem;
+      width: 104px;
+      height: 34px;
+      padding-left: 5px;
+      font-size: 14px;
+      line-height: 34px;
+      border-radius: 5px;
+      border: 3px solid #7d7d7d;
       background: #bdbbbc;
       position: absolute;
-      top: 0.04rem;
-      left: 8.6rem;
+      top: 2px;
+      left: 530px;
+      visibility: hidden;
     }
-    
   }
+
   label {
-    width: 1rem;
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
     display: flex;
     justify-content: flex-end;
-    font-size: 0.2rem;
-    margin-right: 0.16rem;
+    font-size: 20px;
+    margin-right: 16px;
     color: #070707;
   }
   h2 {
-    font-size: 0.16rem;
+    height: 30px;
+    font-size: 16px;
     color: #f90504;
-    line-height: 0.4rem;
+    line-height: 30px;
     font-weight: normal;
-    margin-left: -0.75rem;
-    text-align: center;
-    height: 0.4rem;
+    margin-left: 470px;;
     visibility: hidden;
   }
   input {
-    width: 3rem;
-    height: 0.35rem;
+    width: 380px;
+    height: 38px;
     border: 2px solid #9d9797;
-    padding-left: 0.15rem;
+    padding-left: 15px;
+    outline: none;
   }
-  .tips {
-    margin: 0.17rem 0 0.3rem 5.5rem;
-    display: flex;
-    flex-direction: row;
-    height: 0.125rem;
-    h3 {
-      width: 0.5rem;
-      height: 0.25rem;
-      backgroundcolor: skyblue;
-      font-size: 0.14rem;
-      font-weight: normal;
-      border: 1.5px solid #000;
-      border-radius: 0.05rem;
-      text-align: center;
-      margin-right: 0.16rem;
-    }
-  }
+  
   button {
-    width: 3rem;
-    height: 0.37rem;
-    margin-left: 5.45rem;
+    width: 400px;
+    height: 40px;
     background: #009a44;
     border: 0;
-    border-radius: 0.05rem;
-    margin-top: 0.2rem;
+    border-radius: 5px;
+    margin: 10px 0 25px 465px;
+    cursor:pointer;
+    outline: none;
+  }
+
+  .tips {
+    height: 25px;
+    margin: 15px 0 15px 465px;
+    display: flex;
+    flex-direction: row;
+    h3 {
+      width: 50px;
+      height: 25px;
+      line-height:25px;
+      backgroundcolor: skyblue;
+      font-size: 14px;
+      font-weight: normal;
+      border: 2px solid #000;
+      border-radius: 5px;
+      text-align: center;
+      margin-right: 16px;
+    }
   }
 `
 

@@ -15,7 +15,7 @@ const LoginUi = () => {
                 <HeadNav></HeadNav>
                 <InfoWrap>
                     <Search
-                        margin='0 0 0 5rem'
+                        margin='30px 0 0 500px'
                     ></Search>
                     <LoginTab></LoginTab>
                 </InfoWrap>
