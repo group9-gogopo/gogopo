@@ -66,7 +66,7 @@ const FormWrap = styled.form`
       right: 340px;
       visibility: hidden;
     }
-    .forCode {
+    #forCode {
       width: 104px;
       height: 34px;
       padding-left: 5px;
@@ -79,6 +79,7 @@ const FormWrap = styled.form`
       top: 2px;
       left: 530px;
       visibility: hidden;
+      cursor:pointer;
     }
   }
 

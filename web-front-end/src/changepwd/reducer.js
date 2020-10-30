@@ -4,7 +4,15 @@ const defaultState = {
 
 const reducer = (state = defaultState, action) => {
   switch(action.type) {
-    case 'changeCurrent':
+    case 'addCurrent':
+      return {
+        current: action.current,
+      }
+    case 'reduceCurrent':
+      return {
+        current: action.current,
+      }
+    case 'zeroCurrent':
       return {
         current: action.current,
       }

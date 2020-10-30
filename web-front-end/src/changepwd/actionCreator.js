@@ -1,10 +1,26 @@
-const changeCurrent = (current) => {
+const addCurrent = (current) => {
   return {
-    type: 'changeCurrent',
-    current
+    type: 'addCurrent',
+    current: current + 1,
+  }
+}
+
+const reduceCurrent = (current) => {
+  return {
+    type: 'reduceCurrent',
+    current: current - 1,
+  }
+}
+
+const zeroCurrent = (current) => {
+  return {
+    type: 'zeroCurrent',
+    current: 0,
   }
 }
 
 export default {
-  changeCurrent
+  addCurrent,
+  reduceCurrent,
+  zeroCurrent
 }

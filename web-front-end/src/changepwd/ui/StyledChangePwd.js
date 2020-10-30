@@ -22,6 +22,7 @@ const Container = styled.div`
       line-height: 91px;
       span {
         color: #009a44;
+        cursor:pointer;
       }
     }
 `
@@ -48,14 +49,17 @@ const NavWrap = styled.div`
 
 const ConfirmWrap = styled.form`
   height: 425px;
+  text-align: center;
   p {
     padding-top: 100px;
-    margin-left: 300px;
+    margin-left: 10px;
+    display: flex;
     label {
       margin-right: 10px;
       font-size: 20px;
       height: 42px;
       line-height: 42px;
+      margin-left: 400px;
     }
     input {
       width: 350px;
@@ -68,15 +72,14 @@ const ConfirmWrap = styled.form`
     span {
       width: 200px;
       height: 35px;
-      margin-left: 5px;
       line-height: 35px;
+      margin-left: 5px;
     }
   }
   button {
     width: 131px;
     height: 42px;
     border: 0;
-    margin-left: 500px;
     border-radius: 5px;
     background: #009a44;
     font-size: 16px;
@@ -94,11 +97,12 @@ const SecurityWrap = styled.form`
     padding-top: 80px;
     display: flex;
     margin-left: 300px;
+    position: relative;
     label {
       width: 180px;
       height: 46px;
       margin-right: 15px;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 46px;
       text-align: right;
     }
@@ -111,10 +115,25 @@ const SecurityWrap = styled.form`
       outline: none;
     }
     span {
-      width: 200px;
+      width: 150px;
       height: 35px;
       margin-left: 5px;
       line-height: 35px;
+    }
+    #forCode {
+      width: 104px;
+      height: 34px;
+      padding-left: 5px;
+      font-size: 14px;
+      line-height: 34px;
+      border-radius: 5px;
+      border: 3px solid #7d7d7d;
+      background: #bdbbbc;
+      position: absolute;
+      top: 80px;
+      left: 620px;
+      cursor:pointer;
+      visibility: hidden;
     }
   }
   button {
@@ -128,6 +147,7 @@ const SecurityWrap = styled.form`
     margin-top: 60px;
     cursor:pointer;
     outline: none;
+    margin-left: 50px;
   }
 `
 
@@ -142,7 +162,7 @@ const ResetWrap = styled.form`
   p {
       padding-top: 43px;
       display: flex;
-      margin-left: 300px;
+      margin-left: 350px;
       label {
         width: 90px;
         height: 46px;
@@ -177,6 +197,7 @@ const ResetWrap = styled.form`
     margin-top: 60px;
     cursor:pointer;
     outline: none;
+    margin-left: 50px;
   }
 `
 const AccomplishWrap = styled.form`
@@ -194,9 +215,10 @@ const AccomplishWrap = styled.form`
     background: #009a44;
     font-size: 20px;
     color: #fff;
-    margin-top: 100px;
+    margin-top: 200px;
     cursor:pointer;
     outline: none;
+    margin-left: 50px;
   }
 `
 export {

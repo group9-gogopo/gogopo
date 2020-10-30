@@ -7,6 +7,11 @@ import {
   ResetWrap
 } from './StyledChangePwd'
 
+import {
+  regPwd,
+  regRePwd
+}  from '@u/regRules'
+
 function Reset(props) {
   let [pwd, setPwd] = useState(null)
   let [repwd, setRepwd] = useState(null)
@@ -15,11 +20,17 @@ function Reset(props) {
   const current = useSelector(state => state.changepwd.current)
   const dispatch = useDispatch()
   const history = useHistory()
-  const handleClick = useCallback((current) => {
+  const handleAdd = useCallback((current) => {
     return () => {
-      current = current + 1;
-      dispatch(ac.changeCurrent(current))
+      dispatch(ac.addCurrent(current))
       history.push('/changepwd/accomplish')
+    }
+  }, [dispatch,history])
+
+  const handleReducer = useCallback((current) => {
+    return () => {
+      dispatch(ac.reduceCurrent(current))
+      history.push('/changepwd/security')
     }
   }, [dispatch,history])
 
@@ -31,32 +42,6 @@ function Reset(props) {
     }
   }
 
-    const regPwd = () => {
-      let pwdInfo = document.querySelector('.pwdInfo')
-
-      let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
-
-      if(reg.test(pwd.pwd)) {      
-        pwdInfo.innerHTML = '密码格式正确';
-        pwdInfo.style = 'color: green'
-      } else {
-        pwdInfo.innerHTML = '请输入8-16位字母与数字';
-        pwdInfo.style = 'color: red';
-      }
-    }
-    //确认密码验证
-    const regRePWd = () => {
-      let repwdInfo = document.querySelector('.repwdInfo')
-  
-      if(pwd.pwd === repwd.repwd) {
-        repwdInfo.innerHTML = '密码确认成功';
-        repwdInfo.style = 'color: green';
-      } else {
-        repwdInfo.innerHTML = '两次密码输入不一致';
-        repwdInfo.style = 'color: red';
-      }
-    }
-
   return (
     <ResetWrap onSubmit={handleSubmit()}>
       <h1>设置新密码</h1>
@@ -66,26 +51,27 @@ function Reset(props) {
           type="text" 
           placeholder="8-16位大小写字母和数字"
           defaultValue={pwd} 
-          onBlur={regPwd}
+          onBlur={regPwd('pwdInfo', pwd && pwd.pwd)}
           onChange={(e) => setPwd({
             pwd:e.target.value
           })}
         />
-        <span className="pwdInfo"></span>
+        <span id="pwdInfo"></span>
       </p>
       <p>
         <label htmlFor="">确认新密码</label>
         <input 
           type="text" 
           defaultValue={repwd} 
-          onBlur={regRePWd}
+          onBlur={regRePwd(pwd && pwd.pwd, repwd && repwd.repwd, 'repwdInfo')}
           onChange={(e) => setRepwd({
             repwd:e.target.value
           })}
         />
-        <span className="repwdInfo"></span>
+        <span id="repwdInfo"></span>
       </p>
-      <button type='submit' onClick={handleClick(current)}>下一步</button>
+      <button type='submit' onClick={handleReducer(current)}>上一步</button>
+      <button type='submit' onClick={handleAdd(current)}>下一步</button>
     </ResetWrap>
   );
 }
