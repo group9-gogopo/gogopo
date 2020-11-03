@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-const StoryListStyled = styled.div`
-min-height:1916px;
+const NewListStyled = styled.div`
 margin-left:14px;
     ul{
         li{
@@ -37,5 +36,5 @@ margin-left:14px;
     }
 `
 export {
-    StoryListStyled
+    NewListStyled
 }

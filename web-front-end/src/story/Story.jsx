@@ -5,6 +5,7 @@ import {StoryStyled} from './StoryStyled'
 import StoryList from './storyList/StoryList'
 import Detail from './detail/Detail'
 import Footer from '../components/footer/Footer'
+import NewList from './newList/NewList'
 
 
 class Story extends Component{
@@ -33,7 +34,16 @@ class Story extends Component{
                     storyDate:'2019-01-09'
                 },
             ],
-            '新闻中心':[]
+            '新闻中心':[
+                {
+                    storyName:'甜品--麦片酸奶杯这样吃百吃不腻，吃1次不过瘾！    ',
+                    storyDate:'2019-01-17'
+                },
+                {
+                    storyName:'香蕉做早餐,10分钟搞定,孩子吃了好吸收,促排便一定别错过! ',
+                    storyDate:'2019-01-09'
+                },
+            ]
         },
         showList:[],
         active:0
