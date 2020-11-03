@@ -5,6 +5,7 @@ import { LOADDATA } from './actionTypes'
 
 //这是同步请求的action构造函数
 const loadDataSync=list=>{
+    console.log(list)
     return{
         type:LOADDATA,
         list
@@ -28,7 +29,7 @@ const loadDataAsync = ()=>{
         {
             adressId:2,
             name: '李腾飞',
-            tel: '15022587784',
+            tel: '13822587784',
             state: '默认',
             location: '北京市 昌平区 北京科技职业学院'
         },
