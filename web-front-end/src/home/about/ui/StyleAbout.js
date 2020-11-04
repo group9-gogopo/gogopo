@@ -75,6 +75,10 @@ const Introd = styled.div`
 
     }
 
+    .connect{
+        
+    }
+
 `
 
 export {

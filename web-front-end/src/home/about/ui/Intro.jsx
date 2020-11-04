@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Introd} from './StyleAbout'
+import {Introd, Title} from './StyleAbout'
 import aboutbg from  '../../../asset/img/about/AboutBg.png'
 
 class Intro extends Component {
@@ -45,6 +45,10 @@ class Intro extends Component {
 2012年12月青青果园纬四路店正式成立。2012年12月青青果园农业路店正式成立。<br/>2013年1月青青果园兴化南街店正式成立。2013年6月青青果园建业路店正式成立。<br/>2013年7月青青果园理想城店正式成立。2013年10月青青果园三泉路店正式成立。2014年3月青青果园政七街店正式成立。2014年3月青青果园淮南街店正式成立。2014年3月青青果园祥盛街店正式成立。2014年4月青青果园政通路店正式成立。<br/>2014年3月青青果园电商部门启动，涵盖B2C、O2O方向                                      
                     </p>
                 </div>
+
+                <Title>
+                    
+                </Title>
             </Introd>
         );
     }
