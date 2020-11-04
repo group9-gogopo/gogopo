@@ -17,12 +17,12 @@ const Container = styled.div`
       float:left;
       > input {
         width: 398px;
-        height: 54px;
+        height: 55px;
         background: #fff;
         line-height: 54px;
         font-size: 16px;
         color: #999999;
-        margin: 0.03rem 0 0 0.03rem;
+        margin: 2px 0 2px 1px;
         padding-left: 14px;
         border: 0;
         outline: none;

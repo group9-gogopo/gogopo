@@ -9,18 +9,20 @@ const Container = styled.div`
         flex-direction: column;
 `
 const InfoWrap = styled.div`
-        height: 541px;
+        flex: 1;
         background: url(${loginbgm}) no-repeat;
         background-size: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 600px;
 `
 
 const LoginTabWrap = styled.div`
         width: 400px;
-        height: 340px;
         background: transparent #e3e5e7;
         border: 4px solid #8b8b8b;
         border-radius: 6px;
-        margin: 35px 0 0 500px;
+        margin: 35px 0 4% 500px;
         display: flex;
         flex-direction: column;
         padding-left: 38px;
@@ -87,6 +89,7 @@ const LoginTabWrap = styled.div`
           font-size: 14px;
           color: #050505;
           margin-top: 10px;
+          // margin-bottom: 20%;
           span {
             color: #009a44;
             cursor: pointer;

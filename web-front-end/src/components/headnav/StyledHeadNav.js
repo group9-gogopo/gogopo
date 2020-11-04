@@ -35,6 +35,11 @@ const Container = styled.div`
         >p {
             margin-right: 32px;
             width: 63px;
+            height: 36px;
+            cursor:pointer;
+            : hover {
+                color: #0e9b50;
+            }
         }
     }
 `

@@ -16,10 +16,9 @@ const Container = styled.div`
       border-radius: 155px;
       border: 3px dashed #329908;
       img {
-        width: 300px;
-        height: 300px;
+        width: 290px;
+        height: 290px;
         border-radius: 150px;
-        background: skyblue;
       }
     }
     .price {

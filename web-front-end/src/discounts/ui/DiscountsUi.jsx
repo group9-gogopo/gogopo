@@ -7,6 +7,7 @@ import {
 import HeadNav from '@c/headnav/HeadNav'
 import Search from '@c/search/Search'
 import DiscountList from '@c/discountslist/DiscountList'
+import Nav from '@c/nav/Nav.jsx'
 import DiscountsList from './DiscountsList'
 
 import logo from '../../assets/images/logo.png'
@@ -23,7 +24,7 @@ function DiscountsUi(props) {
           margin='30px 0 0 100px'
         ></Search>
       </div>
-      <div className='nav'></div>
+      <Nav></Nav>
       <div className="banner">
         <img src={banner} alt=""/>
       </div>

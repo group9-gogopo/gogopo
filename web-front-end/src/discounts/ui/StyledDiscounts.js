@@ -16,11 +16,6 @@ const Container = styled.div`
     }
   }
 
-  .nav {
-    height: 40px;
-    background: skyblue;
-  }
-
   .banner {
     width: 100%;
     height: 454px;
