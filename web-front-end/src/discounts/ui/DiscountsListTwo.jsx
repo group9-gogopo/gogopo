@@ -6,16 +6,16 @@ import {
 
 import { get } from '@u/http'
 
-import Specials from '@c/discountslist/Specials'
+import SpecialsTwo from '@c/discounts/SpecialsTwo'
 
 
-function DiscountsList(props) {
+function DiscountsListTwo(props) {
   const [list, setList] = useState(null)
 
     useEffect(() => {
       (async () => {
         let result = await get('/api/special')
-        console.log(result.two)
+        // console.log(result.two)
         setList(result.two)
       })()
     },[])
@@ -29,7 +29,7 @@ function DiscountsList(props) {
               key={value.id}
             >
               <img src={value.img} alt=""/>
-              <Specials
+              <SpecialsTwo
                 margin = '0 0 0 100px'
                 trait1 = {value.trait1}
                 trait2 = {value.trait2}
@@ -38,7 +38,7 @@ function DiscountsList(props) {
                 info2 = {value.info2}
                 tit = {value.title}
                 price = {value.price}
-              ></Specials>
+              ></SpecialsTwo>
             </li>
           )
         })
@@ -47,4 +47,4 @@ function DiscountsList(props) {
   );
 }
 
-export default DiscountsList;
+export default DiscountsListTwo;

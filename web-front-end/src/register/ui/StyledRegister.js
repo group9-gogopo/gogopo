@@ -27,6 +27,7 @@ const Container = styled.div`
       padding-right: 82px;
       span {
         margin-left: 0.1rem;
+        cursor: pointer;
         &:hover {
           color: #009947;
         }

@@ -1,9 +1,8 @@
-import React, {useEffect } from 'react';
+import React, {useEffect, useState } from 'react';
 
 import { Container } from './StyledDiscountList'
 
 import { get } from '@u/http'
-import { useState } from 'react';
 
 function DiscountList(props) {
     const [list, setList] = useState(null)

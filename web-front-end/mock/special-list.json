@@ -32,9 +32,10 @@
       "title": "樱桃 1 斤装",
       "price": "60"
     }],
-    "there":[
+    "three":[
       {
         "id": "001",
+        "img": "https://i.loli.net/2020/11/04/mLgVTzURBXj7i4M.png",
         "title": "智利绿心奇异果 3个装",
         "info1": "鲜甜可口",
         "info2": "甜而不腻",
@@ -43,6 +44,7 @@
       },
       {
         "id": "002",
+        "img": "https://i.loli.net/2020/11/04/REd9QiPm2M41hGW.png",
         "title": "新鲜牛油果 1个装",
         "info1": "奶酪丝滑",
         "info2": "淡淡奶脂",
@@ -51,6 +53,7 @@
       },
       {
         "id": "003",
+        "img": "https://i.loli.net/2020/11/04/UNzli4LcVwHmQ9T.png",
         "title": "沙田柚 2个装",
         "info1": "红肉蜜柚",
         "info2": "酸甜新鲜",

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Home from './home/Home'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Login from './login/container/Login'
@@ -15,13 +14,8 @@ export default class App extends Component {
                 <Route path='/register' component={Register}></Route>
                 <Route path='/changepwd' component={ChangePwd}></Route>
                 <Route path='/discounts' component={Discounts}></Route>
-                <Route path="/home">
-                    <Home></Home>
-                </Route>
-                <Redirect from="/" to="/home"></Redirect>  
+                <Redirect from="/" to="/discounts"></Redirect>  
             </Switch>
-               
-           
         )
     }
 }

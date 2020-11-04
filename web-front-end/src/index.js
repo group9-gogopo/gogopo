@@ -7,7 +7,6 @@ import store from './store'
 
 import 'element-theme-default';
 
-import './asset/reset.css'
 import 'antd/dist/antd.css';
 
 import App from './App'

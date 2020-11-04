@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+const ContainerTwo = styled.div`
   display: flex;
   flex-direction: column;
   width: 160px;
@@ -69,7 +69,7 @@ const Container = styled.div`
     line-height: 100px;
     text-align: center;
     margin-top: 20px;
-    font-family: FZYouXian-Z09S;
+    font-family: MFYueHei_Noncommercial-Regular;
   }
 
   .price {
@@ -119,6 +119,72 @@ const Container = styled.div`
     }
   }
 `
+const ContainerThree = styled.div`
+  background: #319a0a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  li {
+    width: 430px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      margin-top: 20px;
+      width: 300px;
+      height: 225px;
+    }
+    h1 {
+      font-size: 20px;
+      font-family: MFYueHei_Noncommercial-Regular;
+      color: #fff;
+      margin-top: 8px;
+    }
+    .info {
+      display: flex;
+      flex-direction: row;
+      font-size: 14px;
+      font-weight: 600;
+      span {
+        margin-right: 20px;
+      }
+    }
+    .price {
+      display: flex;
+      flex-direction: row;
+      margin-top: 15px;
+      align-items: flex-end;
+      justify-content: center;
+      .newprice {
+        font-size: 15px;
+        color: #fd0038;
+        span {
+          font-size: 30px;
+          height: 30px;
+          line-height: 30px;
+        }
+      }
+      .oldprice {
+        font-size: 13px;
+        color: #fff;
+        text-decoration:line-through;
+        margin: 0 20px 0 10px;
+      }
+      .btn {
+        width: 100px;
+        height: 30px;
+        background: #fd0038;
+        text-align: center;
+        color: #fff;
+        line-height: 30px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+`
 export {
-  Container
+  ContainerTwo,
+  ContainerThree
 }

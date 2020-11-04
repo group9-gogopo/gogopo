@@ -26,12 +26,12 @@ const Container = styled.div`
   }
   .discountsList {
     display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  h1 {
-    margin-top: 30px;
-  }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      margin-top: 30px;
+    }
   p {
     width: 300px;
     height: 40px;
@@ -48,18 +48,23 @@ const Container = styled.div`
     display: flex;
     margin-top: 45px;
   }
-  }
 
   .specialsInfo {
-  display: flex;
-  flex-direction: row;
-  border: 3px solid #fff;
-  img {
-    width: 235px;
-    height: 265px;
-    margin: 93px 0 0 200px;
+    display: flex;
+    flex-direction: row;
+    border: 3px solid #fff;
+    img {
+      width: 235px;
+      height: 265px;
+      margin: 93px 0 0 200px;
+    }
   }
-  }
+  // .specialsThreeBox {
+  //   width: 100%;
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-evenly;
+  // }
 `
 const DiscountsListWrap = styled.div`
   li {

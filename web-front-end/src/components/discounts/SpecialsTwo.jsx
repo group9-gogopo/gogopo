@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Container
+  ContainerTwo
 } from './StyledSpecials'
 
-function Specials(props) {
+function SpecialsTwo(props) {
   return (
-    <Container {...props}>
+    <ContainerTwo {...props}>
       <div className='header'>
         <div className="trait">
           <p>{props.trait1}</p>
@@ -29,8 +29,8 @@ function Specials(props) {
           <button>立即购买</button>
         </div>
       </div>
-    </Container>
+    </ContainerTwo>
   );
 }
 
-export default Specials;
+export default SpecialsTwo;

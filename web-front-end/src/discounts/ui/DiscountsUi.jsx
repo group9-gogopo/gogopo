@@ -6,9 +6,10 @@ import {
 
 import HeadNav from '@c/headnav/HeadNav'
 import Search from '@c/search/Search'
-import DiscountList from '@c/discountslist/DiscountList'
+import DiscountList from '@c/discounts/DiscountList'
 import Nav from '@c/nav/Nav.jsx'
-import DiscountsList from './DiscountsList'
+import DiscountsListTwo from './DiscountsListTwo'
+import SpecialsThree from '@c/discounts/SpecialsThree'
 
 import logo from '../../assets/images/logo.png'
 import banner from '../../assets/images/discountsBanner_02.png'
@@ -35,7 +36,8 @@ function DiscountsUi(props) {
           <DiscountList></DiscountList>
         </div>
       </div>
-      <DiscountsList></DiscountsList>
+      <DiscountsListTwo></DiscountsListTwo>
+      <SpecialsThree></SpecialsThree>
     </Container>
   );
 }

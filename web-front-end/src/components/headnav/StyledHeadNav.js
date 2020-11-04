@@ -18,6 +18,7 @@ const Container = styled.div`
             width: 55px;
             margin-left: 5px;
             float: right;
+            cursor: pointer;
             > span:hover {
                 color: #0e9b50;
             }
