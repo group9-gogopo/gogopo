@@ -47,7 +47,7 @@ class Intro extends Component {
                 </div>
 
                 <Title>
-                    
+                   联系我们
                 </Title>
             </Introd>
         );
