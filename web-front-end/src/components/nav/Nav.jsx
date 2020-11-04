@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {Nav} from './StyledNav'
+import { 
+    Link
+  } from 'react-router-dom'
 
 class nav extends Component {
     render() {
@@ -7,11 +10,11 @@ class nav extends Component {
             <Nav>
                 <ul>
                     <li>所有果果分类</li>
-                    <li>首页</li>
+                    <li><Link to="/home">首页</Link></li>
                     <li>今日限购</li>
-                    <li>所有果果</li>
-                    <li>小果故事</li>
-                    <li>关于我们</li>
+                    <li><Link to="/allProduct">所有果果</Link></li>
+                    <li><Link to="/story">小果故事</Link></li>
+                    <li><Link to="/about">关于我们</Link></li>
                 </ul>
             </Nav>
         );
