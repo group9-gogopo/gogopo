@@ -106,8 +106,8 @@ const Container = styled.div`
       padding: 5px;
       margin-left: 50px;
       button {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         background: #e22e3e;
         border: 0;
         outline: 0;
