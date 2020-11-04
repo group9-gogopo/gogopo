@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const StoryListStyled = styled.div`
+float:left;
 min-height:1916px;
 margin-left:14px;
     ul{

@@ -234,9 +234,9 @@ class AllProduct extends Component{
         return (
             <div>
                 <AllProductStyled>
-                    <div>
+                    {/* <div> */}
                         <LeftNav {...this.state} clickOn={this.handleChange}></LeftNav>
-                    </div>
+                    {/* </div> */}
                     <div>
                         <Products {...this.state}></Products>
                         <Pages></Pages>

@@ -4,12 +4,9 @@ const StoryStyled = styled.div`
         width:1300px;
         overflow:hidden;
         margin:0 auto;
-            >div:first-child{
+            /* div{
                 float:left;
-            }
-            >div:last-child{
-                float:left;
-                margin-left:15px;
+                margin-left:15px; */
             
     }
 `

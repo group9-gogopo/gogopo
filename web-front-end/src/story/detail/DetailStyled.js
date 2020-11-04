@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const DetailStyled=styled.div`
 float:left;
+margin-left:20px;
     >div:first-child{
         width:974px;
         height:45px;

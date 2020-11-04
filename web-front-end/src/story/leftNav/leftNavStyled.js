@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 const LeftNavStyled=styled.div`
+float:left;
+width:284px;
     p{
         width:284px;
         height:45px;
