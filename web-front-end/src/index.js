@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
@@ -23,3 +24,22 @@ ReactDOM.render(
     </Router>,
     document.querySelector('#root')
 )
+=======
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './assets/styles/reset.css'
+import store from './store/index'
+import { Provider } from 'react-redux'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+ReactDOM.render(
+  <Router>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Router>,
+  document.querySelector('#root')
+);
+
+>>>>>>> liyx
