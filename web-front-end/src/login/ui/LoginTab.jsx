@@ -67,7 +67,7 @@ class LoginTab extends Component {
             <p>用户名错误</p>
             <h2 onClick={this.gotoChangePwd}>忘记密码？</h2>
           </span>
-          <button type="submit" >登录</button>
+          <button type="submit">登录</button>
         </form>
         <div>
           还没有账号？

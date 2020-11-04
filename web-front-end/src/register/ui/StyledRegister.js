@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-  width: 100%;
   height: 100%;
   margin-left: 1px;
   display: flex;
@@ -38,6 +37,7 @@ const Container = styled.div`
 
 const FormWrap = styled.form`
   height: 100%;
+  width: 1260px;
   p {
     display: flex;
     flex-direction: row;

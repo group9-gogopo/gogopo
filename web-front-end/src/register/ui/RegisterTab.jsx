@@ -36,7 +36,7 @@ class RegisterTab extends Component {
     let { history } = this.props
     history.push('/login')
   }
-
+  
   //密码强度验证
   handleKeyUp = () => {
     let n = 0;

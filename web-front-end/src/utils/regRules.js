@@ -83,7 +83,6 @@ const regPwd = (id, state) => {
   }
 }
 
-
 //验证重复输入密码
 const regRePwd = (state1,state2,id) => {
   return () => {

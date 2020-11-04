@@ -1,0 +1,61 @@
+{
+    "two":[{
+      "id": "001",
+      "img": "https://i.loli.net/2020/11/04/RpG6hMsDv8OILi1.png",
+      "trait1": "清",
+      "trait2": "甜",
+      "sort": "蓝莓",
+      "info1": "口口清脆 甜而不腻",
+      "info2": "新鲜 美味 爽脆",
+      "title": "蓝莓 2 盒装",
+      "price": "30"
+    },
+    {
+      "id": "002",
+      "img": "https://i.loli.net/2020/11/04/Q1Pp6B7OtGweLSi.png",
+      "trait1": "甜",
+      "trait2": "清",
+      "sort": "芒果",
+      "info1": "口口清脆 甜而不腻",
+      "info2": "新鲜 美味 爽脆",
+      "title": "芒果 2 盒装",
+      "price": "80"
+    },
+    {
+      "id": "003",
+      "img": "https://i.loli.net/2020/11/04/ZrOIBe5wklXLxTn.png",
+      "trait1": "新",
+      "trait2": "鲜",
+      "sort": "樱桃",
+      "info1": "智力进口 清甜爽口",
+      "info2": "新鲜 美味 爽脆",
+      "title": "樱桃 1 斤装",
+      "price": "60"
+    }],
+    "there":[
+      {
+        "id": "001",
+        "title": "智利绿心奇异果 3个装",
+        "info1": "鲜甜可口",
+        "info2": "甜而不腻",
+        "newprice": "10",
+        "oldprice": "15"
+      },
+      {
+        "id": "002",
+        "title": "新鲜牛油果 1个装",
+        "info1": "奶酪丝滑",
+        "info2": "淡淡奶脂",
+        "newprice": "20",
+        "oldprice": "35"
+      },
+      {
+        "id": "003",
+        "title": "沙田柚 2个装",
+        "info1": "红肉蜜柚",
+        "info2": "酸甜新鲜",
+        "newprice": "22",
+        "oldprice": "50"
+      }
+    ]
+}

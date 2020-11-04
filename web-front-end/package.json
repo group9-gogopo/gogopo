@@ -10,6 +10,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.7.3",
+    "axios": "^0.21.0",
+    "json-server": "^0.16.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-redux": "^7.2.1",
@@ -23,7 +25,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock": "json-server ./mock/mock.js -r ./mock/route.json -p 9000 -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,6 +46,7 @@
   "devDependencies": {
     "babel-plugin-import": "^1.13.1",
     "customize-cra": "^1.0.0",
+    "http-proxy-middleware": "^1.0.6",
     "react-app-rewired": "^2.1.6"
   }
 }
