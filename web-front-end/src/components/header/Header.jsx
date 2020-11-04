@@ -23,8 +23,8 @@ class header extends Component {
                         
                     </div>
                     <ul>
-                        <li>返回首页</li>
-                        <li>个人中心</li>
+                        <li><Link to="/home">返回首页</Link></li>
+                        <li><Link to="/profile">个人中心</Link></li>
                         <li>我的订单</li>
                     </ul>
                 </div>
