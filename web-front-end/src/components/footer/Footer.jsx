@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import FooterStyled from './footerStyled'
-import logo1 from'./images/logo1.png'
-import QRcode from './images/QRcode.jpg'
+import logo1 from'../../assets/images/logo1.png'
+import QRcode from '../../assets/images/QRcode.jpg'
 
 
-class Footer extends Component {
-    render(){
+const Footer =()=> {
         return(
             <FooterStyled>
                 <div className='top'>
@@ -47,6 +46,5 @@ class Footer extends Component {
             </FooterStyled>
         )
     }
-}
 
 export default Footer
