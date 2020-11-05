@@ -204,35 +204,38 @@ class AllProduct extends Component{
         showList:[],
         title:'国产水果',
         recommendList:[
-                                {
+                        {
+                            proId:1,
+                            proType:1,
+                            proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
+                            proPrice:198,
+                            proName:'泰国金枕头榴莲1个装(五斤左右)'
+                        },
+                        {
                                     proId:1,
                                     proType:1,
                                     proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                                     proPrice:198,
                                     proName:'泰国金枕头榴莲1个装(五斤左右)'
-                                },
-                                {
+                        },
+                        {
                                     proId:1,
                                     proType:1,
                                     proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                                     proPrice:198,
                                     proName:'泰国金枕头榴莲1个装(五斤左右)'
-                                },
-                                {
+                        },
+                        {
                                     proId:1,
                                     proType:1,
                                     proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                                     proPrice:198,
                                     proName:'泰国金枕头榴莲1个装(五斤左右)'
-                                },
-                                {
-                                    proId:1,
-                                    proType:1,
-                                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
-                                    proPrice:198,
-                                    proName:'泰国金枕头榴莲1个装(五斤左右)'
-                                }]
-    }
+                        }],
+        currentPage:1,
+        pages:1,
+        currentList:[]
+        }
 
     handleChange=(item,index)=>{
         return ()=>{
@@ -260,6 +263,13 @@ class AllProduct extends Component{
         }
     }
 
+    handleChangePage=(page)=>{
+        return()=>{
+            //分页器
+            console.log('修改页数')
+        }
+    }
+
     componentDidMount(){
         //这里做数据请求
         this.props.loadData()
@@ -267,8 +277,10 @@ class AllProduct extends Component{
         console.log("测试",this.props)
         let first=Object.keys(this.state.data)
         let showList=this.state.data[first[this.state.active]]
+        let pages=Math.ceil(showList.length/9)
         this.setState({
-            showList
+            showList,
+            pages
         })
     }
     componentDidUpdate(){
@@ -286,7 +298,13 @@ class AllProduct extends Component{
                         <LeftNav {...this.state} clickOn={this.handleChange}></LeftNav>
                     <div>
                         <Products {...this.state} handleToDetail={this.handleClick} onAddCart={this.handleCart}></Products>
-                        <Pages></Pages>
+                        <Pages
+                                currentList={this.state.currentList}
+                                pages={this.state.pages}
+                                currentPage={this.state.currentPage}
+                                onToPage={this.handleChangePage}        
+                        >
+                        </Pages>
                         <Recommendation recommendList={this.state.recommendList} 
                                         handleToDetail={this.handleClick}
                                         ></Recommendation>
