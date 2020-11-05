@@ -3,7 +3,7 @@ import {Switch,Route,Redirect} from 'react-router-dom'
 import LeftNav from './leftNav/LeftNav'
 import {StoryStyled} from './StoryStyled'
 import StoryList from './storyList/StoryList'
-import Detail from './detail/Detail'
+// import Detail from './detail/Detail'
 import Footer from '../components/footer/Footer'
 
 

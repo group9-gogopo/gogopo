@@ -1,0 +1,23 @@
+{
+    "data":[
+        {
+            "userid":1001,
+            "usernum":"tanxu",
+            "userpassword":"123456",
+            "username":"檀旭",
+            "userage":21
+        },{
+            "userid":1002,
+            "usernum":"litenfei",
+            "userpassword":"123456",
+            "username":"李腾飞",
+            "userage":23
+        },{
+            "userid":1003,
+            "usernum":"liyunxiang",
+            "userpassword":"123456",
+            "username":"李云祥",
+            "userage":22
+        }
+    ]
+}
