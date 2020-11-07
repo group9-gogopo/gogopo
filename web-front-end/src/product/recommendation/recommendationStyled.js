@@ -42,6 +42,9 @@ width:988px;
             }
             >div:last-child{
                 font-size:14px;
+                a{
+                    color:#000;
+                }
             }
         }
     }

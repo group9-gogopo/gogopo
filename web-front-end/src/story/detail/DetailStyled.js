@@ -16,8 +16,8 @@ margin-left:20px;
         }
     }
     .imagebox{
-        width:790px;
-        height:500px;
+        width:820px;
+        height:520px;
         padding:10px 15px;
         margin-bottom:40px;
         background-color:#000;
@@ -25,8 +25,8 @@ margin-left:20px;
             float:left;
             margin-right:15px;
             img{
-                height:160px;
                 width:253px;
+                height:160px;
                 margin-bottom:10px;
                 background-color:white;
                 display:block;

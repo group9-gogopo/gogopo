@@ -2,6 +2,10 @@ import React from 'react'
 import { Component } from 'react';
 import { connect } from 'react-redux'
 import Pages from './pages/Pages'
+// import Pages from './pages/Pages'
+// Pagination
+import Header from '../components/header/Header'
+import Nav from '../components/nav/Nav'
 import Products from './products/Products'
 import Recommendation from './recommendation/Recommendation'
 import LeftNav from './leftNav/LeftNav'
@@ -29,21 +33,21 @@ class AllProduct extends Component{
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 }
@@ -52,28 +56,28 @@ class AllProduct extends Component{
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 }
@@ -82,35 +86,35 @@ class AllProduct extends Component{
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 }
@@ -119,27 +123,27 @@ class AllProduct extends Component{
                 {
                 proId:1,
                 proType:1,
-                proImage:'image1',
+                proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                 proPrice:198,
                 proName:'泰国金枕头榴莲1个装(五斤左右)'
             },
             {
                 proId:1,
                 proType:1,
-                proImage:'image1',
+                proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                 proPrice:198,
                 proName:'泰国金枕头榴莲1个装(五斤左右)'
             },
             {
                 proId:1,
                 proType:1,
-                proImage:'image1',
+                proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                 proPrice:198,
                 proName:'泰国金枕头榴莲1个装(五斤左右)'
             },{
                 proId:1,
                 proType:1,
-                proImage:'image1',
+                proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                 proPrice:198,
                 proName:'泰国金枕头榴莲1个装(五斤左右)'
             },
@@ -148,49 +152,49 @@ class AllProduct extends Component{
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 },
                 {
                     proId:1,
                     proType:1,
-                    proImage:'image1',
+                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
                     proPrice:198,
                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                 }
@@ -198,8 +202,40 @@ class AllProduct extends Component{
         },
         active:0,
         showList:[],
-        title:'国产水果'
-    }
+        title:'国产水果',
+        recommendList:[
+                        {
+                            proId:1,
+                            proType:1,
+                            proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
+                            proPrice:198,
+                            proName:'泰国金枕头榴莲1个装(五斤左右)'
+                        },
+                        {
+                                    proId:1,
+                                    proType:1,
+                                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
+                                    proPrice:198,
+                                    proName:'泰国金枕头榴莲1个装(五斤左右)'
+                        },
+                        {
+                                    proId:1,
+                                    proType:1,
+                                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
+                                    proPrice:198,
+                                    proName:'泰国金枕头榴莲1个装(五斤左右)'
+                        },
+                        {
+                                    proId:1,
+                                    proType:1,
+                                    proImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604556298430&di=fb5b39105fc8855423d27d661187abeb&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2135060977b674b7a2c99c88b8255b2af4039b71781be-wDYHjG_fw658',
+                                    proPrice:198,
+                                    proName:'泰国金枕头榴莲1个装(五斤左右)'
+                        }],
+        currentPage:1,
+        pages:1,
+        currentList:[]
+        }
 
     handleChange=(item,index)=>{
         return ()=>{
@@ -213,6 +249,27 @@ class AllProduct extends Component{
         }
     }
 
+    handleClick=(id)=>{
+        return()=>{
+            //跳转路由到详情页面
+            console.log("到详情页面")
+        }
+    }
+
+    handleCart=(id)=>{
+        return ()=>{
+            //添加到购物车
+            window.alert("商品添加购物车成功")
+        }
+    }
+
+    handleChangePage=(page)=>{
+        return()=>{
+            //分页器
+            console.log('修改页数')
+        }
+    }
+
     componentDidMount(){
         //这里做数据请求
         this.props.loadData()
@@ -220,8 +277,10 @@ class AllProduct extends Component{
         console.log("测试",this.props)
         let first=Object.keys(this.state.data)
         let showList=this.state.data[first[this.state.active]]
+        let pages=Math.ceil(showList.length/9)
         this.setState({
-            showList
+            showList,
+            pages
         })
     }
     componentDidUpdate(){
@@ -230,17 +289,25 @@ class AllProduct extends Component{
     }
 
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div>
+                <Header></Header>
+                <Nav></Nav>
                 <AllProductStyled>
-                    {/* <div> */}
                         <LeftNav {...this.state} clickOn={this.handleChange}></LeftNav>
-                    {/* </div> */}
                     <div>
-                        <Products {...this.state}></Products>
-                        <Pages></Pages>
-                        <Recommendation></Recommendation>
+                        <Products {...this.state} handleToDetail={this.handleClick} onAddCart={this.handleCart}></Products>
+                        <Pages
+                                currentList={this.state.currentList}
+                                pages={this.state.pages}
+                                currentPage={this.state.currentPage}
+                                onToPage={this.handleChangePage}        
+                        >
+                        </Pages>
+                        <Recommendation recommendList={this.state.recommendList} 
+                                        handleToDetail={this.handleClick}
+                                        ></Recommendation>
                     </div>
                 </AllProductStyled>
                 <Footer></Footer>

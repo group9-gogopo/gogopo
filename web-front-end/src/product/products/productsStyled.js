@@ -15,8 +15,8 @@ width:988px;
     }
     ul{
         border:1px solid #f5f5f5;
-        width:944px;
-        padding:20px 21px;
+        width:988px;
+        padding:20px 20px;
         min-height:900px;
         background-color:pink;
         li{
@@ -36,6 +36,7 @@ width:988px;
                 margin-top:16px;
                 font-size:18px;
                 color:#ff0000;
+                width:220px;
                 span{
                     line-height:30px;
                 }
@@ -54,6 +55,9 @@ width:988px;
             }
             >div:last-child{
                 font-size:14px;
+                a{
+                    color:#000;
+                }
             }
 
 
