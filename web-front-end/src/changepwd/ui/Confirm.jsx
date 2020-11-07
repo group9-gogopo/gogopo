@@ -39,7 +39,6 @@ function Confirm(props) {
             type="text" 
             defaultValue={username}
             autoComplete="off" 
-            placeholder='首字母为大写的5-19个英文字母'
             onBlur={regUserName("regUserName", username && username.username)}
             onChange={(e) => setUserName({
               username: e.target.value

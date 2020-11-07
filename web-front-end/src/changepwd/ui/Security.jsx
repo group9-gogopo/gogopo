@@ -8,14 +8,14 @@ import {
 } from './StyledChangePwd'
 
 import {
-  regCode,
+  regEmail,
   regTel
 } from '@u/regRules' 
 
 function Security(props) {
 
   let [tel, setTel] = useState(null)
-  let [code, setCode] = useState(null)
+  let [email, setEmail] = useState(null)
 
   //改变store中的current
   const current = useSelector(state => state.changepwd.current)
@@ -40,7 +40,7 @@ function Security(props) {
     return (e) => {
       e.preventDefault()
       console.log(tel)
-      console.log(code)
+      console.log(email)
       // console.log(data.tel)
       // console.log(data.code)
     }
@@ -55,23 +55,22 @@ function Security(props) {
           type="text" 
           defaultValue={tel} 
           autoComplete="off" 
-          onBlur={regTel('regTel','forCode', tel && tel.tel)}
+          onBlur={regTel('regTel', tel && tel.tel)}
           onChange={(e) => setTel({
             tel:e.target.value
           })}
         />
         <span id="regTel"></span>
-        <span id='forCode'>点击发送验证码</span>
       </p>
       <p>
-        <label htmlFor="">输入验证码</label>
+        <label htmlFor="">输入绑定的邮箱</label>
         <input 
           type="text" 
-          defaultValue={code} 
+          defaultValue={email} 
           id="code"
           autoComplete="off" 
-          onBlur={regCode('regCode', code && code.code)}
-          onChange={(e) => setCode({
+          onBlur={regEmail('regCode', email && email.email)}
+          onChange={(e) => setEmail({
             code: e.target.value
           })}
         />

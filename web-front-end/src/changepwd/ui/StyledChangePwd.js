@@ -4,8 +4,9 @@ const Container = styled.div`
   height: 100%;
   margin-left: 1px;
   border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
   background: #fff;
+  display: flex;
+  flex-direction: column;
   header {
     height: 91px;
     border-bottom: 2px solid #000;
@@ -33,6 +34,8 @@ const NavWrap = styled.div`
   flex-direction: row;
   justify-content: space-around;
   padding-top: 15px;
+  height: 50px;
+  margin-bottom: 30px;
   li {
     width: 120px;
     height: 35px;
@@ -48,7 +51,7 @@ const NavWrap = styled.div`
 `
 
 const ConfirmWrap = styled.form`
-  height: 425px;
+  flex: 1;
   text-align: center;
   p {
     padding-top: 100px;
@@ -70,10 +73,9 @@ const ConfirmWrap = styled.form`
       outline: none;
     }
     span {
-      width: 200px;
+      width: 120px;
       height: 35px;
       line-height: 35px;
-      margin-left: 5px;
     }
   }
   button {
@@ -94,7 +96,7 @@ const SecurityWrap = styled.form`
   height: 425px;
   text-align: center;
   p {
-    padding-top: 80px;
+    padding-top: 50px;
     display: flex;
     margin-left: 300px;
     position: relative;
@@ -119,21 +121,6 @@ const SecurityWrap = styled.form`
       height: 35px;
       margin-left: 5px;
       line-height: 35px;
-    }
-    #forCode {
-      width: 104px;
-      height: 34px;
-      padding-left: 5px;
-      font-size: 14px;
-      line-height: 34px;
-      border-radius: 5px;
-      border: 3px solid #7d7d7d;
-      background: #bdbbbc;
-      position: absolute;
-      top: 80px;
-      left: 620px;
-      cursor:pointer;
-      visibility: hidden;
     }
   }
   button {
