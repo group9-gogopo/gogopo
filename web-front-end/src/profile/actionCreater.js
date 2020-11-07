@@ -1,4 +1,4 @@
-import { LOADDATA } from './actionTypes'
+import { LOADDATA ,CHANGESHOW} from './actionTypes'
 
 //导入配置好的数据请求格式
 import { get } from '@u/http.js'
@@ -24,7 +24,14 @@ const loadDataAsync = ()=>{
     }
 }
 
+const  changeShow=(id)=>{
+    return {
+        type:CHANGESHOW,
+        id
+    }
+}
 export {
     loadDataSync,
-    loadDataAsync
+    loadDataAsync,
+    changeShow
 }
