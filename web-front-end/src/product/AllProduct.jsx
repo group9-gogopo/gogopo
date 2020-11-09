@@ -233,7 +233,7 @@ class AllProduct extends Component{
                                     proName:'泰国金枕头榴莲1个装(五斤左右)'
                         }],
         currentPage:1,
-        pages:1,
+        pages:3,
         currentList:[]
         }
 
@@ -266,6 +266,12 @@ class AllProduct extends Component{
     handleChangePage=(page)=>{
         return()=>{
             //分页器
+            let list=[]
+            if(this.state.showList.length<=0) list=this.state.showList
+            else {
+                let list=this.state.showList
+            }
+            this.state.currentList=
             console.log('修改页数')
         }
     }
@@ -296,7 +302,7 @@ class AllProduct extends Component{
                 <Nav></Nav>
                 <AllProductStyled>
                         <LeftNav {...this.state} clickOn={this.handleChange}></LeftNav>
-                    <div>
+                    <div className='box'>
                         <Products {...this.state} handleToDetail={this.handleClick} onAddCart={this.handleCart}></Products>
                         <Pages
                                 currentList={this.state.currentList}
