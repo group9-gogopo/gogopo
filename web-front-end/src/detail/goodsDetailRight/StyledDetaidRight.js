@@ -39,6 +39,9 @@ const StyledDetaidRight = styled.div`
         display: flex;
         margin-top: 20px;
         align-items: center;
+        .active{
+          border :3px solid #ffc514;
+        }
         span {
           display: block;
           width: 22px;
@@ -48,12 +51,14 @@ const StyledDetaidRight = styled.div`
           cursor: pointer;
           background-color: #ddd;
           border: 1px solid #ccc;
+          user-select:none;
         }
         .boxImgUl {
           flex: 1;
           height: 95%;
           display: flex;
           margin: 0;
+          overflow:hidden;
           li {
             width: 114px;
             height: 114px;
@@ -155,6 +160,7 @@ const StyledDetaidRight = styled.div`
             color: #000;
             margin: none;
             cursor: pointer;
+            user-select:none;
           }
           .detailNumBoxCountS {
             border-bottom: 2px solid #aaa;
@@ -185,6 +191,7 @@ const StyledDetaidRight = styled.div`
         color: #ff0033;
         margin-right: 10%;
         cursor: pointer;
+        user-select:none;
       }
       .addShoppingCar {
         width: 40%;
@@ -195,6 +202,7 @@ const StyledDetaidRight = styled.div`
         background-color: #ff0033;
         color: #fff;
         cursor: pointer;
+        user-select:none;
       }
     }
   }
