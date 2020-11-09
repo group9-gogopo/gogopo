@@ -22,7 +22,6 @@ function ChangePwdUi(props) {
         <h1>找回密码 <span onClick={handleClick}>登录</span></h1>
       </header>
       <Nav {...props}></Nav>
-      
     </Container>
   );
 }

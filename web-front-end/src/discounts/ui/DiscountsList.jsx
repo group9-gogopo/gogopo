@@ -14,9 +14,9 @@ function DiscountsList(props) {
 
     useEffect(() => {
       (async () => {
-        let result = await get('/api/special')
-        console.log(result.two)
-        setList(result.two)
+        let result = await get('api/goodslist?sort=localfruit')
+        // console.log(result)
+        setList(result.goodslist)
       })()
     },[])
 

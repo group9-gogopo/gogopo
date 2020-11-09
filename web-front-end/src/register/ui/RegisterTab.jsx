@@ -6,7 +6,7 @@ import {FormWrap} from './StyledRegister'
 import {
   regUserName,
   regTel,
-  regCode,
+  regEmail,
   regPwd,
   regRePwd
 } from '@u/regRules'
@@ -17,15 +17,22 @@ class RegisterTab extends Component {
   state = {
     username: '',
     tel: '',
-    code: '',
+    email: '',
     createpwd: '',
     repwd: '',
   }
 
   handleSubmit = () => {
+    
     return (e) => {
       e.preventDefault()
       console.log(this.state)
+      Object.keys(this.state).map((item) => {
+        if(! this.state[item]) {
+          alert("请完整填写注册信息")
+        }
+        return true
+      })
     }
     
   }
@@ -91,7 +98,7 @@ class RegisterTab extends Component {
                 username: e.target.value
               })} 
               onBlur={regUserName('regUserName', this.state.username)} 
-              placeholder='首字母为大写的5-19个英文字母'
+              placeholder='请输入用户名'
             />
             <span id="regUserName"></span>
             <svg t="1603677074280" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7252" width="200" height="200"><path d="M512 64.003072c-247.412736 0-448 200.576-448 448.002048 0 247.419904 200.587264 447.990784 448 447.990784 247.431168 0 448-200.571904 448-447.990784 0-247.426048-200.568832-448.002048-448-448.002048z m-22.288384 201.660416c-0.007168-12.377088 10.028032-22.403072 22.40512-22.403072 12.367872 0.004096 22.411264 10.034176 22.411264 22.403072v268.778496c0 12.370944-10.036224 22.395904-22.411264 22.395904-12.367872 0.009216-22.406144-10.02496-22.406144-22.4l0.001024-268.7744z m21.941248 515.257344c-37.111808 0-67.196928-30.08-67.196928-67.18976s30.08512-67.198976 67.196928-67.198976c37.107712 0 67.19488 30.089216 67.19488 67.198976s-30.088192 67.18976-67.19488 67.18976z" fill="#ff574d" p-id="7253"></path></svg>
@@ -107,21 +114,20 @@ class RegisterTab extends Component {
               onChange={(e) => this.setState({
                 tel: e.target.value
               })} 
-              onBlur={regTel('regTel','forCode',this.state.tel)} />
+              onBlur={regTel('regTel',this.state.tel)} />
             <span id="regTel"></span>
-            <span id='forCode'>点击发送验证码</span>
           </p>
           <p>
-            <label htmlFor="">短信动态码</label>
+            <label htmlFor="">邮箱</label>
             <input 
               type="text" 
               id="code" 
               autoComplete="off" 
-              defaultValue={this.state.code}
+              defaultValue={this.state.email}
               onChange={(e) => this.setState({
-                code: e.target.value
+                email: e.target.value
               })} 
-              onBlur={regCode('regCode',this.state.code)}/>
+              onBlur={regEmail('regCode',this.state.email)}/>
             <span id="regCode"></span>
           </p>
           <p>

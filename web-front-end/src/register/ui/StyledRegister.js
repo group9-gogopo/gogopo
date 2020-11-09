@@ -6,6 +6,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   border: 2px solid #000;
+  border-bottom: 0;
   background: #fff;
   header {
     height: 91px;
@@ -51,7 +52,7 @@ const FormWrap = styled.form`
       position: relative;
     }
     &: nth-of-type(5) {
-      margin-top: 0;
+      // margin-top: 0;
     }
     span {
       width: 200px;
@@ -116,21 +117,19 @@ const FormWrap = styled.form`
     background: #009a44;
     border: 0;
     border-radius: 5px;
-    margin: 10px 0 25px 465px;
+    margin: 30px 0 25px 465px;
     cursor:pointer;
     outline: none;
   }
 
   .tips {
     height: 25px;
-    margin: 15px 0 15px 465px;
+    margin: 20px 0 15px 465px;
     display: flex;
     flex-direction: row;
     h3 {
       width: 50px;
-      height: 25px;
-      line-height:25px;
-      backgroundcolor: skyblue;
+      height: 28px;
       font-size: 14px;
       font-weight: normal;
       border: 2px solid #000;
