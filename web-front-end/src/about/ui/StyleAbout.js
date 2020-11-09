@@ -76,7 +76,58 @@ const Introd = styled.div`
     }
 
     .connect{
-        
+        height:880px;
+        margin-top:128px;
+        .weibo{
+            padding-left:190px;
+            float:left;
+            p:first-child{          
+                font-size: 36px;
+                font-family: Adobe Heiti Std;
+                font-weight: normal;
+                color: #070707;
+                padding-left:88px;
+            }
+
+        }
+        .weixin{
+            float:left;
+            padding-left:316px;
+            p:first-child{          
+                font-size: 36px;
+                font-family: Adobe Heiti Std;
+                font-weight: normal;
+                color: #070707;
+                padding-left:88px;
+
+            }
+        }
+    }
+
+    .connect_email{
+        height:500px;
+        p{   
+            font-size: 36px;
+            font-family: Adobe Heiti Std;
+            font-weight: normal;
+            color: #050505;
+            padding-left:111px;
+            
+        }
+
+    }
+
+    .connect_client{
+        height:800px;
+        padding-top:133px;
+        p{
+            padding-left:111px;
+            
+            font-size: 36px;
+            font-family: Adobe Heiti Std;
+            font-weight: normal;
+            color: #090707;
+        }
     }
 
 `

@@ -4,10 +4,13 @@ import styled from 'styled-components'
 const Container = styled.div`
     width: 1920px;
     overflow:hidden;
+    margin:0 auto;
 `
 const ShowInfor=styled.div`
+    
     height:962px; 
     background: #F0F0F8;
+    margin:0 auto;
     .info_top{
         height:274px;    
         background: #F0F0F8;
@@ -133,6 +136,7 @@ const FruitInfor=styled.div`
     height:1000px;
     background: #F0F0F8;;
     padding:0 308px;
+    margin:0 auto;
     .title{
         position:relative;
         img{
@@ -230,6 +234,7 @@ const Comments=styled.div`
     width: 1920px;
     height: 558px;
     background: #414141;
+    margin:0 auto;
     /* opacity: 0.6; */
     .title{
         position:relative;

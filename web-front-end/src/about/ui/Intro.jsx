@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Introd, Title} from './StyleAbout'
-import aboutbg from  '../../../asset/img/about/AboutBg.png'
-
+import aboutbg from  '../../asset/img/about/AboutBg.png'
+import weibo from '../../asset/img/about/weibo.png'
+import weixin from '../../asset/img/about/weixin.png'
 class Intro extends Component {
     render() {
         return (
@@ -46,9 +47,57 @@ class Intro extends Component {
                     </p>
                 </div>
 
-                <Title>
-                   联系我们
-                </Title>
+                
+                <div className="connect">
+                    <Title>
+                        联系我们
+                    </Title>
+                    <div className='connect_info'>
+                        <div className='weibo'>
+                            <p>官方微博</p>
+                            <p><img src={weibo} alt=""/></p>
+                        </div>
+                        <div className='weixin'>
+                            <p>官方微信</p>
+                            <p><img src={weixin} alt=""/></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="connect_email">
+                    <Title>
+                        联系邮箱
+                    </Title>
+                    <p>
+                        APP商务合作  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*******************.com     
+                    </p>
+                    <p>
+                    企业团购     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;guoguopu@*******.com
+                    </p>   
+                </div>
+
+                <div className="connect_client">
+                    <Title>
+                        联系客服
+                    </Title>
+                    <p>
+                    客服热线   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                    123456789
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                  123456789
+                    </p>
+                    <p>
+                    企业总机     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                  123456789
+                    </p>
+                    <p>
+                    团购热线        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                               000000000
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                               000000000
+                                                                                 </p>
+                    <p>
+                    果果铺APP及官网客服专线     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             123456789    
+                    </p>
+                </div>
+
+                
+
             </Introd>
         );
     }

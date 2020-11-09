@@ -5,6 +5,7 @@ import { Input } from 'antd';
 import { 
     Link
   } from 'react-router-dom'
+// import Search from '../../components/search/Search'
 
 
 const { Search } = Input;
@@ -30,6 +31,7 @@ class header extends Component {
                 </div>
                 <div className='bottom'>
                     <div className='img'><img src={img} alt=""/></div>
+                    {/* <Search></Search> */}
                     <Search
                         placeholder="您今天想吃什么水果？搜下看看  有惊喜"
                         allowClear
