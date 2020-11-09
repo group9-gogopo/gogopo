@@ -11,6 +11,7 @@ import Login from './login/container/Login'
 import Register from './register/container/Register'
 import ChangePwd from './changepwd/container/ChangePwd'
 import Discounts from './discounts/container/Discounts'
+import Detail from './detail/GoodsDetail'
 
 export default class App extends Component {
     render() {
@@ -23,6 +24,7 @@ export default class App extends Component {
                 <Route path='/allProduct' component={AllProduct}></Route>
                 <Route path='/story' component={Story}></Route>
                 <Route path='/profile' component={Profile}></Route>
+                <Route path='/detail' component={Detail}></Route>
                 <Route path="/home">
                     <Home></Home>
                 </Route>

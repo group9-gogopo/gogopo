@@ -10,15 +10,15 @@ function DiscountList(props) {
 
     useEffect(() => {
       (async () => {
-        let result = await get('/api/discount')
-        // console.log(result)
+        let result = await get('api/goodslist?sort=localfruit')
+        console.log(result)
         setList(result)
       })()
     },[])
   
   return (
     <Container>
-        {
+        {/* {
           list && list.map(value => {
             return (
               <li
@@ -46,7 +46,7 @@ function DiscountList(props) {
               </li>
             )
           })
-        }   
+        }    */}
     </Container>
   );
 }
