@@ -1,18 +1,12 @@
 import React from 'react'
-import { useHistory} from "react-router-dom"
-// import { connect } from 'react-redux'
 import { PersonalDataStyled } from './PersonalDataStyled'
 
 const PersonalData =(props)=>{
     const history=useHistory()
-    const handlerClick=()=>{
-        history.push("/detail",{id:1007})
-    }
+   
         return(
             <PersonalDataStyled>
-                <header>个人资料 
-                    <button onClick={handlerClick}>1111</button>
-                </header>
+                <header>个人资料  </header>
                 <ul>
                     <li>
                         姓名

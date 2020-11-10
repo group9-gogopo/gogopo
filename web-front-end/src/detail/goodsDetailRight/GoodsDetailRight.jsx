@@ -4,8 +4,6 @@ import { useHistory } from "react-router-dom";
 
 const GoodsDetailRight = (props) => {
 
-  console.log(props.detailList);
-
   const [imgNum, setImgNum] = useState(0);
   const [goodsNum, setGoodsNum] = useState(1);
   
