@@ -1,41 +1,34 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import Personaldata from './personaldata/Personaldata'
-import Address from './adress/Address'
-import { ProfileStyled } from './ProfileStyled'
-import Footer from '../components/footer/Footer'
-import { loadDataAsync } from './actionCreater'
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Personaldata from "./personaldata/Personaldata";
+import Address from "./adress/Address";
+import { ProfileStyled } from "./ProfileStyled";
+import Footer from "@c/footer/Footer";
+import { loadDataAsync,changeShow } from "./actionCreater";
+import AddAddress from "@c/addAddress/AddAddress"
 
-@connect(
-    state=>{
-        console.log('映射的state',state)
-        return {
-            list:state.profile.list
-        }
-    },
-    dispatch=>({
-        loadData(){
-            dispatch(loadDataAsync())
-        }
-    })
-)
-class Profile extends Component{
+const Profile = (props) => {
+  const list = useSelector((state) => state.profile.list);
+  const addShow = useSelector((state) => state.profile.addShow);
+  const dispatch = useDispatch();
 
-    componentDidMount(){
-        this.props.loadData()
-    }
+  const addClose=()=>{
+    dispatch(changeShow(0))
+  }
 
-    render(){
-        return(
-            <>
-                <ProfileStyled>
-                    <Personaldata></Personaldata>
-                    <Address list={this.props.list}></Address>
-                </ProfileStyled>
-                <Footer></Footer>
-            </>
-        )
-    }
-}
+  useEffect(() => {
+    dispatch(loadDataAsync());
+  }, [dispatch]);
+  return (
+    <>
+      <ProfileStyled>
+        <Personaldata></Personaldata>
+        <Address list={list}></Address>
+      </ProfileStyled>
+      {addShow===0?"":<AddAddress addClose={addClose} addShowID={addShow}></AddAddress>}
+      <Footer></Footer>
+    </>
+  );
+};
 
-export default Profile
+export default Profile;

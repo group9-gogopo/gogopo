@@ -13,9 +13,9 @@ width:988px;
         font-weight:bold;
     }
     ul{
-        width:948px;
+        width:988px;
         padding:20px;
-        min-height:300px;
+        min-height:310px;
         background-color:pink;
         li{
             width:220px;
@@ -42,6 +42,9 @@ width:988px;
             }
             >div:last-child{
                 font-size:14px;
+                a{
+                    color:#000;
+                }
             }
         }
     }

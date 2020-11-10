@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import DiscountsUi from '../ui/DiscountsUi'
 
+import { get } from '@u/http'
+
+
+
 function Discounts(props) {
+  const [list, setList] = useState(null)
+
+    useEffect(() => {
+      (async () => {
+        let result = await get('api/goodslist?sort=localfruit&limit=14&start=0')
+        setList(result.goodslist)
+      })()
+    },[])
+
   return (
-    <DiscountsUi></DiscountsUi>
+    <DiscountsUi list={list}></DiscountsUi>
   );
 }
 

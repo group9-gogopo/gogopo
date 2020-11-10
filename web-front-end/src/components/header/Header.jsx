@@ -19,7 +19,7 @@ class header extends Component {
                     <div>
                         <span>欢迎光临果果铺</span>
                         <span><Link to="/login">[登录]</Link></span>
-                        <span><Link to="/login">[注册]</Link></span>
+                        <span><Link to="/register">[注册]</Link></span>
                         
                     </div>
                     <ul>

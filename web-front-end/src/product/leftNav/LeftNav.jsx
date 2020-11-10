@@ -10,7 +10,7 @@ class LeftNav extends Component{
     }
     componentDidMount(){
         let keys=Object.keys(this.props.data)
-        // console.log(this.props)
+        console.log(keys)
         this.setState({
             List:keys
         })

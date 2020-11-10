@@ -4,21 +4,17 @@ import {
   DiscountsListWrap
 } from './StyledDiscounts'
 
-import { get } from '@u/http'
 
 import Specials from '@c/discountslist/Specials'
 
 
 function DiscountsList(props) {
   const [list, setList] = useState(null)
-
-    useEffect(() => {
-      (async () => {
-        let result = await get('/api/special')
-        console.log(result.two)
-        setList(result.two)
-      })()
-    },[])
+  
+  useEffect(() => {
+    let goodslist = props.goodslist && props.goodslist.slice(5,19)
+    setList(goodslist)
+  },[props])
 
   return (
     <DiscountsListWrap>
@@ -28,16 +24,14 @@ function DiscountsList(props) {
             <li 
               key={value.id}
             >
-              <img src={value.img} alt=""/>
+              <img src={value.image} alt=""/>
               <Specials
-                margin = '0 0 0 100px'
-                trait1 = {value.trait1}
-                trait2 = {value.trait2}
-                sort = {value.sort}
-                info1 = {value.info1}
-                info2 = {value.info2}
-                tit = {value.title}
-                price = {value.price}
+                margin = '0 52.5px 0 60px'
+                nm = {value.nm}
+                name = {value.name}
+                info = {value.info}
+                price = {value.newprice}
+                id = {value.id}
               ></Specials>
             </li>
           )

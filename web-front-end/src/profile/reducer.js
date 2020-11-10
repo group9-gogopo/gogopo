@@ -1,16 +1,22 @@
-import {LOADDATA} from './actionTypes'
+import {LOADDATA,CHANGESHOW} from './actionTypes'
 const defaultState={
     // profileMsg:{},
-    list:[]
+    list:[],
+    addShow:0
 }
 
 const reducer=(state=defaultState,action)=>{
     switch(action.type){
         case LOADDATA:
-            console.log('成功到reducer这里了',action)
             return{
                 // profileMsg:action.profileMsg,
+                ...state,
                 list:action.list
+            }
+        case CHANGESHOW:
+            return{
+                ...state,
+                addShow:action.id
             }
         default:
             return state

@@ -3,8 +3,22 @@ import { withRouter } from 'react-router-dom'
 
 import { LoginTabWrap } from '../ui/StyledLogin'
 
+import { get } from '@u/http'
+
 @withRouter
 class LoginTab extends Component {
+
+  login = async () => {
+    let { account, password } = this.state
+    let result = await get(`api/login?username=${account}&createpwd=${password}`)
+    let { ret } = result.registerconfirm
+    console.log(ret)
+    // if(ret) {
+    //   const h2 = document.getElementById('warning')
+    //   h2.style = 'visibility : visible'
+    // }
+  }
+
   state = {
     account: '',
     password: '',
@@ -29,8 +43,9 @@ class LoginTab extends Component {
   handleSubmit = () => {
     return (e) => {
       e.preventDefault()
-      console.log(this.state.account)
-      console.log(this.state.password)
+      this.login()
+      // console.log(this.state.account)
+      // console.log(this.state.password)
     }
   }
 
