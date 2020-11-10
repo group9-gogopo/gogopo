@@ -1,9 +1,7 @@
 import React from 'react'
 import { PersonalDataStyled } from './PersonalDataStyled'
 
-const PersonalData =(props)=>{
-    const history=useHistory()
-   
+const PersonalData =(props)=>{   
         return(
             <PersonalDataStyled>
                 <header>个人资料  </header>
