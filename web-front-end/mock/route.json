@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+{
+  "/api/discount": "/discount",
+  "/api/special": "/special"
+=======
 {
   "/api/goods":"/goods",
   "/api/users":"/users",
   "/api/discount": "/discount",
   "/api/special": "/special",
   "/api/address":"/address"
+>>>>>>> master
 }

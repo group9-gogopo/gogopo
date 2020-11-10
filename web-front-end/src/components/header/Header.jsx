@@ -38,7 +38,7 @@ class header extends Component {
                     />
                     <p>芒果&nbsp;&nbsp;&nbsp;<span>樱桃</span>&nbsp;&nbsp;苹果 &nbsp;&nbsp;&nbsp;山竹</p>
 
-                    <div className="cart">购物车</div>                   
+                    <div className="cart"><Link to="/shoppingCart">购物车</Link></div>                   
                 </div>
 
               </Header>
