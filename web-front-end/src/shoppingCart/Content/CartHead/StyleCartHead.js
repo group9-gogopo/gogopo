@@ -5,6 +5,7 @@ const StyleCartHead = styled.div`
     height:60px;
     background:orange;
     color:#000000;
+    margin:0 auto;
     ul{
         text-align:center;
         li{

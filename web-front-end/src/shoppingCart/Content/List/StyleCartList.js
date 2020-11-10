@@ -6,6 +6,7 @@ const StyleCartList = styled.div`
      height:1300px;
      background:#fff;
      overflow:scroll;
+     margin:0 auto;
      >ul{
         width:1300px;
        
@@ -21,6 +22,7 @@ const StyleCartList = styled.div`
              width:50px;
              height:50px;
              float:left;
+             padding-left:14px;
              border-radius:50%;
              background:#fff;
              border:1px solid #000;
@@ -28,6 +30,14 @@ const StyleCartList = styled.div`
              top:50%;
              transform:translateY(-50%);
              margin:0 30px 0 10px;
+             .correct{
+                width: 20px;
+                height: 32px;
+                border-color: #009933;
+                border-style: solid;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+             }
          }
          .pic{
              width:440px;

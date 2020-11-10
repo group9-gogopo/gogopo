@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
-import Header from './Header/Header'
-import Search from './Search/Search'
 import {Container}from './Header/StyleHeader'
 import ContentIndex from './Content/ContentIndex'
-import Footer from './Footer/Footer'
-import Nav from './Nav/Nav'
 import { connect } from 'react-redux'
+import Header from '../components/header/Header'
+import Nav from '../components/nav/Nav'
+import Footer from '../components/footer/Footer'
 import {
     userAddShop,
     userSubShop,
     loadDataSync,
-    removeCartShop
+    removeCartShop,
+    checkShopNumber,
+    operationAllShop
 } from './actionCreators'
 
 @connect(
@@ -32,7 +33,14 @@ import {
             },
           handleDelete(id){
               dispatch(removeCartShop(id))
+          },
+          handSelectClick(id){
+              dispatch(checkShopNumber(id))
+          },
+          selectStatus(selectStatus){
+              dispatch(operationAllShop(selectStatus))
           }
+          
     })
 )
 class Cart extends Component {
@@ -43,15 +51,19 @@ class Cart extends Component {
         return (       
             <Container>
                 <Header></Header>
-                <Search></Search>
                 <Nav></Nav>
                 <ContentIndex 
                 data={this.props.list} 
                 handleAddClick={this.props.handleAddClick}
                 handleReducerClick={this.props.handleReducerClick}
                 handleDelete={this.props.handleDelete}
+                handSelectClick={this.props.handSelectClick}
+                selectStatus={this.props.selectStatus}
                 ></ContentIndex>
-                <Footer></Footer>
+                <Footer 
+                    totalPrice={this.props.totalPrice}
+                    totalNum={this.props.totalNum}
+                ></Footer>
             </Container>
         )
     }

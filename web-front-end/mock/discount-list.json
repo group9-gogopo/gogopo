@@ -1,0 +1,23 @@
+[
+  {
+    "id": "001",
+    "img": "https://i.loli.net/2020/11/03/2eEcp87aVRxAlsF.jpg",
+    "title": "苹果",
+    "oldprice":"80",
+    "newprice":"30"
+  },
+  {
+    "id": "002",
+    "img": "https://i.loli.net/2020/11/03/TptwVq6PJe3zsiN.jpg",
+    "title": "山竹",
+    "oldprice":"100",
+    "newprice":"40"
+  },
+  {
+    "id": "003",
+    "img": "https://i.loli.net/2020/11/03/vJfXq1EnTlwIaLe.jpg",
+    "title": "血橙",
+    "oldprice":"110",
+    "newprice":"50"
+  }
+]

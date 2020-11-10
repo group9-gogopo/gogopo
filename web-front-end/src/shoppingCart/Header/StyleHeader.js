@@ -10,6 +10,7 @@ const StyleHead = styled.div`
     width:1300px;
     height:40px;
     background: #ccc;
+    margin:0 auto;
 `
 
 export  {

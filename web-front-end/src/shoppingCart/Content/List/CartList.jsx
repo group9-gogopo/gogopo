@@ -17,17 +17,23 @@ export class CartList extends Component {
             this.props.handleDelete(id)
         }
     }
+    handSelectClick = (id) => {
+        return () => {
+            this.props.handSelectClick(id)
+        }
+    }
     render() {
         return (
                 <StyleCartList>
                     <ul>
                         {
-                             this.props.dataList.map((value) => {
+                             this.props.dataList && this.props.dataList.map((value) => {
                                 return(
                                     <li key={value.id}>
-                                        <a className='check'>
-                                            <input type="checkbox" name="mychoice" id="a" value='ch' />
-                                            <label htmlFor="a"> </label>
+                                        <a className='check' 
+                                        onClick={this.handSelectClick(value.id)}
+                                        >
+                                            <div className='correct' style={value.checked?{display:'block'}:{display:'none'}}></div>
                                         </a>
                                         <div className='pic'>
                                             <img src={value.image} alt=""/>

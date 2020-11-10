@@ -36,7 +36,7 @@ export  function loadDataSync () {
   
   // 购物车选中或不选中
   
-  export function checkShopNumber(type, id) {
+  export function checkShopNumber(id) {
   
     return { type: TOGGLE_SHOP, id };
   
@@ -46,9 +46,9 @@ export  function loadDataSync () {
   
   // 购物车全选或取消全选
   
-  export function operationAllShop(seleStatus) {
+  export function operationAllShop(selectStatus) {
   
-    return { type: SELECT_ALL_SHOP, seleStatus };
+    return { type: SELECT_ALL_SHOP, selectStatus };
   
   }
   

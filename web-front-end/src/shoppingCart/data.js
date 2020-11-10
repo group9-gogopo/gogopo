@@ -22,6 +22,7 @@ const shoppingCartData = [
         image:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3860799277,769615190&fm=26&gp=0.jpg',
         count:1,
         checked:false,
-    }
+    },
+    
 ]
 export default shoppingCartData

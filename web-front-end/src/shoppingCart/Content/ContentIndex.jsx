@@ -6,6 +6,7 @@ export class ContentIndex extends Component {
 
     
     render() {
+        console.log(this.props)
         return (
             <div>
                 <CartHead></CartHead>
@@ -14,8 +15,14 @@ export class ContentIndex extends Component {
                 handleAddClick={this.props.handleAddClick}
                 handleReducerClick={this.props.handleReducerClick}
                 handleDelete={this.props.handleDelete}
+                handSelectClick={this.props.handSelectClick}
                 ></CartList>
-                <CartFooter data={this.props.data}></CartFooter>
+                <CartFooter 
+                    data={this.props.data}
+                    selectStatus={this.props.selectStatus}
+                    totalPrice={this.props.totalPrice}
+                    totalNum={this.props.totalNum}
+                ></CartFooter>
             </div>
         )
     }
