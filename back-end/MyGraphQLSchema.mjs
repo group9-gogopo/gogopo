@@ -31,6 +31,9 @@ const GoodType = new GraphQLObjectType({
     image: {
       type: GraphQLString
     },
+    nm: {
+      type: GraphQLString
+    },
     newprice: {
       type: GraphQLInt
     },
@@ -63,16 +66,17 @@ const schema = new GraphQLSchema({
       good: {
         type: GoodType,
         args:{
-          sort: {
-            type: GraphQLString
-          },
+          // sort: {
+          //   type: GraphQLString
+          // },
           id: {
             type: GraphQLInt
           }
         },
         async resolve(obj, args) {
-          let { sort, id } = args
-          let result = await axios.get(`http://localhost:9000/${sort}?id=${id}`)
+          let { id } = args
+          let result = await axios.get(`http://localhost:9000/allproduct?id=${id}`)
+          console.log(result)
           return result.data[0]
         }
       },
@@ -83,12 +87,19 @@ const schema = new GraphQLSchema({
         args: {
           sort: {
             type: GraphQLString
+          },
+          limit: {
+            type: GraphQLInt
+          },
+          start: {
+            type: GraphQLInt
           }
         },
         async resolve(obj, args) {
-          let { sort } = args
-          let result = await axios.get(`http://localhost:9000/${sort}`)
-          return result.data
+          let { sort,limit, start } = args
+          let result = await axios.get(`http://localhost:9000/${sort}?${limit}&${start}`)
+          let list = result.data
+          return list.splice(start, limit)
         }
       },
 

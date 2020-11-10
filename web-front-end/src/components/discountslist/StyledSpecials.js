@@ -3,74 +3,48 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 160px;
   margin: ${props => props.margin};
 
   .header {
     display: flex;
+    flex-direction: row;
+    width: 100%;
     height: 240px;
-    .trait {
-      margin-left: 80px;
-    }
-    p {
-      width: 100px;
-      height: 100px;
-      border-radius: 50px;
-      background: #319a0a;
-      color: #fff;
-      font-size: 44px;
-      line-height: 100px;
-      text-align: center;
-      margin-bottom: 20px;
-      font-family: YouYuan;
-    }
-    .sort {
-      width: 380px;
-      height: 136px;
-      line-height:136px;
-      font-size: 100px;
+    h1 {
+      width: 80px;
+      height: 240px;
+      line-height: 80px;
+      font-size: 60px;
       color: #483f40;
-      margin: 65px 0 0 100px;
+      margin: 10px 0 0 0;
       font-family:  STHupo;
     }
-  }
 
-  .info {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    h2 {
-      width: 200px;
-      height: 24px;
-      color: #3c3636;
+    .info {
+      display: flex;
+      width: 300px;
+      flex-direction: column;
+      margin: 20px 0 0 50px;
       font-size: 18px;
-      line-height: 24px;
-      text-align: center;
-      margin-bottom: 10px;
-      margin-top: 20px;
+      line-height: 36px;
+      color: #319a0a;
+      // height: 200px;
+      // padding-top: 10px;
     }
-    h3 {
-      width: 240px;
-      height: 44px;
-      text-align: center;
-      line-height: 44px;
-      font-size: 22px;
+  }
+    .name {
+      width: 500px;
+      height: 100px;
+      font-size: 32px;
+      line-height: 40px;
+      margin: 10px 0 10px 0;
+      font-family:  YouYuan;
+      background: #319A0A;
       color: #fff;
-      background: #fdaf06;
+      padding: 8px 0 0 10px;
     }
-  }
 
-  .tit {
-    width: 480px;
-    height: 100px;
-    background: #319a0a;
-    font-size: 70px;
-    color: #fff;
-    line-height: 100px;
-    text-align: center;
-    margin-top: 20px;
-    font-family: FZYouXian-Z09S;
-  }
+  
 
   .price {
     width: 480px;
@@ -78,7 +52,6 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-top: 30px;
     align-items: flex-end;
     h1 {
       width: 93px;

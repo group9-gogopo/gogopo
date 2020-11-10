@@ -14,7 +14,7 @@ import title from '../../assets/images/discountsTitle.gif'
 
 function DiscountsUi(props) {
   return (
-    <Container>
+    <Container >
       <Header></Header>
       <Nav></Nav>
       <div className="banner">
@@ -24,10 +24,12 @@ function DiscountsUi(props) {
         <h1><img src={title} alt=""/></h1>
         <p>带你吃遍全世界 水果促销季</p>
         <div className='listBox'>
-          <DiscountList></DiscountList>
+          <DiscountList goodslist={props.list}></DiscountList>
         </div>
       </div>
-      <DiscountsList></DiscountsList>
+      <div className='listinfo'>
+        <DiscountsList goodslist={props.list}></DiscountsList>
+      </div>
     </Container>
   );
 }

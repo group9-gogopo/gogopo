@@ -5,11 +5,11 @@ import schema from '../MyGraphQLSchema.mjs'
 const router = express.Router()
 
 router.get('/good', async (req, res, next) => {
-  let { sort, id } = req.query
-
+  let { id } = req.query
+  console.log(id)
   let query = `
      query {
-        good(sort: "${sort}", id: ${id}) {
+        good( id: ${id}) {
           id,
           image,
           newprice,

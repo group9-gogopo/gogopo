@@ -1,32 +1,38 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useHistory } from 'react-router-dom'
+
 import {
   Container
 } from './StyledSpecials'
 
 function Specials(props) {
+  const history = useHistory()
+
+  const handleGotoDetail = useCallback((id) => {
+    return () => {
+      console.log(id)
+      history.push({pathname: "/detail",state:{id}})
+    }
+  }, [history])
+
   return (
     <Container {...props}>
       <div className='header'>
-        <div className="trait">
-          <p>{props.trait1}</p>
-          <p>{props.trait2}</p>
-        </div>
-        <div className="sort">
-          {props.sort}
+        <h1>
+          {props.nm}
+        </h1>
+        <div className='info'>
+          {props.info}
         </div>
       </div>
-      <div className="info">
-        <h2>{props.info1}</h2>
-        <h3>{props.info2}</h3>
-      </div>
-      <div className="tit">
-        {props.tit}
+      <div className="name">
+        {props.name}
       </div>
       <div className='price'>
         <h1>特惠价</h1>
         <h2>￥<span>{props.price}</span></h2>
         <div className='box'>
-          <button>立即购买</button>
+          <button onClick={handleGotoDetail(props.id)}>立即购买</button>
         </div>
       </div>
     </Container>
