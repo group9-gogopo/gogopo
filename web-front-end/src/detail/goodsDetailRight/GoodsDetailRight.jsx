@@ -3,9 +3,12 @@ import { StyledDetaidRight } from "./StyledDetaidRight";
 import { useHistory } from "react-router-dom";
 
 const GoodsDetailRight = (props) => {
+
+  console.log(props.detailList);
+
   const [imgNum, setImgNum] = useState(0);
   const [goodsNum, setGoodsNum] = useState(1);
-
+  
   const history = useHistory();
 
   const handlerImgClick = useCallback((imgNumC) => {
@@ -40,7 +43,7 @@ const GoodsDetailRight = (props) => {
       name: shoppingCartName,
       image: shoppingCartImage,
       newprice: shoppingCartPrice,
-    } = props.detailList[0];
+    } = props.detailList;
     let shoppingCartNum=goodsNum;
     if(e.target.className==="detailBuy"){
       console.log(shoppingCartID);
@@ -58,18 +61,18 @@ const GoodsDetailRight = (props) => {
     }
   });
 
-  return props.detailList.length > 0 ? (
+  return props.detailList ? (
     <StyledDetaidRight>
       <h3 className="detailText">详细说明</h3>
       <div className="detailBox">
         <div className="detailBoxLeft">
           <div className="boxImgOne">
-            <img src={props.detailList[0].detailImages[imgNum]} alt="" />
+            <img src={props.detailList.detailImages[imgNum]} alt="" />
           </div>
           <div className="boxImgAll">
             <span onClick={handlerAdd}>&lt;</span>
             <ul className="boxImgUl">
-              {props.detailList[0].detailImages.slice(0, 3).map((i, n) => {
+              {props.detailList.detailImages.slice(0, 3).map((i, n) => {
                 return (
                   <li key={n} className={imgNum === n ? "active" : ""}>
                     <img src={i} alt="" onClick={handlerImgClick(n)} />
@@ -81,21 +84,21 @@ const GoodsDetailRight = (props) => {
           </div>
         </div>
         <div className="detailBoxRight">
-          <h3>{props.detailList[0].name}</h3>
+          <h3>{props.detailList.name}</h3>
           <div className="detailPrice">
             <span className="detailPriceLeft">价格</span>
             <span className="detailPriceNum">
-              {props.detailList[0].newprice}
+              {props.detailList.newprice}
             </span>
             <span className="detailPriceRight">元</span>
           </div>
           <div className="detailCount">
             <div className="detailCountBox">
-              累计数量 {props.detailList[0].sale}
+              累计数量 {props.detailList.sale}
             </div>
             <span>|</span>
             <div className="detailCountBox">
-              累计评价 {props.detailList[0].say}
+              累计评价 {props.detailList.say}
             </div>
           </div>
           <div className="detailNum">
@@ -112,7 +115,7 @@ const GoodsDetailRight = (props) => {
             <div className="detailNumR">
               总计{" "}
               <span>
-                {(props.detailList[0].newprice * goodsNum).toFixed(2)}
+                {(props.detailList.newprice * goodsNum).toFixed(2)}
               </span>{" "}
               元
             </div>

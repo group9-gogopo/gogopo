@@ -1,7 +1,7 @@
 import { DETAILDATA } from "./actionTypes";
 
 const defaultState={
-    list:[],
+    list:null,
     count:1
 }
 
