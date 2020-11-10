@@ -1,12 +1,11 @@
 import React from 'react'
 
-// import { connect } from 'react-redux'
 import { PersonalDataStyled } from './PersonalDataStyled'
 
 const PersonalData =(props)=>{
         return(
             <PersonalDataStyled>
-                <header>个人资料</header>
+                <header>个人资料 </header>
                 <ul>
                     <li>
                         姓名

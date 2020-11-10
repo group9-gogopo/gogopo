@@ -1,53 +1,50 @@
 import React,{ Component } from 'react'
 import { StoryListStyled } from './StoryListStyled'
+import Detail from '../detail/Detail'
+
 
 class StoryList extends Component{
-    // state={
-    //     list:[
-    //         {
-    //             storyName:'哪些水果搭配榨汁好？',
-    //             storyDate:'2019-03-13'
-    //         },
-    //         {
-    //             storyName:'草莓慕斯蛋糕，口感画嘴草莓鲜美，忍不住又想偷吃一口        ',
-    //             storyDate:'2019-02-21'
-    //         },
-    //         {
-    //             storyName:'一周果汁轻松配，轻食主义瘦起来',
-    //             storyDate:'2019-02-01'
-    //         },
-    //         {
-    //             storyName:'甜品--麦片酸奶杯这样吃百吃不腻，吃1次不过瘾！    ',
-    //             storyDate:'2019-01-17'
-    //         },
-    //         {
-    //             storyName:'香蕉做早餐,10分钟搞定,孩子吃了好吸收,促排便一定别错过! ',
-    //             storyDate:'2019-01-09'
-    //         },
-    //     ]
+
+    // 跳转到详情页
+    // handleToDetail(active,id){
+    //     return()=>{
+    //         let { history } = this.props
+    //         active===0?history.push('/story/storyList/detail'):history.push('/story/newsList/detail)')
+    //         history.push('/story/detail')
+    //     console.log("跳转到新闻详情")
+    //     }
     // }
+
     render(){
         console.log(this.props)
         return(
+            <div>
             <StoryListStyled>
                 <ul>
                     {
                         this.props.showList.map((item,index)=>{
                             return(
-                                <li key={index}>
+                                <li key={index} onClick={this.props.onToDetail(this.props.active,item.storyImageId)}>
+                                {/* <li key={index} onClick={this.handleToDetail(this.props.active,item.storyImageId)}> */}
+                                    <a>
                                     <div>
-                                        <img src="" alt=""/>
+                                        <img src={item.storyImage} alt=""/>
                                     </div>
                                     <div>
                                         <p>{item.storyName}</p>
                                         <p>{item.storyDate}</p>
                                     </div>
+                                    </a>
                                 </li>
                             )
                         })
                     }
                 </ul>
             </StoryListStyled>
+                {/* <Route path='/story/newsList'>
+                        <StoryList showList={this.state.showList} active={this.state.active} onToDetail={this.handleToDetail}></StoryList>
+                </Route> */}
+            </div>
         )
     }
 }
