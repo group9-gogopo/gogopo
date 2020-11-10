@@ -11,12 +11,14 @@ import DetaliBottom from "./detailBottom/DetaliBottom"
 
 import { detailLoadData}  from "./actionCreater"
 
-const GoodsDetail = () => {
+const GoodsDetail = (props) => {
+  // const goodsID=props.location.state.id;
   let detailList=useSelector((state)=>state.detail.list)
   const dispatch=useDispatch()
   useEffect(()=>{
-    dispatch(detailLoadData())
+    dispatch(detailLoadData(/* goodsID */))
   },[dispatch])
+
   return (
     <>
         <Header></Header>
@@ -25,7 +27,7 @@ const GoodsDetail = () => {
         <GoodsDetailLeft></GoodsDetailLeft>
         <GoodsDetailRight detailList={detailList}></GoodsDetailRight>
       </StyledGoodsDetail>
-      <DetaliBottom></DetaliBottom>
+      <DetaliBottom detailList={detailList}></DetaliBottom>
       <Footer></Footer>
     </>
   );

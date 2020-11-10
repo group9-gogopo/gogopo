@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import detailPriceImg from "@a/images/detailPrice.png";
+import deatailGoods from "@a/images/deatailGoods.png"
 
 const StyledDetaidRight = styled.div`
   display: flex;
@@ -208,4 +209,10 @@ const StyledDetaidRight = styled.div`
   }
   
 `;
-export { StyledDetaidRight };
+
+
+
+export { 
+  StyledDetaidRight,
+
+};

@@ -17,7 +17,7 @@ const StyledDetailBottom=styled.div`
   }
    .goodsImgFirst{
        width:1200px;
-       height:600px;
+       height:300px;
        margin-top:20px;
        img{
            display:block;

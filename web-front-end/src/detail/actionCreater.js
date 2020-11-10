@@ -6,23 +6,22 @@ import { get } from "@u/http.js";
 const detailLoadData = (id) => {
   let list = [
     {
-      id: 1076,
-      image:
-        "https://image.missfresh.cn/product_images/946B4F4B5FF0E2DE70AEF093145D9FCE.JPG?mryxw=640&mryxh=640",
-      newprice: 6.9,
-      oldprice: 7.8,
-      name: "台式鲜榨椰子汁500ml",
-      sale: 1499,
-      say: 1339,
-      info: "富含蛋白质 维生素C",
-      detailImages: [
-        "https://image.missfresh.cn/53d564f2cd454fa9b813dc68f9439a0e.jpg?mryxw=750&mryxh=500",
-        "https://image.missfresh.cn/dd9e4b07e35a4a73b33da8f5a9935559.jpg?mryxw=750&mryxh=500",
-        "https://image.missfresh.cn/b4799489a64e4e628b3c42ee193286b2.jpg?mryxw=750&mryxh=500",
-        "https://image.missfresh.cn/cc5219a153624bb5881c25d749e29ade.jpg?mryxw=750&mryxh=500",
-        "https://image.missfresh.cn/bfe4c318d3f44d7bbaee1cd440b96ce0.jpg?mryxw=750&mryxh=500",
-        "https://image.missfresh.cn/2989f3964220419387625d24d19c907d.jpg?mryxw=750&mryxh=500",
-      ],
+      "id": 1077,
+      "image": "https://image.missfresh.cn/f2961abd91fd4961beec48cb993777be.jpg?mryxw=450&mryxh=450",
+      "newprice": 48.9,
+      "oldprice": 49.8,
+      "name": "有时红西柚果酒330ml",
+      "sale": 499,
+      "say": 367,
+      "info": "半熟轻发酵果酒 微醺你一整天",
+      "detailImages": [
+        "https://image.missfresh.cn/5ff5f366885d4e4d872585297facface.png?mryxw=750&mryxh=500",
+        "https://image.missfresh.cn/49a0e153c9d9493db3016870c2deceab.png?mryxw=750&mryxh=500",
+        "https://image.missfresh.cn/04df129069d64b6db3dccb5afc59a2f3.png?mryxw=750&mryxh=500",
+        "https://image.missfresh.cn/9069c1cb4352441db8834113a8cbd70b.png?mryxw=750&mryxh=500",
+        "https://image.missfresh.cn/3f2c2784b3c445a7b8795a31afa4210e.png?mryxw=750&mryxh=500",
+        "https://image.missfresh.cn/0c304d58cdab4cca96df9190d75397e4.png?mryxw=750&mryxh=500"
+      ]
     },
   ];
   return {
