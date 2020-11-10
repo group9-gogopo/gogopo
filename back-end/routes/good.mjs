@@ -6,7 +6,6 @@ const router = express.Router()
 
 router.get('/good', async (req, res, next) => {
   let { id } = req.query
-  console.log(id)
   let query = `
      query {
         good( id: ${id}) {

@@ -76,7 +76,6 @@ const schema = new GraphQLSchema({
         async resolve(obj, args) {
           let { id } = args
           let result = await axios.get(`http://localhost:9000/allproduct?id=${id}`)
-          console.log(result)
           return result.data[0]
         }
       },
