@@ -17,8 +17,8 @@ const Container = styled.div`
   }
 
   .banner {
-    width: 100%;
-    height: 454px;
+    width: 1920px;
+    height: 684px;
     img {
       width: 100%;
       height: 100%;
@@ -26,42 +26,43 @@ const Container = styled.div`
   }
   .discountsList {
     display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  h1 {
-    margin-top: 30px;
-  }
-  p {
-    width: 300px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    background: #329908;
-    border-radius: 15px;
-    margin-top: 30px;
-  }
-  .listBox {
-    width: 100%;
-    display: flex;
-    margin-top: 45px;
-  }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      margin-top: 30px;
+    }
+
+    p {
+      width: 300px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      color: #fff;
+      text-align: center;
+      background: #329908;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+
+    .listBox {
+      width: 100%;
+      display: flex;
+      margin-top: 45px;
+    }
   }
 
-  .specialsInfo {
-  display: flex;
-  flex-direction: row;
-  border: 3px solid #fff;
-  img {
-    width: 235px;
-    height: 265px;
-    margin: 93px 0 0 200px;
-  }
+  .listinfo {
+    width: 100%;
+    background: pink;
+    display: flex;
+    flex-direction: row;
   }
 `
 const DiscountsListWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   li {
     display: flex;
     flex-direction: row;
@@ -71,7 +72,7 @@ const DiscountsListWrap = styled.div`
     img {
       width: 235px;
       height: 265px;
-      margin: 93px 0 0 200px;
+      margin: 90px 10px 0 90px;
     }
   }
 `

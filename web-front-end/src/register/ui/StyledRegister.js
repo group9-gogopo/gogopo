@@ -112,7 +112,7 @@ const FormWrap = styled.form`
   }
   
   button {
-    width: 400px;
+    width: 380px;
     height: 40px;
     background: #009a44;
     border: 0;
