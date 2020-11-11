@@ -1,6 +1,5 @@
 import React,{ Component } from 'react'
 import { StoryListStyled } from './StoryListStyled'
-import Detail from '../detail/Detail'
 
 
 class StoryList extends Component{
@@ -16,7 +15,6 @@ class StoryList extends Component{
     // }
 
     render(){
-        console.log(this.props)
         return(
             <div>
             <StoryListStyled>
@@ -24,8 +22,7 @@ class StoryList extends Component{
                     {
                         this.props.showList.map((item,index)=>{
                             return(
-                                <li key={index} onClick={this.props.onToDetail(this.props.active,item.storyImageId)}>
-                                {/* <li key={index} onClick={this.handleToDetail(this.props.active,item.storyImageId)}> */}
+                                <li key={index} onClick={this.props.onToDetail(this.props.active,index)}>
                                     <a>
                                     <div>
                                         <img src={item.storyImage} alt=""/>

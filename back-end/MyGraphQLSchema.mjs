@@ -22,6 +22,27 @@ const FeedbackType = new GraphQLObjectType({
     }
   }
 })
+
+const storyType=new GraphQLObjectType({
+  name: 'knowledgeType',
+  fields:{
+    storyImage:{
+      type: GraphQLString
+    },
+    storyName:{
+      type: GraphQLString
+    },
+    storyDate:{
+      type: GraphQLString
+    },
+    storyImages:{
+      type: new GraphQLList(GraphQLID),
+    },
+    storyText:{
+      type: GraphQLString
+    }
+  }
+})
 const GoodType = new GraphQLObjectType({
   name: 'GoodType',
   fields: {
@@ -88,21 +109,35 @@ const schema = new GraphQLSchema({
           sort: {
             type: GraphQLString
           },
-          limit: {
+          page: {
             type: GraphQLInt
           },
-          start: {
+          limit: {
             type: GraphQLInt
           }
         },
         async resolve(obj, args) {
-          let { sort,limit, start } = args
-          let result = await axios.get(`http://localhost:9000/${sort}?${limit}&${start}`)
+          let { sort,page,limit } = args
+          let result = await axios.get(`http://localhost:9000/${sort}?_page=${page}&_limit${limit}`)
           let list = result.data
-          return list.splice(start, limit)
+          return list
         }
       },
-
+      //水果知识
+      story: {
+        type: new GraphQLList(storyType),
+        args:{
+          storytype: {
+            type: GraphQLString
+          }
+        },
+        async resolve(obj, args) {
+          let { storytype } = args
+          let result = await axios.get(`http://localhost:9000/${storytype}`)
+          let list = result.data
+          return list
+        }
+      },
       //登录
       login: {
         type: FeedbackType,

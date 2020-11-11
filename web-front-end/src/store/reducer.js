@@ -9,6 +9,7 @@ import { reducer as profile } from "../profile/index";
 import { reducer as detail } from "../detail/index";
 
 import { reducer as shoppingCart } from "../shoppingCart/index";
+import { reducer as story } from "../story/index";
 
 const reducer = combineReducers({
   profile,
@@ -16,6 +17,7 @@ const reducer = combineReducers({
   changepwd,
   detail,
   shoppingCart,
+  story
 });
 
 export default reducer;

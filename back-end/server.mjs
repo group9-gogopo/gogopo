@@ -8,6 +8,7 @@ import goodslistRouter from './routes/goodslist.mjs'
 import registerRouter from './routes/register.mjs'
 import loginRouter from './routes/login.mjs'
 import registerconfirmRouter from './routes/registerconfirm.mjs'
+import storyRouter from './routes/story.mjs'
 
 const app = express()
 
@@ -32,6 +33,6 @@ app.use(
   }),
 )
 
-app.use('/api', goodRouter, goodslistRouter, registerRouter, loginRouter, registerconfirmRouter)
+app.use('/api', goodRouter, goodslistRouter, registerRouter, loginRouter, registerconfirmRouter,storyRouter)
 
 app.listen(4400)
