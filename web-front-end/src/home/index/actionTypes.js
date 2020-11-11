@@ -1,0 +1,1 @@
+export const CHANGENUM = 'home/index/changenum'

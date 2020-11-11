@@ -3,6 +3,9 @@ import styled from 'styled-components'
 const Container = styled.div`
   width: 722px;
   margin: ${props => props.margin};
+  float:right;
+  margin-left:251px;
+  /* margin-top:39px; */
 
   .searchBox {
     width: 700px;
@@ -65,7 +68,7 @@ const Container = styled.div`
       }
       > span {
         font-size: 0.2rem;
-        fon-weight: 300;
+        font-weight: 300;
       }
     }
   }

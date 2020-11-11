@@ -46,11 +46,11 @@ const footerStyled=styled.div`
                 margin-left:26px;
                 /* display:flex;
                 flex-direction:row; */
-                width:350px;
+                width:360px;
                 overflow-x:hidden;
                 font-size:16px;
                 li{
-                    width:74px;
+                    width:90px;
                     float:left;
                     border-right:1px solid #009A44;
                     padding-left:11px;
