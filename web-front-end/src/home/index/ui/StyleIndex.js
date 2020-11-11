@@ -6,8 +6,7 @@ const Container = styled.div`
     overflow:hidden;
     margin:0 auto;
 `
-const ShowInfor=styled.div`
-    
+const ShowInfor=styled.div`  
     height:962px; 
     background: #F0F0F8;
     margin:0 auto;

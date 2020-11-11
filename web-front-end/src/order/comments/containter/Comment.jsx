@@ -3,9 +3,9 @@ import CommentUi from '../ui/CommentUi'
 
 class comment extends Component {
     render() {
-        console.log(this.props)
+        // console.log(this.props,"----")
         return (
-            <CommentUi></CommentUi>
+            <CommentUi time={this.props.location.state.time} img={this.props.location.state.img}></CommentUi>
         );
     }
 }

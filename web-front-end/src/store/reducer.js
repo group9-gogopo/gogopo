@@ -13,10 +13,15 @@ import {
   reducer as profile
 } from '../profile/index'
 
+import {
+  reducer as home
+} from '../home/index/index'
+
 const reducer=combineReducers({
     profile,
     product,
-    changepwd
+    changepwd,
+    home
 })
 
 export default reducer

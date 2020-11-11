@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
-import Home from './home/Home'
+
+import Home from './home/index/Container/Home'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import About from './about/ui/AboutUi'
 import { Profile } from './profile/index'

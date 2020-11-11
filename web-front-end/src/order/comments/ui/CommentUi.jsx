@@ -13,7 +13,7 @@ class CommentUi extends Component {
                 <Header></Header>
                 <Nav></Nav>
                 <CoTitle></CoTitle>
-                <CommentInfo></CommentInfo>
+                <CommentInfo time={this.props.time} img={this.props.img}></CommentInfo>
                 <Footer></Footer>
             </AllComment>
         );

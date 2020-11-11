@@ -19,6 +19,9 @@ const Nav = styled.div `
             &:hover{       
                 background: #009A44;
             }
+            a{
+                color:#ffffff;
+            }
         }
         li:first-child{
             width:200px;

@@ -37,6 +37,9 @@ const Header = styled.div`
             font-weight: normal;
             color: #999999;
             margin-right:10px;
+            a{
+                color: #999999;
+            }
         }
     }
 }
@@ -78,6 +81,8 @@ const Header = styled.div`
                     font-size: 16px;
                     font-family: Microsoft YaHei;
                     font-weight: 300;
+                }
+                span.active{
                     color: #009A44;
                 }
             }
