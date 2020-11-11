@@ -95,8 +95,16 @@ class AllProduct extends Component {
     }
 
     componentDidMount() {
-        //这里做数据请求
-        this.props.loadData(this.state.goodtype, this.state.currentPage, this.state.pageSize)
+        if(this.props.location.state.index){
+            this.setState({
+                active:this.props.location.state.index,
+                goodtype:this.state.goodstype[this.props.location.state.index]
+            })
+            this.props.loadData(this.state.goodstype[this.props.location.state.index], this.state.currentPage, this.state.pageSize)
+        }else{
+            //这里做数据请求
+            this.props.loadData(this.state.goodtype, this.state.currentPage, this.state.pageSize)
+        }
     }
     render() {
         return (

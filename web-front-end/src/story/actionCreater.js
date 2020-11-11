@@ -1,9 +1,7 @@
 import { LOADDATA } from './actionTypes'
+//导入配置好的数据请求格式
 import { get } from "@u/http.js";
 
-
-//导入配置好的数据请求格式
-// import { get } from '@u/http.js'
 
 //这是同步请求的action构造函数
 const loadDataSync=(showList)=>{
