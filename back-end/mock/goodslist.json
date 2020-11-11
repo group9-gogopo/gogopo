@@ -4490,32 +4490,43 @@
       "shoppingCartPrice": "390",
       "shoppingCartNum": "1",
       "id": 1
-    },
+    }
+  ],
+  "userAddress": [
     {
-      "userid": "1002",
-      "goodsid": "1001",
-      "shoppingCartName": "【匠心】优级实建褚橙6斤装*1箱 99好评率的传奇橙",
-      "shoppingCartImage": "https://image.missfresh.cn/fe994eb5464b424e80a8ad63c43cdbca.jpg?mryxw=200&mryxh=200",
-      "shoppingCartPrice": "390",
-      "shoppingCartNum": "1",
-      "id": 2
-    },
-    {
+      "id": 1,
       "userid": "1001",
-      "goodsid": "1001",
-      "shoppingCartName": "【匠心】优级实建褚橙6斤装*1箱 99好评率的传奇橙",
-      "shoppingCartImage": "https://image.missfresh.cn/fe994eb5464b424e80a8ad63c43cdbca.jpg?mryxw=200&mryxh=200",
-      "shoppingCartPrice": "390",
-      "shoppingCartNum": "1",
-      "id": 3
+      "name": "李云祥",
+      "tel": "15022581580",
+      "state": true,
+      "location": "北京市 昌平区 北京科技职业学院",
+      "officeId": "122211"
     },
     {
+      "id": 2,
       "userid": "1001",
-      "goodsid": "1001",
-      "shoppingCartName": "【匠心】优级实建褚橙6斤装*1箱 99好评率的传奇橙",
-      "shoppingCartImage": "https://image.missfresh.cn/fe994eb5464b424e80a8ad63c43cdbca.jpg?mryxw=200&mryxh=200",
-      "shoppingCartPrice": "390",
-      "shoppingCartNum": "1",
+      "name": "李腾飞",
+      "tel": "13822587784",
+      "state": false,
+      "location": "北京市 昌平区 北京科技职业学院",
+      "officeId": "223322"
+    },
+    {
+      "id": 3,
+      "userid": "1001",
+      "name": "檀旭",
+      "tel": "15022584567",
+      "state": false,
+      "location": "北京市 昌平区 北京科技职业学院",
+      "officeId": "445789"
+    },
+    {
+      "userid": "2",
+      "name": "嘘嘘嘘",
+      "tel": "15254544",
+      "state": "false",
+      "location": "山东济南",
+      "officeId": "14445",
       "id": 4
     }
   ]

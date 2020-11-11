@@ -53,10 +53,14 @@ const GoodsDetailRight = (props) => {
       shoppingCartNum,
     }
     if(e.target.className==="detailBuy"){
-      await post("http://localhost:4400/api/shoppingCartsIns",data)
+      let res =await post("http://localhost:4400/api/shoppingCartsIns",data)
+      if(!res.insertCart.ret)return  alert("不好意思，添加购物车失败")
+     
       history.push("/shoppingCart");
     }else{
-     
+     let res= await post("http://localhost:4400/api/shoppingCartsIns",data)
+     if(res.insertCart.ret)return alert("成功添加到购物车")
+     alert("不好意思，添加购物车失败")
     }
   });
 

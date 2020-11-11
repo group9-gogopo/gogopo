@@ -84,6 +84,51 @@ const shoppingCartType = new GraphQLObjectType({
   },
 });
 
+const userAddressType = new GraphQLObjectType({
+  name: "userAddressType",
+  fields: {
+    id: {
+      type: GraphQLInt,
+    },
+    userid: {
+      type: GraphQLString,
+    },
+    name: {
+      type: GraphQLString,
+    },
+    tel: {
+      type: GraphQLString,
+    },
+    state: {
+      type: GraphQLString,
+    },
+    location: {
+      type: GraphQLString,
+    },
+    officeId: {
+      type: GraphQLString,
+    },
+  },
+});
+
+const userInfoType=new GraphQLObjectType({
+  name: "userInfoType",
+  fields: {
+    id: {
+      type: GraphQLInt,
+    },
+    username: {
+      type: GraphQLString,
+    },
+    tel: {
+      type: GraphQLString,
+    },
+    email: {
+      type: GraphQLString,
+    }
+  },
+});
+
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: "RootQueryType",
@@ -133,6 +178,23 @@ const schema = new GraphQLSchema({
         },
       },
 
+      //商品模糊查询
+      goodslistLike: {
+        type: new GraphQLList(GoodType),
+        args: {
+          like: {
+            type: GraphQLString,
+          }
+        },
+        async resolve(obj, args) {
+          let { like } = args;
+          console.log(like);
+          let likeName = encodeURL("好");
+          console.log(likeName);
+          let result = await axios.get(`http://localhost:9000/allproduct?nm_like=%E8%8B%B9`);
+          return result.data;
+        },
+      },
       //登录
       login: {
         type: FeedbackType,
@@ -158,6 +220,24 @@ const schema = new GraphQLSchema({
         },
       },
 
+      //查询一个用户
+      userInfoOne: {
+        type: userInfoType,
+        args: {
+          id: {
+            type: GraphQLInt,
+          },
+        },
+        async resolve(obj, args) {
+          let { id } = args;
+          let result = await axios.get(
+            `http://localhost:9000/register?id=${id}`
+          );
+          console.log(result);
+          return result.data[0];
+        },
+      },
+    
       //注册验证（用户名是否重复）
       registerconfirm: {
         type: FeedbackType,
@@ -193,6 +273,39 @@ const schema = new GraphQLSchema({
           );
           console.log(result);
           return result.data;
+        },
+      },
+      //查询地址
+      userAddressList: {
+        type: new GraphQLList(userAddressType),
+        args: {
+          userid: {
+            type: GraphQLInt,
+          },
+        },
+        async resolve(obj, args) {
+          let { userid } = args;
+          let result = await axios.get(
+            `http://localhost:9000/userAddress?userid=${userid}`
+          );
+          return result.data;
+        },
+      },
+      //查询单个地址
+      userAddressOne: {
+        type: userAddressType,
+        args: {
+          id: {
+            type: GraphQLInt,
+          },
+        },
+        async resolve(obj, args) {
+          let { id } = args;
+          let result = await axios.get(
+            `http://localhost:9000/userAddress?id=${id}`
+          );
+          console.log(result);
+          return result.data[0];
         },
       },
     },
@@ -260,9 +373,43 @@ const schema = new GraphQLSchema({
           };
         },
       },
+      //插入地址
+      insertAddress: {
+        type: FeedbackType,
+        args: {
+          userid: {
+            type: GraphQLString,
+          },
+          name: {
+            type: GraphQLString,
+          },
+          tel: {
+            type: GraphQLString,
+          },
+          state: {
+            type: GraphQLString,
+          },
+          location: {
+            type: GraphQLString,
+          },
+          officeId: {
+            type: GraphQLString,
+          },
+        },
+        async resolve(obj, args) {
+          console.log(args);
+          let res = await axios.post("http://localhost:9000/userAddress", {
+            ...args,
+          });
+          console.log(res);
+          return {
+            ret: true,
+            msg: "注册成功",
+          };
+        },
+      },
     },
   }),
-  
 });
 
 export default schema;

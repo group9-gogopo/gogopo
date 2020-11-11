@@ -6,7 +6,7 @@ const StyledAddAddress = styled.div`
   background-color:rgba(204,204,204,0.6);
   position: absolute;
   left:0;
-  top:0;
+  top:200px;
   .addMiddle {
     width: 800px;
     height: 700px;
