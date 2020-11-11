@@ -9,7 +9,7 @@ const Container = styled.div`
   border-bottom: 0;
   background: #fff;
   header {
-    height: 91px;
+    height: 120px;
     border-bottom: 2px solid #000;
     display: flex;
     flex-direction: row;
@@ -19,7 +19,7 @@ const Container = styled.div`
       margin-left: 26px;
     }
     h1 {
-      font-size: 16px;
+      font-size: 22px;
       font-weight: 500;
       flex: 1;
       display: flex;
@@ -38,11 +38,10 @@ const Container = styled.div`
 
 const FormWrap = styled.form`
   height: 100%;
-  width: 1260px;
   p {
     display: flex;
     flex-direction: row;
-    margin: 30px 0 0 350px;
+    margin: 60px 0 0 550px;
     &: nth-of-type(1) {
       position: relative;
     }
@@ -56,8 +55,10 @@ const FormWrap = styled.form`
     }
     span {
       width: 200px;
-      height: 35px;
-      margin-left: 5px;
+      height: 50px;
+      line-height: 30px;
+      font-size: 25px;
+      margin-left: 20px;
       line-height: 35px;
     }
     svg {
@@ -85,13 +86,13 @@ const FormWrap = styled.form`
   }
 
   label {
-    width: 100px;
-    height: 38px;
-    line-height: 38px;
+    width: 120px;
+    height: 52px;
+    line-height: 52px;
     display: flex;
     justify-content: flex-end;
-    font-size: 20px;
-    margin-right: 16px;
+    font-size: 28px;
+    margin-right: 20px;
     color: #070707;
   }
   h2 {
@@ -104,33 +105,36 @@ const FormWrap = styled.form`
     visibility: hidden;
   }
   input {
-    width: 380px;
-    height: 38px;
+    width: 500px;
+    height: 52px;
     border: 2px solid #9d9797;
     padding-left: 15px;
+    font-size: 18px;
     outline: none;
   }
   
   button {
-    width: 380px;
-    height: 40px;
+    width: 635px;
+    height: 50px;
+    font-size: 20px;
     background: #009a44;
     border: 0;
     border-radius: 5px;
-    margin: 30px 0 25px 465px;
+    margin: 30px 0 25px 550px;
     cursor:pointer;
     outline: none;
   }
 
   .tips {
-    height: 25px;
-    margin: 20px 0 15px 465px;
+    height: 22px;
+    margin: 20px 0 10px 690px;
     display: flex;
     flex-direction: row;
     h3 {
       width: 50px;
-      height: 28px;
-      font-size: 14px;
+      height: 30px;
+      line-height: 25px;
+      font-size: 18px;
       font-weight: normal;
       border: 2px solid #000;
       border-radius: 5px;

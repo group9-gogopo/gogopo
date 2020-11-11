@@ -4,15 +4,17 @@ import schema from '../MyGraphQLSchema.mjs'
 
 const router = express.Router()
 
-router.get('/login', async (req, res, next) => {
-  let { username, createpwd } = req.query
+router.post('/changepwd', async (req, res, next) => {
+  let { username, createpwd } = req.body
   let query = `
-     query {
-        login(username: "${username}", createpwd: "${createpwd}") {
-          ret,
-          msg,
-          id
-        }
+     mutation {
+      changepwd(
+        username: "${username}"
+        createpwd: "${createpwd}"
+       ) {
+         ret,
+         msg
+       }
      }
   `
   

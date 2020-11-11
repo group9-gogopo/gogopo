@@ -54,7 +54,6 @@ const Container = styled.div`
 
   .listinfo {
     width: 100%;
-    background: pink;
     display: flex;
     flex-direction: row;
   }

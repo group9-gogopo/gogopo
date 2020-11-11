@@ -19,8 +19,16 @@ const zeroCurrent = (current) => {
   }
 }
 
+const storeUserid = (userid) => {
+  return {
+    type: 'storeUserid',
+    userid
+  }
+}
+
 export default {
   addCurrent,
   reduceCurrent,
-  zeroCurrent
+  zeroCurrent,
+  storeUserid
 }

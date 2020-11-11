@@ -1,8 +1,9 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { actionCreator as ac } from '../../changepwd/index'
 
+import { get } from '@u/http'
 
 import {
   ConfirmWrap
@@ -14,6 +15,20 @@ function Confirm(props) {
   let [username, setUserName] = useState(null)
 
   const current = useSelector(state => state.changepwd.current)
+  // const userid = useSelector(state => state.changepwd.userid)
+
+  let name = username && username.username
+
+  useEffect(() => {
+    (async () => {
+      let result = await get(`/api/forid?username=${name}`)
+      let { ret, msg, id } = result.forid
+      if(ret) {
+        dispatch(ac.storeUserid(id))
+      }
+    })()
+  },[username])
+
   const dispatch = useDispatch()
   const history = useHistory()
   const handleClick = useCallback((current) => {
@@ -23,12 +38,14 @@ function Confirm(props) {
     }
   }, [dispatch,history])
 
+
   const handleSubmit = () => {
     return (e) => {
       e.preventDefault()
-      console.log(username)
+      
     }
   }
+  
 
   return (
     <>

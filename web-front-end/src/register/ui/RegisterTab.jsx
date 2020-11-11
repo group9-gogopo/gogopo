@@ -63,7 +63,7 @@ class RegisterTab extends Component {
   }
   //用户名框失焦事件：验证用户名是否重复
   handleUsername = () => {
-    regUserName('regUserName', this.state.username)
+    // regUserName('regUserName', this.state.username)
     this.confirmUsername()
   }
   
@@ -114,7 +114,8 @@ class RegisterTab extends Component {
               onChange={(e) => this.setState({
                 username: e.target.value
               })} 
-              onBlur={this.handleUsername} 
+              onBlur={this.handleUsername}
+              onBlur={regUserName('regUserName', this.state.username)} 
               placeholder='请输入用户名'
             />
             <span id="regUserName"></span>

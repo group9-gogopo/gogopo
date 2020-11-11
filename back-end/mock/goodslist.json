@@ -330,7 +330,7 @@
     },
     {
       "id": 1015,
-      "image": "https://image.missfresh.cn/d365e3d585e64323a0f7c4161abfc0cc.jpg?mryxw=750&mryxh=750",
+      "image": "https://image.missfresh.cn/e465c7d1822f45b590fc9f27d0564f57.jpg?mryxw=750&mryxh=500",
       "nm": "梨",
       "newprice": 590,
       "oldprice": 690,
@@ -339,7 +339,6 @@
       "say": 21092,
       "info": "中国梨类优良品种之一。果形美观匀称，似鸭蛋，梗处有突起，果柄歪斜如鸭嘴，故名鸭梨。皮薄肉细，核小，色泽鲜黄，脆甜无渣，多汁爽口，梨香浓郁且耐贮存，在国内外市场素享盛名。",
       "detailImages": [
-        "https://image.missfresh.cn/e465c7d1822f45b590fc9f27d0564f57.jpg?mryxw=750&mryxh=500",
         "https://image.missfresh.cn/bc080f8aed2b4f52975ff7f5148d65d2.jpg?mryxw=750&mryxh=500",
         "https://image.missfresh.cn/87512d0b8ed2481891b62c73b88cc9dc.jpg?mryxw=750&mryxh=500",
         "https://image.missfresh.cn/b758bbb3f84c413aafdc9e255824fe45.jpg?mryxw=750&mryxh=500",
@@ -358,7 +357,7 @@
     },
     {
       "id": 1016,
-      "image": "https://image.missfresh.cn/a981573fbfa440c2bf86ea4e909bbe8f.jpg?mryxw=750&mryxh=750",
+      "image": "https://image.missfresh.cn/ce0a39caee924ffc9b7432af4dc1416e.jpg?mryxw=750&mryxh=500",
       "nm": "雪莲果",
       "newprice": 350,
       "oldprice": 299,
@@ -378,9 +377,7 @@
         "https://image.missfresh.cn/bea1523047854a9ba764406759c21894.jpg?mryxw=750&mryxh=500",
         "https://image.missfresh.cn/833efda4919b4c229f3bba8768c98ea7.jpg?mryxw=750&mryxh=500",
         "https://image.missfresh.cn/8e823aa2913040dd9e301253c9890c4a.jpg?mryxw=750&mryxh=500",
-        "https://image.missfresh.cn/71768d6ea2754e6db31930589c93b5b8.jpg?mryxw=750&mryxh=500",
-        "https://image.missfresh.cn/343d3eea04c949e1a357485748a210e4.jpg?mryxw=750&mryxh=500",
-        "https://image.missfresh.cn/27903aa326c54182a720190434d0ea6e.jpg?mryxw=750&mryxh=500"
+        "https://image.missfresh.cn/71768d6ea2754e6db31930589c93b5b8.jpg?mryxw=750&mryxh=500"
       ]
     },
     {
@@ -3084,7 +3081,7 @@
       "username": "张思锐",
       "tel": "22222222222",
       "email": "12432124@qq.com",
-      "createpwd": "123321",
+      "createpwd": "111111",
       "id": 1
     },
     {
@@ -3114,6 +3111,13 @@
       "email": "111314@qq.com",
       "createpwd": "qqq111AAA",
       "id": 6
+    },
+    {
+      "username": "小胖",
+      "tel": "11111111111",
+      "email": "26675463@qq.com",
+      "createpwd": "qqqAAA111",
+      "id": 7
     }
   ]
 }
