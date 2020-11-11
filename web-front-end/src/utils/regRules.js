@@ -3,7 +3,7 @@ const regUserName = (id, state) => {
   return () => {
     let elem = document.getElementById(id)
 
-    const reg = /^[A-Z]{1}[A-Za-z]{5,19}$/;
+    const reg = /^[\u4E00-\u9FA5]{2,4}$/;
 
     if(elem){
       switch (reg.test(state)){
@@ -19,43 +19,41 @@ const regUserName = (id, state) => {
   }
 }
 //验证手机号
-const regTel = (id1,id2, state) => {
+const regTel = (id, state) => {
   return () =>{
-    let elem1 = document.getElementById(id1)
-    let elem2 = document.getElementById(id2)
+    let elem = document.getElementById(id)
     
     let reg = /^1[0-9]{10}$/;
     
-    if(elem1 && elem2){
+    if(elem){
       switch (reg.test(state)){
         case true:
-          elem2.style = 'visibility: visible';
-          elem1.style = 'visibility: hidden';
+          elem.innerHTML = '手机号正确';
+          elem.style = 'color: green';
         break;
-        default :
-          elem1.innerHTML = '请正确输入手机号';
-          elem1.style = 'color: red';
-          elem2.style = 'visibility: hidden';
+        default:
+          elem.innerHTML = '请正确输入手机号';
+          elem.style = 'color: red'
       }
     }
   }
 }
 
-//验证短信动态码
-const regCode = (id, state) => {
+//验证邮箱
+const regEmail = (id, state) => {
   return () => {
     let elem = document.getElementById(id)
 
-    let reg = /^[0-9]{6}$/;
+    let reg = /^[0-9a-zA-Z]\w{5,11}@(qq|163)\.(com|cn)$/;
 
     if(elem){
       switch (reg.test(state)){
         case true:
-          elem.innerHTML = '动态码正确';
+          elem.innerHTML = '邮箱格式正确';
           elem.style = 'color: green';
         break;
         default:
-          elem.innerHTML = '请输入正确的动态码';
+          elem.innerHTML = '请输入正确的邮箱';
           elem.style = 'color: red'
       }
     }
@@ -100,7 +98,7 @@ const regRePwd = (state1,state2,id) => {
 export {
   regUserName,
   regTel,
-  regCode,
+  regEmail,
   regPwd,
   regRePwd
 }

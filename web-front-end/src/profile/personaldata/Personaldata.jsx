@@ -1,13 +1,10 @@
-import React,{ Component } from 'react'
-
-// import { connect } from 'react-redux'
+import React from 'react'
 import { PersonalDataStyled } from './PersonalDataStyled'
 
-class PersonalData extends Component{
-    render(){
+const PersonalData =(props)=>{   
         return(
             <PersonalDataStyled>
-                <header>个人资料</header>
+                <header>个人资料  </header>
                 <ul>
                     <li>
                         姓名
@@ -43,6 +40,6 @@ class PersonalData extends Component{
             </PersonalDataStyled>
         )
     }
-}
+
 
 export default PersonalData

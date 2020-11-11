@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import {Container,Info} from './StyleAbout'
-import Header from '../../components/header/Header'
-import Nav from '../../components/nav/Nav'
+import Header from '@c/header/Header'
+import Nav from '@c/nav/Nav'
 import Title from './Title'
 import Intro from './Intro'
 import Footer from '../../components/footer/Footer'

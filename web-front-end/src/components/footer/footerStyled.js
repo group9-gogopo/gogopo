@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import footer from './images/footer.png'
+import footer from '../../assets/images/footer.png'
 
 
 const footerStyled=styled.div`

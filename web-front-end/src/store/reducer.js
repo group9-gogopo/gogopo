@@ -17,11 +17,17 @@ import {
   reducer as home
 } from '../home/index/index'
 
+import { reducer as detail } from "../detail/index";
+
+import { reducer as shoppingCart } from "../shoppingCart/index";
+
 const reducer=combineReducers({
     profile,
     product,
     changepwd,
-    home
+    home,
+    detail,
+    shoppingCart,
 })
 
 export default reducer

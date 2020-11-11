@@ -1,20 +1,25 @@
-import React, {useEffect } from 'react';
+import React, { useEffect,useCallback } from 'react';
+import { useHistory } from 'react-router-dom'
 
 import { Container } from './StyledDiscountList'
 
-import { get } from '@u/http'
 import { useState } from 'react';
 
 function DiscountList(props) {
+    const history = useHistory()
+
     const [list, setList] = useState(null)
 
     useEffect(() => {
-      (async () => {
-        let result = await get('/api/discount')
-        // console.log(result)
-        setList(result)
-      })()
-    },[])
+      let goodslist = props.goodslist && props.goodslist.slice(0,4)
+      setList(goodslist)
+    },[props])
+
+    const handleGotoDetail = useCallback((id) => {
+      return () => {
+        history.push({pathname: "/detail",state:{id}})
+      }
+    }, [history])
   
   return (
     <Container>
@@ -25,7 +30,7 @@ function DiscountList(props) {
                 key={value.id}
               >
                 <div className='imgBox'>
-                  <img src={value.img} alt=""/>
+                  <img src={value.image} alt=""/>
                 </div>
                 <div className='price'>
                   <div className='oldPrice'>
@@ -37,11 +42,11 @@ function DiscountList(props) {
                     <span>{value.newprice}</span>
                   </div>
                 </div>
-                <button className="purchase">
+                <button className="purchase" onClick={handleGotoDetail(value.id)}>
                   立即抢购 &gt;&gt;
                 </button>
                 <div className="name">
-                  {value.title}
+                  {value.nm}
                 </div>
               </li>
             )
