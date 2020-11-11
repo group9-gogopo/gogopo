@@ -25,7 +25,7 @@ class header extends Component {
                     <ul>
                         <li><Link to="/home">返回首页</Link></li>
                         <li><Link to="/profile">个人中心</Link></li>
-                        <li>我的订单</li>
+                        <li><Link to="/clearAccount">我的订单</Link></li>
                     </ul>
                 </div>
                 <div className='bottom'>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useHistory}from 'react'
 import { PersonalDataStyled } from './PersonalDataStyled'
 
 const PersonalData =(props)=>{
