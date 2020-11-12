@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { StyledDetaidRight } from "./StyledDetaidRight";
 import { useHistory } from "react-router-dom";
+import {post} from "@u/http"
 
 const GoodsDetailRight = (props) => {
 
@@ -35,27 +36,31 @@ const GoodsDetailRight = (props) => {
     setGoodsNum(() => goodsNum - 1);
   }, [goodsNum]);
 
-  const handlerCommit = useCallback((e) => {
+  const handlerCommit = useCallback(async(e) => {
     let {
-      id: shoppingCartID,
+      id: goodsid,
       name: shoppingCartName,
       image: shoppingCartImage,
       newprice: shoppingCartPrice,
     } = props.detailList;
     let shoppingCartNum=goodsNum;
+    let data={
+      userid:1001,
+      goodsid,
+      shoppingCartName,
+      shoppingCartImage,
+      shoppingCartPrice,
+      shoppingCartNum,
+    }
     if(e.target.className==="detailBuy"){
-      console.log(shoppingCartID);
-      console.log(shoppingCartName);
-      console.log(shoppingCartImage);
-      console.log(shoppingCartPrice);
-      console.log(shoppingCartNum);
+      let res =await post("http://localhost:4400/api/shoppingCartsIns",data)
+      if(!res.insertCart.ret)return  alert("不好意思，添加购物车失败")
+     
       history.push("/shoppingCart");
     }else{
-      console.log(shoppingCartID);
-      console.log(shoppingCartName);
-      console.log(shoppingCartImage);
-      console.log(shoppingCartPrice);
-      console.log(shoppingCartNum);
+     let res= await post("http://localhost:4400/api/shoppingCartsIns",data)
+     if(res.insertCart.ret)return alert("成功添加到购物车")
+     alert("不好意思，添加购物车失败")
     }
   });
 
