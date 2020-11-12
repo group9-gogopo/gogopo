@@ -15,6 +15,7 @@ import userAddressOneRouter from './routes/userAddressOne.mjs'
 import userInfoOneRouter from './routes/userInfoOne.mjs'
 import userAddressInsRouter from './routes/userAddressIns.mjs'
 import goodslistLikeRouter from './routes/goodslistLike.mjs'
+import storyRouter from './routes/story.mjs'
 
 const app = express()
 
@@ -51,6 +52,7 @@ app.use('/api',
     userAddressOneRouter,
     userInfoOneRouter,
     userAddressInsRouter,
-    goodslistLikeRouter)
+    goodslistLikeRouter,
+    storyRouter)
 
 app.listen(4400)

@@ -5,6 +5,7 @@ const PagesStyled=styled.div`
 min-height:30px;
 width:988px;
 text-align:center;
+margin-bottom:10px;
     div{
         display:inline-block;
         line-height:28px;
@@ -32,6 +33,10 @@ text-align:center;
             a{
                 color:#000;
             }
+        }
+        .active{
+            color:#0a9e4b;
+            background-color:#eeeeee;
         }
     }
     >div:last-child{

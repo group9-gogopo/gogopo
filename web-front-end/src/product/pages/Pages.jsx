@@ -15,7 +15,6 @@ class Pages extends Component {
   }
 
   render() {
-    console.log(this.state.pagesList);
     return (
       <PagesStyled>
         <div>
@@ -30,17 +29,19 @@ class Pages extends Component {
         >
           <a>上一页</a>
         </div>
-        {/* <div className='currentPages'> */}
         <ul>
           {this.state.pagesList.map((item, index) => {
             return (
-              <li key={index} className={index}>
-                <a href="#">{index + 1}</a>
+              <li key={index}
+                  className={index} 
+                  onClick={this.props.onToPage(index+1)}
+                  className={this.props.currentPage===(index+1)?"active":''}
+              >
+                <a>{index + 1}</a>
               </li>
             );
           })}
         </ul>
-        {/* </div> */}
         <div
           className="nextPage"
           onClick={this.props.onToPage(this.props.currentPage + 1)}

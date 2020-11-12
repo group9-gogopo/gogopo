@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const ProductsStyled = styled.div`
-height:1034px;
+min-height:968px;
 width:988px;
     p{
         background-color:#ffc514;
@@ -17,8 +17,8 @@ width:988px;
         border:1px solid #f5f5f5;
         width:988px;
         padding:20px 20px;
-        min-height:900px;
-        background-color:pink;
+        min-height:920px;
+        /* background-color:pink; */
         li{
             width:220px;
             height:300px;
