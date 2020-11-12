@@ -27,6 +27,9 @@ const AllOrderNav = styled.div`
                 font-size: 18px;
                 font-family: Adobe Heiti Std;
                 font-weight: normal;
+                &.active{
+                    color:#000;
+                }
             }
     }
     }

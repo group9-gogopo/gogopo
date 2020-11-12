@@ -8,10 +8,33 @@ import {
 import { connect } from 'react-redux'
 import actionCreator from '../../home/index/actionCreator'
 
+import { Menu, Dropdown } from 'antd';
+
 
 
 const { Search } = Input;
 const onSearch = value => console.log(value);
+
+
+const menu = (
+    <Menu>
+      <Menu.Item key="0">
+        <Link to="/allOrder">全部</Link>
+      </Menu.Item>
+      <Menu.Item key="1">
+         <Link to="/allOrder">待发货</Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+         <Link to="/allOrder">待付款</Link>
+      </Menu.Item>
+      <Menu.Item key="3">
+         <Link to="/allOrder">已完成</Link>
+      </Menu.Item>
+      <Menu.Item key="4">
+         <Link to="/allOrder">评价</Link>
+      </Menu.Item>
+    </Menu>
+  );
 @connect(
     (state) => {
         return {
@@ -41,7 +64,14 @@ class header extends Component {
                     <ul>
                         <li><Link to="/home">返回首页</Link></li>
                         <li><Link to="/profile">个人中心</Link></li>
-                        <li><Link to="">我的订单</Link></li>
+                        <li>
+                            <Dropdown overlay={menu} trigger={['click']}>
+                            <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                            我的订单
+                            </a>
+                        </Dropdown>
+                        </li>
+
                     </ul>
                 </div>
                 <div className='bottom'>

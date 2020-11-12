@@ -47,12 +47,13 @@ const CoInfo=styled.div`
                 color: #171414;
                 margin-bottom:64px;
             }
-            p:nth-of-type(1){
+            .attitude{
                 margin-bottom:60px;
             }
-            p{
+            .attitude,.speed{
                 padding-left:43px;
             }
+
         }
     }
     .coright{
@@ -75,6 +76,11 @@ const CoInfo=styled.div`
             margin-left:140px;
             font-size:10px;
             p{
+                float:left;
+                padding-top:15px;
+                padding-left:15px;
+            }
+            .coright_star2{
                 float:left;
                 width:170px;
                 font-size:14px;

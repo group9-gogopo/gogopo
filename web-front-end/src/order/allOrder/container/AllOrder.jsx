@@ -5,7 +5,7 @@ class AllOrder extends Component {
 
     onGoToComment=(time,img)=>{
         return ()=>{
-            this.props.history.push('/comment',{time,img})
+            this.props.history.push('/comment',{ time,img })
         }
     }
     render() {
