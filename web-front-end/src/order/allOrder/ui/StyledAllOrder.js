@@ -80,10 +80,11 @@ const OrderListInfo= styled.div`
         div:first-child{
             width:300px;
             p{     
-                font-size: 14px;
+                font-size: 18px;
                 font-family: Adobe Heiti Std;
                 font-weight: normal;
                 color: #171414;
+                margin-bottom:10px;
             }
             img{
                 width: 297px;

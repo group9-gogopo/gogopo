@@ -19,19 +19,46 @@ const onSearch = value => console.log(value);
 const menu = (
     <Menu>
       <Menu.Item key="0">
-        <Link to="/allOrder">全部</Link>
+        <Link to={{
+            pathname: "/allOrder",
+            state: 1
+            }}>全部
+        </Link> 
       </Menu.Item>
       <Menu.Item key="1">
-         <Link to="/allOrder">待发货</Link>
+         <Link to={{
+            pathname: "/allOrder",
+            state: 2,
+            }}>未发货
+        </Link> 
       </Menu.Item>
       <Menu.Item key="2">
-         <Link to="/allOrder">待付款</Link>
+         <Link to={{
+            pathname: "/allOrder",
+            state: 3,
+            }}>待付款
+        </Link> 
       </Menu.Item>
       <Menu.Item key="3">
-         <Link to="/allOrder">已完成</Link>
+         <Link to={{
+            pathname: "/allOrder",
+            state: 4,
+            }}>待发货
+        </Link> 
       </Menu.Item>
       <Menu.Item key="4">
-         <Link to="/allOrder">评价</Link>
+         <Link to={{
+            pathname: "/allOrder",
+            state: 5,
+            }}>已完成
+        </Link> 
+      </Menu.Item>
+      <Menu.Item key="5">
+         <Link to={{
+            pathname: "/allOrder",
+            state: 6,
+            }}>评价
+        </Link> 
       </Menu.Item>
     </Menu>
   );

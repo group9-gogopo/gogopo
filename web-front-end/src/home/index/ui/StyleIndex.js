@@ -225,6 +225,9 @@ const FruitInfor=styled.div`
                       }
                   }
                 }
+             dl:nth-of-type(2){
+                margin-top:25px;
+             }   
         }
 
     }

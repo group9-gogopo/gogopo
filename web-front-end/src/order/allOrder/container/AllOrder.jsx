@@ -9,9 +9,12 @@ class AllOrder extends Component {
         }
     }
     render() {
-        console.log(this.props)
+        // console.log(this.props.location.state)
         return (
-            <AllOrderUi handleOnGoToComment={this.onGoToComment}></AllOrderUi>
+            <AllOrderUi 
+                handleOnGoToComment={this.onGoToComment}
+                index={this.props.location.state}
+            ></AllOrderUi>
         );
     }
 }
