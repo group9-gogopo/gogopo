@@ -61,7 +61,7 @@ const AddressD = styled.div`
                 }
             }
         }
-        button{
+        .newAd{
             margin:52px 0 0 56px;
         }
     }
