@@ -27,7 +27,7 @@ function Confirm(props) {
         dispatch(ac.storeUserid(id))
       }
     })()
-  },[username])
+  },[name])
 
   const dispatch = useDispatch()
   const history = useHistory()

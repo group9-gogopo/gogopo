@@ -4,12 +4,12 @@ import schema from '../MyGraphQLSchema.mjs'
 
 const router = express.Router()
 
-router.post('/changepwd', async (req, res, next) => {
-  let { username, createpwd } = req.body
+router.patch('/changepwd', async (req, res, next) => {
+  let { userid, createpwd } = req.body
   let query = `
      mutation {
       changepwd(
-        username: "${username}"
+        userid: ${userid},
         createpwd: "${createpwd}"
        ) {
          ret,

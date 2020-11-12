@@ -49,9 +49,28 @@ const post = (url, data) => {
       })
   })
 }
+
+
+/**
+ * 封装patch请求
+ * @param url
+ * @param data
+ * @returns {Promise}
+ */
+const patch = (url, data) => {
+  return new Promise((resolve, reject) => {
+    axios.patch(url, data)
+      .then(response => {
+        resolve(response.data)
+      }, err => {
+        reject(err)
+      })
+  })
+}
+
 export {
 
   get,
-  post
-
+  post,
+  patch
 }

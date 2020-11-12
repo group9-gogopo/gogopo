@@ -8,6 +8,7 @@ import {
   GraphQLID,
   GraphQLList,
   GraphQLBoolean,
+  GraphQLNonNull
 } from 'graphql'
 
 
@@ -78,7 +79,7 @@ const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-      //单个商品
+      //获取单个商品
       good: {
         type: GoodType,
         args:{
@@ -217,15 +218,27 @@ const schema = new GraphQLSchema({
       changepwd: {
         type: FeedbackType,
         args: {
-          id: {
-            type: GraphQLInt
+          userid: {
+            type: new GraphQLNonNull(GraphQLInt)
+          },
+          createpwd: {
+            type: new GraphQLNonNull(GraphQLString)
           }
         },
         async resolve(obj, args) {
-        let result = await axios.patch("http://localhost:9000/register/" + args.id, { ...args })
-        console.log(result)
+          // console.log(args.userid,args.createpwd)
+          let result = await axios.patch(`http://localhost:9000/register/${args.userid}`, {createpwd: args.createpwd})
+          console.log(result.data)
+            return {
+              ret: args.createpwd === null ? false : true,
+              msg: args.createpwd === null ? '修改密码失败' : '修改密码成功'
+            }
         }
-      },
+      }
+
+      //修改购物车数量
+
+
     }
   })
 })
