@@ -35,7 +35,7 @@ module.exports = override(
     "@a":path.resolve(__dirname,"src/assets/"),
     "@c":path.resolve(__dirname,"src/components/"),
     "@h":path.resolve(__dirname,"src/home/"),
-    "@u":path.resolve(__dirname,"src/utils/"),
+    "@u":path.resolve(__dirname,"src/utils/")
   }),
   addDecoratorsLegacy(),
   customize()

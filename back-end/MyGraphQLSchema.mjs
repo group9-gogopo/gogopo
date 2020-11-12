@@ -43,6 +43,22 @@ const storyType=new GraphQLObjectType({
     }
   }
 })
+
+const LoginfeedbackType = new GraphQLObjectType({
+  name: 'loginfeedbackType',
+  fields: {
+    ret: {
+      type: GraphQLBoolean,
+    },
+    msg: {
+      type: GraphQLString
+    },
+    id: {
+      type: GraphQLInt
+    }
+  }
+})
+
 const GoodType = new GraphQLObjectType({
   name: "GoodType",
   fields: {
@@ -158,10 +174,7 @@ const schema = new GraphQLSchema({
       //单个商品
       good: {
         type: GoodType,
-        args: {
-          // sort: {
-          //   type: GraphQLString
-          // },
+        args:{
           id: {
             type: GraphQLInt,
           },
@@ -235,7 +248,7 @@ const schema = new GraphQLSchema({
 
       //登录
       login: {
-        type: FeedbackType,
+        type: LoginfeedbackType,
         args: {
           username: {
             type: GraphQLString,
@@ -245,17 +258,38 @@ const schema = new GraphQLSchema({
           },
         },
         async resolve(obj, args) {
-          let { username, createpwd } = args;
-          let name = encodeURI(username);
-          let pwd = encodeURI(createpwd);
-          let result = await axios.get(
-            `http://localhost:9000/register?username=${name}&createpwd=${pwd}`
-          );
+          let { username, createpwd } = args
+          let name = encodeURI(username) 
+          let pwd = encodeURI(createpwd)
+
+          let result = await axios.get(`http://localhost:9000/register?username=${name}&createpwd=${pwd}`)
+
           return {
             ret: result.data[0] === undefined ? false : true,
             msg: result.data[0] === undefined ? "登录失败" : "登录成功",
-          };
+            id: result.data[0] === undefined ? null : result.data[0].id,
+          }
+        }
+      },
+
+      //获取用户id
+      forid: {
+        type: LoginfeedbackType,
+        args: {
+          username: {
+            type: GraphQLString
+          }
         },
+        async resolve(obj, args) {
+          let { username } = args
+          let name = encodeURI(username)
+          let result = await axios.get(`http://localhost:9000/register?username=${name}`)
+          return {
+            ret: result.data[0] === undefined ? false : true,
+            msg: result.data[0] === undefined ? "查询用户id失败" : "查询用户id成功",
+            id: result.data[0] === undefined ? null : result.data[0].id,
+          }
+        }
       },
 
       //查询一个用户
@@ -449,5 +483,6 @@ const schema = new GraphQLSchema({
     },
   }),
 });
+
 
 export default schema;

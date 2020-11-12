@@ -23,6 +23,10 @@ import { reducer as detail } from "../detail/index";
 import { reducer as shoppingCart } from "../shoppingCart/index";
 import { reducer as story } from "../story/index";
 
+import {
+  reducer as login
+} from '../login/index'
+
 const reducer=combineReducers({
     profile,
     product,
@@ -30,7 +34,9 @@ const reducer=combineReducers({
     home,
     detail,
     shoppingCart,
-    story
+    story,
+    login
+
 })
 
 export default reducer

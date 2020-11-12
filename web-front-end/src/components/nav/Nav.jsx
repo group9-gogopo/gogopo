@@ -11,7 +11,7 @@ class nav extends Component {
                 <ul>
                     <li>所有果果分类</li>
                     <li><Link to="/home">首页</Link></li>
-                    <li>今日限购</li>
+                    <li><Link to="/discounts">限时特惠</Link></li>
                     <li><Link to="/allProduct">所有果果</Link></li>
                     <li><Link to="/story">小果故事</Link></li>
                     <li><Link to="/about">关于我们</Link></li>

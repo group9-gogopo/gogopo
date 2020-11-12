@@ -4,12 +4,12 @@ import schema from '../MyGraphQLSchema.mjs'
 
 const router = express.Router()
 
-router.get('/login', async (req, res, next) => {
-  let { username, createpwd } = req.query
+router.get('/forid', async (req, res, next) => {
+  let { username } = req.query
   let query = `
      query {
-        login(username: "${username}", createpwd: "${createpwd}") {
-          ret,
+        forid(username: "${username}") {
+          ret, 
           msg,
           id
         }

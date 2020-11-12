@@ -8,6 +8,7 @@ import DiscountList from '@c/discountslist/DiscountList'
 import Nav from '@c/nav/Nav.jsx'
 import DiscountsList from './DiscountsList'
 import Header from '@c/header/Header'
+import Footer from '@c/footer/Footer'
 
 import banner from '../../assets/images/discountsBanner_02.png'
 import title from '../../assets/images/discountsTitle.gif'
@@ -30,6 +31,7 @@ function DiscountsUi(props) {
       <div className='listinfo'>
         <DiscountsList goodslist={props.list}></DiscountsList>
       </div>
+      <Footer></Footer>
     </Container>
   );
 }

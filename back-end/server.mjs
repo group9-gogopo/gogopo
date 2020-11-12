@@ -8,6 +8,7 @@ import goodslistRouter from './routes/goodslist.mjs'
 import registerRouter from './routes/register.mjs'
 import loginRouter from './routes/login.mjs'
 import registerconfirmRouter from './routes/registerconfirm.mjs'
+
 import shoppingCartsRouter from './routes/shoppingCarts.mjs'
 import shoppingCartQueryRouter from './routes/shoppingcartquery.mjs'
 import userAddressQueryRouter from './routes/userAddressQuery.mjs'
@@ -16,6 +17,7 @@ import userInfoOneRouter from './routes/userInfoOne.mjs'
 import userAddressInsRouter from './routes/userAddressIns.mjs'
 import goodslistLikeRouter from './routes/goodslistLike.mjs'
 import storyRouter from './routes/story.mjs'
+import foridRouter from './routes/forid.mjs'
 
 const app = express()
 
@@ -53,6 +55,8 @@ app.use('/api',
     userInfoOneRouter,
     userAddressInsRouter,
     goodslistLikeRouter,
-    storyRouter)
+    storyRouter,
+    foridRouter
+    )
 
 app.listen(4400)
