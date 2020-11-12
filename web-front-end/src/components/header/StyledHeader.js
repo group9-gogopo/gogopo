@@ -81,6 +81,7 @@ const Header = styled.div`
                     font-size: 16px;
                     font-family: Microsoft YaHei;
                     font-weight: 300;
+                    margin-left:30px;
                 }
                 span.active{
                     color: #009A44;
