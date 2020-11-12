@@ -189,9 +189,10 @@ const schema = new GraphQLSchema({
         async resolve(obj, args) {
           let { like } = args;
           console.log(like);
-          let likeName = encodeURL("好");
-          console.log(likeName);
-          let result = await axios.get(`http://localhost:9000/allproduct?nm_like=%E8%8B%B9`);
+          // let likeName = encodeURL("好");
+          // console.log(likeName);
+          let result = await axios.get(`http://localhost:9000/allproduct?nm_like=${like}`);
+          // console.log(result)
           return result.data;
         },
       },

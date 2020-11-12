@@ -14,8 +14,8 @@ class AllOrderUi extends Component {
             <AllContainer>
                 <Header></Header>
                 <Nav></Nav>
-                <OrderNav></OrderNav>
-                <OrderList handleOnGoToComments={this.props.handleOnGoToComment}></OrderList>
+                <OrderNav handleOnGoToComments={this.props.handleOnGoToComment}></OrderNav>
+                {/* <OrderList handleOnGoToComments={this.props.handleOnGoToComment}></OrderList> */}
                 <Footer></Footer>
             </AllContainer>
         );

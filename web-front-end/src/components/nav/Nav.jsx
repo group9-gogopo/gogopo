@@ -9,9 +9,15 @@ import { Menu, Dropdown } from 'antd';
 const menu = (
     <Menu>
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+        {/* <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
          国产水果
-        </a>
+        </a> */}
+        
+        <Link to={{
+                pathname: '/allProduct',
+                index: 1,
+                }}>国产水果
+        </Link> 
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item>

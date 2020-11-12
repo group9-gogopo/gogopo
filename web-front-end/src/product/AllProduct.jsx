@@ -295,7 +295,7 @@ class AllProduct extends Component{
     }
 
     render(){
-        // console.log(this.props)
+        console.log(this.props.location.index,'00000000')
         return (
             <div>
                 <Header></Header>

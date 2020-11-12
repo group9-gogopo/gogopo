@@ -8,6 +8,7 @@ class OrderList extends Component {
     img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604729539404&di=f4c2e28742d6e4ec2deacfa33d99d079&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F003cb3327dcd1ccf2947ddd658b9fd1d5c8b30873bc86-VMu1lS_fw658"
   }
     render() {
+      // console.log(this.props)
         return (
             <OrderListInfo>
                 <div className='top'>
@@ -31,6 +32,7 @@ class OrderList extends Component {
                 <div className="bottom">
                   <p>订单号：123456789</p>  
                   <p onClick={this.props.handleOnGoToComments(this.state.time,this.state.img)}>评价</p>
+                  
                 </div>
             </OrderListInfo>
         );
