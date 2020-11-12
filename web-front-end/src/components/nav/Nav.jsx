@@ -17,27 +17,35 @@ const menu = (
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-          进口水果
-        </a>
+        <Link to={{
+                  pathname: '/allProduct',
+                  index: 2,
+                  }}>进口水果
+          </Link> 
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-          水果饮品
-        </a>
+          <Link to={{
+                pathname: '/allProduct',
+                index: 3,
+                }}>水果饮品
+          </Link> 
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-         果肉制品
-        </a>
+          <Link to={{
+                    pathname: '/allProduct',
+                    index: 4,
+                    }}>果肉制品
+              </Link> 
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-        礼盒包装
-        </a>
+                <Link to={{
+                      pathname: '/allProduct',
+                      index: 5,
+                      }}>礼品包装
+                </Link> 
       </Menu.Item>
     </Menu>
   );
