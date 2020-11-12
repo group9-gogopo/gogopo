@@ -1,31 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import CartHead from './CartHead/CartHead'
 import CartList from './List/CartList'
 import CartFooter from './CartFooter/CartFooter'
-export class ContentIndex extends Component {
+const  ContentIndex =(props)=> {
 
-    
-    render() {
-        console.log(this.props)
         return (
             <div>
                 <CartHead></CartHead>
                 <CartList 
-                dataList={this.props.data} 
-                handleAddClick={this.props.handleAddClick}
-                handleReducerClick={this.props.handleReducerClick}
-                handleDelete={this.props.handleDelete}
-                handSelectClick={this.props.handSelectClick}
+                    dataList={props.data} 
+                    handleAddClick={props.handleAddClick}
+                    handleDescClick={props.handleDescClick}
+                    handleDelete={props.handleDelete}
+                    handSelectClick={props.handSelectClick}
                 ></CartList>
                 <CartFooter 
-                    data={this.props.data}
-                    selectStatus={this.props.selectStatus}
-                    totalPrice={this.props.totalPrice}
-                    totalNum={this.props.totalNum}
+                    data={props.data}
+                    selectStatus={props.selectStatus}
+                    totalPrice={props.totalPrice}
+                    totalNum={props.totalNum}
                 ></CartFooter>
             </div>
         )
-    }
 }
 
 export default ContentIndex

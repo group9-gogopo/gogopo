@@ -8,6 +8,7 @@ import {
   GraphQLID,
   GraphQLList,
   GraphQLBoolean,
+  GraphQLNonNull
 } from "graphql";
 
 const FeedbackType = new GraphQLObjectType({
@@ -102,10 +103,10 @@ const shoppingCartType = new GraphQLObjectType({
       type: GraphQLInt,
     },
     userid: {
-      type: GraphQLString,
+      type: GraphQLInt,
     },
     goodsid: {
-      type: GraphQLString,
+      type: GraphQLInt,
     },
     shoppingCartName: {
       type: GraphQLString,
@@ -114,10 +115,10 @@ const shoppingCartType = new GraphQLObjectType({
       type: GraphQLString,
     },
     shoppingCartPrice: {
-      type: GraphQLString,
+      type: GraphQLInt,
     },
     shoppingCartNum: {
-      type: GraphQLString,
+      type: GraphQLInt,
     },
   },
 });
@@ -416,10 +417,10 @@ const schema = new GraphQLSchema({
         type: FeedbackType,
         args: {
           userid: {
-            type: GraphQLString,
+            type: GraphQLInt,
           },
           goodsid: {
-            type: GraphQLString,
+            type: GraphQLInt,
           },
           shoppingCartName: {
             type: GraphQLString,
@@ -428,14 +429,13 @@ const schema = new GraphQLSchema({
             type: GraphQLString,
           },
           shoppingCartPrice: {
-            type: GraphQLString,
+            type: GraphQLInt,
           },
           shoppingCartNum: {
-            type: GraphQLString,
+            type: GraphQLInt,
           },
         },
         async resolve(obj, args) {
-          console.log(args);
           let res = await axios.post("http://localhost:9000/goodsCart", {
             ...args,
           });
@@ -450,7 +450,7 @@ const schema = new GraphQLSchema({
         type: FeedbackType,
         args: {
           userid: {
-            type: GraphQLString,
+            type: GraphQLInt,
           },
           name: {
             type: GraphQLString,
@@ -480,6 +480,25 @@ const schema = new GraphQLSchema({
           };
         },
       },
+      //修改购物车数量
+      updateShoopingCart:{
+        type: FeedbackType,
+        args: {
+          cartid: {
+            type :new GraphQLNonNull(GraphQLInt)
+          },
+          shoppingCartNum: {
+            type: new GraphQLNonNull(GraphQLInt)
+          }
+        },
+        async resolve(obj, args) {
+          let result = await axios.patch(`http://localhost:9000/goodsCart/${args.cartid}`,{shoppingCartNum: args.shoppingCartNum})
+          return {
+            ret: result.data.createpwd === "null" ? false : true,
+            msg: result.data.createpwd === "null" ? "购物车数据添加失败" : '购物车数据添加成功'
+          }
+        }
+      }
     },
   }),
 });

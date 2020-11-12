@@ -9,7 +9,7 @@ router.post('/useraddressins', async (req, res, next) => {
   let query = `
      mutation {
       insertAddress(
-        userid: "${userid}"
+        userid: ${userid}
         name: "${name}"
         tel: "${tel}"
         state: "${state}"

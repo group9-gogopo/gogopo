@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { StyleCartFooter } from './StyleCartFooter'
 import PropTypes  from 'prop-types'
-import memoize from 'memoize-one'
 
 
-export class CartFooter extends Component {
+
+ class CartFooter extends Component {
     constructor(props){
         super(props)
         this.state = {
-            optxt:false
+            optxt:false,
+            tolPrice:0
         }
     }
     
@@ -16,12 +17,6 @@ export class CartFooter extends Component {
         data: PropTypes.array
     }
     
-    tolPrice = memoize((list)=>{
-        console.log(list)
-        return list.reduce((value,item)=>{
-            return value+item.price*item.count
-        },0)
-    })
     selectAllShop(){
         if(this.state.optxt === true) {
           this.props.selectStatus('SELECTED_S');
@@ -41,6 +36,7 @@ export class CartFooter extends Component {
             console.log(this.state.optxt,this.props);
             }
     }
+
     render() {
         return (
             <StyleCartFooter>
@@ -54,7 +50,7 @@ export class CartFooter extends Component {
                     <span>全选</span>
                 </div>
                 <span>已经选择<span>{this.props.totalNum}</span>件商品</span>
-                <i>总价: ￥<span>{this.tolPrice}</span></i>
+                <i>总价: ￥<span>{this.state.tolPrice}</span></i>
                 <div >结算(1)</div>
             </StyleCartFooter>
         )

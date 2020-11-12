@@ -2,37 +2,23 @@ import {
     SELECT_ALL_SHOP,
     GET_USERS_CART,
     TOGGLE_SHOP,
-    ADD_SHOP,
-    SUB_SHOP,
-    REMOVE_SHOP
+
 } from './actionTypes'
+import { get } from "@u/http"
 
-
-export  function loadDataSync () {
+export  function loadDataSync (list) {
     return{
         type:GET_USERS_CART,
+        list
     }
 }   
 
-// 异步获取用户购物车数据
-
-// export function getUserCarData(userId) {
-
-//     let statements = `SELECT * FROM userCart WHERE user_id = '${userId}'`;
-  
-//     return (dispatch) => {
-  
-//       wantShopData({ statements }).then(data => {
-  
-//         dispatch(asyncUserCartData(data));
-  
-//       });
-  
-//     }
-  
-//   }
-  
-   
+export function loadDataAsync(userid){
+  return async(dispatch)=>{
+    let result=await get("http://localhost:4400/api/shoppingcartquery",{userid})
+    dispatch(loadDataSync(result.shoppingCartList))
+  }
+}
   
   // 购物车选中或不选中
   
@@ -54,32 +40,5 @@ export  function loadDataSync () {
   
    
   
-  // 购物车加商品
-  
-  export function userAddShop(id) {
-  
-    return { type: ADD_SHOP, id }
-  
-  }
-  
-   
-  
-  // 购物车减商品
-  
-  export function userSubShop(id) {
-  
-    return { type: SUB_SHOP, id }
-  
-  }
-  
-   
-  
-  // 删除商品
-  
-  export function removeCartShop(id) {
-  
-    return { type: REMOVE_SHOP, id }
-  
-  }
-
+ 
   
