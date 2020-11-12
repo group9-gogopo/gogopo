@@ -263,6 +263,44 @@ const Comments=styled.div`
         }
 
     }
+
+    .comts{
+        padding-left:310px;
+        padding-right:292px;
+        padding-top:253px;
+        
+        .comts_con{
+            width:416px;
+            height:220px;
+            background:#fff;
+            float:left;
+            margin-right:23px;
+            .comts_left{
+                float:left;
+                padding-left:40px;
+                padding-top:70px;
+                img{
+                    width:120px;
+                    height:120px;
+                }
+
+            }
+            .comts_right{
+                float:left;
+                padding-top:70px;
+                margin-left:25px;
+                .rate{
+                    margin-bottom:22px;
+                }
+                .text{
+                    margin-bottom:30px;
+                }
+                .time{
+
+                }
+            }
+        }
+    }
 `
 
 

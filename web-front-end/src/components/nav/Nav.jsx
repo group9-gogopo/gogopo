@@ -8,11 +8,7 @@ import { Menu, Dropdown } from 'antd';
 
 const menu = (
     <Menu>
-      <Menu.Item>
-        {/* <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-         国产水果
-        </a> */}
-        
+      <Menu.Item>   
         <Link to={{
                 pathname: '/allProduct',
                 index: 1,
