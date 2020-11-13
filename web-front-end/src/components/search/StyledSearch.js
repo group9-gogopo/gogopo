@@ -1,28 +1,31 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-  width: 722px;
+  width: 1000px;
   margin: ${props => props.margin};
+  float:right;
+  margin-left:251px;
+  /* margin-top:39px; */
 
   .searchBox {
-    width: 700px;
-    height: 60px;
+    width: 880px;
+    height: 70px;
     .search{
-      width: 500px;
-      height: 60px;
+      width: 650px;
+      height: 80px;
       line-height: 60px;
       background: #009a44;
       padding-left: 3px;
       position: relative;
       float:left;
       > input {
-        width: 398px;
-        height: 55px;
+        width: 550px;
+        height: 70px;
         background: #fff;
         line-height: 54px;
-        font-size: 16px;
+        font-size: 20px;
         color: #999999;
-        margin: 2px 0 2px 1px;
+        margin: 5px 0 5px 3px;
         padding-left: 14px;
         border: 0;
         outline: none;
@@ -35,8 +38,8 @@ const Container = styled.div`
         height: 60px;
         float: right;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 8px;
+        right: 5px;
         cursor:pointer;
         svg {
           width: 38px;
@@ -48,38 +51,39 @@ const Container = styled.div`
 
     .shopcarButton {
       width: 160px;
-      height: 60px;
+      height: 80px;
       float: right;
       background: #009a44;
-      font-size: 18px;
+      font-size: 22px;
       color: #fff;
       font-weight: 100;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-left: 6px;
+
       svg{
-        width: 30px;
-        height: 30px;
+        width: 38px;
+        height: 38px;
         fill: #fff;
       }
       > span {
-        font-size: 0.2rem;
-        fon-weight: 300;
+        font-size: 22px;
+        font-weight: 300;
       }
     }
   }
 
   .hotSearch {
+    width: 400px;
     display: flex;
     flex-direction: row;
     height: 20px;
-    font-size: 16px;
-    margin-top: 8px;
+    font-size: 18px;
+    padding-top: 10px;
     color: #999999;
     padding-left: 11px;
     p {
-      width: 52px;
+      width: 50px;
       &.active {
         color: #009a44;
       }

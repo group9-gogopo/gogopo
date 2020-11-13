@@ -1,9 +1,9 @@
-import {LOADDATA,CHANGESHOW} from './actionCreateTypes'
+import {LOADDATA,CHANGESHOW, PASSDATA} from './actionCreateTypes'
 const defaultState = {
     list:[],
-    isShow:false
+    isShow:false,
+    data:{}
 }
-
 const reducer = (state = defaultState,action)=>{
     switch(action.type){
         case LOADDATA: 
@@ -15,6 +15,11 @@ const reducer = (state = defaultState,action)=>{
             return{
                 ...state,
                 isShow:action.show
+            }
+        case PASSDATA:
+            return{
+                ...state,
+                data:action.data
             }
         default:
             return state

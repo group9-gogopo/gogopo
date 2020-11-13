@@ -9,7 +9,7 @@ background-color:#FFFBF6;
         font-size:18px;
         border-bottom:4px solid #FF861B;
         line-height:67px;
-        font-weight:R;
+        font-weight:600;
     }
     ul{
         padding:133px;
@@ -53,8 +53,18 @@ background-color:#FFFBF6;
                             width:39px;
                             height:22px;
                             text-align:center;
-                            background-color:#00C775;
                             margin-right:94px;
+                            span{
+                                font-size:12px;
+                                line-height:22px;
+                            }
+                        }
+                        .activeBgc{
+                            width:39px;
+                            height:22px;
+                            text-align:center;
+                            margin-right:94px;
+                            background-color:#00C775;
                             span{
                                 font-size:12px;
                                 line-height:22px;

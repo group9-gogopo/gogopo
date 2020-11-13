@@ -56,10 +56,11 @@ margin-left:20px;
     >div:last-child{
         height:1930px;
         width:820px;
-        background-color:pink;
+        /* background-color:pink; */
         p{
             height:400px;
-            background-color:hotpink;
+            font-size:16px;
+            /* background-color:hotpink; */
         }
     }
 `

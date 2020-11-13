@@ -1,45 +1,50 @@
-import React ,{useHistory}from 'react'
+
+import React ,{useHistory,useEffect, useState}from 'react'
 import { PersonalDataStyled } from './PersonalDataStyled'
 
-const PersonalData =(props)=>{   
-        return(
-            <PersonalDataStyled>
-                <header>个人资料  </header>
-                <ul>
-                    <li>
-                        姓名
-                        <input type="text"/>
-                        <span>修改姓名</span>
-                    </li>
-                    <li>
-                        身份认证
-                        <span>412827272727271171</span>
-                        <span>点击申请身份认证</span>
-                    </li>
-                    <li>
-                        性别
-                        <span>男</span>
-                    </li>
-                    <li>
-                        常住地
-                        <span>北京市昌平区</span>
-                    </li>
-                    <li>
-                        生日
-                        <span>19980217</span>
-                    </li>
-                    <li>
-                        邮箱
-                        <span>1107181671@qq.com</span>
-                    </li>
-                    <li>
-                        职业
-                        <span>学生</span>
-                    </li>
-                </ul>
-            </PersonalDataStyled>
-        )
-    }
+import { get } from "@u/http";
 
+const PersonalData = (props) => {
+  let [userDetail, setUserDetail] = useState(null);
+  useEffect(() => {
+    let userID = 1;
+    (async () => {
+      let result = await get("http://localhost:4400/api/userinfoone", {
+        id: userID,
+      });
+      setUserDetail(() => result.userInfoOne);
+    })();
+  }, []);
 
-export default PersonalData
+  return userDetail? (
+    <PersonalDataStyled>
+      <header>个人资料 </header>
+      <ul>
+        <li>
+          <span className="spanLeft">姓名:</span>
+          <span>{userDetail.username}</span>
+        </li>
+        <li>
+          <span className="spanLeft"> 手机：</span>
+          <span>{userDetail.tel}</span>
+        </li>
+        <li>
+          <span className="spanLeft">常住地</span>
+          <span>北京市昌平区</span>
+        </li>
+        <li>
+          <span className="spanLeft"> 邮箱：</span>
+          <span>{userDetail.email}</span>
+        </li>
+        <li>
+          <span className="spanLeft">职业</span>
+          <span>学生</span>
+        </li>
+      </ul>
+    </PersonalDataStyled>
+  ) : (
+    ""
+  );
+};
+
+export default PersonalData;

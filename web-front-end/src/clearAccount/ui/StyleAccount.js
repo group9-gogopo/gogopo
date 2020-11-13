@@ -53,6 +53,9 @@ const AddressD = styled.div`
                     margin-left:10px;
                 }
                 .defaultAddress{
+                    display:block;
+                    width:100px;
+                    float:right;
                     margin-left:20px
                 }
                 .changeName{
@@ -75,47 +78,57 @@ const Message = styled.div`
     }
     .contain{
         width:100%;
-        height:406px;
+        min-height:406px;
         margin-top:62px;
         border-top:1px solid #f6f8eb;
         border-bottom:1px solid #fff8e1;
         .prod{
-            height:338px;
+            min-height:400px;
             width:100%;
             background:#fff3e3;
             padding:20px 0 0 26px;
-            .pic{
-                float:left;
-                font-size:20px;
-                width:230px;
-                margin-right:210px;
-                img{
-                    margin-top:15px;
-                    width:230px;
-                    height:235px;
-                    
-                }
-            }
-            .desc{
-                float:left;
-                margin-top:128px;
-                font-size:20px;
-                width:384px;
-
-            }
-            .right{
-                font-size:20px;
-                float:right;
-                padding-top:120px;
-                .price{
-                    margin-left:60px;
+            .time{
+                    float:left;
+                    font-size:20px;
                     display:block;
+                    width:100%;
                 }
-                .num{
+            li{
+                width:100%;
+                height:350px;
+                .pic{
+                    float:left;
+                    font-size:20px;
+                    width:230px;
+                    margin-right:210px;
+                    img{
+                        margin-top:15px;
+                        width:230px;
+                        height:235px;
+                        
+                    }
+                }
+                .desc{
+                    float:left;
+                    margin-top:128px;
+                    font-size:20px;
+                    width:384px;
+
+                }
+                .right{
+                    font-size:20px;
                     float:right;
-                }
-                .all{
-                    margin-top:138px;
+                    padding-top:120px;
+                    .price{
+                        margin-left:60px;
+                        display:block;
+                    }
+                    .num{
+                        float:right;
+                    }
+                    .all{
+                        margin-top:138px;
+                    }
                 }
             }
         }
@@ -134,53 +147,59 @@ const Message = styled.div`
             background:#fff3e3;
             border-bottom:2px solid #fff7e0;
         }
+        
     }
-    .compute{
-        width:520px;
-        height:160px;
-        float:right;
-        margin-top:60px;
-        .detail{
-            border:1px solid red;
-            .pay{
-                margin-left:288px;
-                font-size:20px;
-                >span{
-                    font-size:30px;
-                    color:#ff9f2f;
-                }
-            }
-            .To{
-                font-size:20px;
-                margin-left:30px;
-                margin-top:28px;
-                >span{
-                    color:#9e9e9e;
-                }
-            }
-            .user{
-                font-size:20px;
-                margin-left:200px;
-                margin-bottom:30px;
-                >span{
-                    color:#9e9e9e;
-                }
-            }
-        }
-        .btn{
+    .submit{
+        width:100%;
+        height:300px;
+        background:#fff;
+        .compute{
+            width:520px;
+            height:160px;
             float:right;
-            font-size:20px;
-            .btn-real{
-                display:inline-block;
-                text-align:center;
-                line-height:50px;
-                width:240px;
-                height:50px;
-                margin-left:65px;
-                background:#ff9c28;
+            margin-top:60px;
+            .detail{
+                border:1px solid red;
+                .pay{
+                    margin-left:288px;
+                    font-size:20px;
+                    >span{
+                        font-size:30px;
+                        color:#ff9f2f;
+                    }
+                }
+                .To{
+                    font-size:20px;
+                    margin-left:30px;
+                    margin-top:28px;
+                    >span{
+                        color:#9e9e9e;
+                    }
+                }
+                .user{
+                    font-size:20px;
+                    margin-left:30px;
+                    margin-bottom:30px;
+                    >span{
+                        color:#9e9e9e;
+                    }
+                }
             }
-        }
+            .btn{
+                float:right;
+                font-size:20px;
+                .btn-real{
+                    display:inline-block;
+                    text-align:center;
+                    line-height:50px;
+                    width:240px;
+                    height:50px;
+                    margin-left:65px;
+                    background:#ff9c28;
+                }
+            }
 
+        }
     }
 `
 export {

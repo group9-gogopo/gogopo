@@ -1,33 +1,56 @@
-import React,{useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from '@c/modal/Modal'
-import {AddressD} from './StyleAccount'
+import { AddressD } from './StyleAccount'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeShow, loadDataAsync, loadDataSync, pasData } from '../actionCreator'
 const Address = (props) => {
-    const [isShow,setIsShow] = useState(props.isShow)
-    function handleShowClick (){
-        setIsShow(()=>true)
+    const list = useSelector((state) => state.clearAccount.list)
+    const isShow = useSelector((state) => state.clearAccount.isShow)
+    const [isSelect,setIsSelect]=useState({})
+
+    const dispatch = useDispatch()
+
+    const addClose = () => {
+
+        dispatch(changeShow(true))
     }
+    useEffect(() => {
+        let userid = 1001
+        dispatch(loadDataAsync(userid))
+    }, [dispatch])
+    function handlerClick(value){
+        return()=>{
+            dispatch(pasData(value))
+        }
+    }
+    console.log(isSelect);
     return (
-            <AddressD>
-                <div className='addressHead'>
-                    <span className='receiving'>确认收货地址</span>
-                </div>
-                <div className='addressbody'>
-                    <ul>
-                        <li>
-                            <input type="checkBox" name="" id="" checked={true}/>
-                            <p className='address'>北京市昌平区沙河镇沙阳路北京科技职业学院</p> 
-                            <span className='name'>(D女士)</span>
-                            <span className='phoneNum'>18573232384</span> 
-                            <span className='defaultAddress'>默认地址</span>
-                            <a className='changeName'>修改地址</a>
-                        </li>
-                    </ul>
-                    <button className='newAd' onClick={handleShowClick}><span>+</span>使用新地址</button>
-                    {
-                        isShow?(<Modal state={isShow} addClose={props.addClose}></Modal>):""
+        <AddressD>
+            <div className='addressHead'>
+                <span className='receiving'>确认收货地址</span>
+            </div>
+            <div className='addressbody'>
+                <ul>{
+                        list.length>0 && list.map((value) => {
+                            console.log(value.state)
+                            return(
+                                <li key={value.id} >
+                                    <input className='check' type="radio" name='mazhao' onClick={handlerClick(value)}/>
+                                    <p className='address'>{value.location}</p>
+                                    <span className='name'>{value.name}</span>
+                                    <span className='phoneNum'>{value.tel}</span>
+                                </li>
+                            )
+                        })
                     }
-                </div>
-            </AddressD>
+                    
+                </ul>
+                <button className='newAd' onClick={addClose}><span>+</span>使用新地址</button>
+                {
+                    isShow ? (<Modal ></Modal>) : ""
+                }
+            </div>
+        </AddressD>
     )
 }
 export default Address

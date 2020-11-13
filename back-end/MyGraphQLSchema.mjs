@@ -21,6 +21,44 @@ const FeedbackType = new GraphQLObjectType({
     },
   },
 });
+      
+
+const storyType=new GraphQLObjectType({
+  name: 'knowledgeType',
+  fields:{
+    storyImage:{
+      type: GraphQLString
+    },
+    storyName:{
+      type: GraphQLString
+    },
+    storyDate:{
+      type: GraphQLString
+    },
+    storyImages:{
+      type: new GraphQLList(GraphQLID),
+    },
+    storyText:{
+      type: GraphQLString
+    }
+  }
+})
+
+const LoginfeedbackType = new GraphQLObjectType({
+  name: 'loginfeedbackType',
+  fields: {
+    ret: {
+      type: GraphQLBoolean,
+    },
+    msg: {
+      type: GraphQLString
+    },
+    id: {
+      type: GraphQLInt
+    }
+  }
+})
+
 const GoodType = new GraphQLObjectType({
   name: "GoodType",
   fields: {
@@ -84,6 +122,51 @@ const shoppingCartType = new GraphQLObjectType({
   },
 });
 
+const userAddressType = new GraphQLObjectType({
+  name: "userAddressType",
+  fields: {
+    id: {
+      type: GraphQLInt,
+    },
+    userid: {
+      type: GraphQLString,
+    },
+    name: {
+      type: GraphQLString,
+    },
+    tel: {
+      type: GraphQLString,
+    },
+    state: {
+      type: GraphQLString,
+    },
+    location: {
+      type: GraphQLString,
+    },
+    officeId: {
+      type: GraphQLString,
+    },
+  },
+});
+
+const userInfoType=new GraphQLObjectType({
+  name: "userInfoType",
+  fields: {
+    id: {
+      type: GraphQLInt,
+    },
+    username: {
+      type: GraphQLString,
+    },
+    tel: {
+      type: GraphQLString,
+    },
+    email: {
+      type: GraphQLString,
+    }
+  },
+});
+
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: "RootQueryType",
@@ -91,10 +174,7 @@ const schema = new GraphQLSchema({
       //单个商品
       good: {
         type: GoodType,
-        args: {
-          // sort: {
-          //   type: GraphQLString
-          // },
+        args:{
           id: {
             type: GraphQLInt,
           },
@@ -119,23 +199,56 @@ const schema = new GraphQLSchema({
           limit: {
             type: GraphQLInt,
           },
-          start: {
+          page: {
             type: GraphQLInt,
           },
         },
         async resolve(obj, args) {
-          let { sort, limit, start } = args;
-          let result = await axios.get(
-            `http://localhost:9000/${sort}?${limit}&${start}`
-          );
-          let list = result.data;
-          return list.splice(start, limit);
+          let { sort,page,limit } = args
+          let result = await axios.get(`http://localhost:9000/${sort}?_page=${page}&_limit${limit}`)
+          let list = result.data
+          return list
+        }
+      },
+
+      //商品模糊查询
+      goodslistLike: {
+        type: new GraphQLList(GoodType),
+        args: {
+          like: {
+            type: GraphQLString,
+          }
         },
+        async resolve(obj, args) {
+          let { like } = args;
+          console.log(like);
+          let likeName = encodeURL("好");
+          console.log(likeName);
+          let result = await axios.get(`http://localhost:9000/allproduct?nm_like=%E8%8B%B9`);
+          return result.data;
+        },
+      },
+
+          
+      //水果知识
+      story: {
+        type: new GraphQLList(storyType),
+        args:{
+          storytype: {
+            type: GraphQLString
+          }
+        },
+        async resolve(obj, args) {
+          let { storytype } = args
+          let result = await axios.get(`http://localhost:9000/${storytype}`)
+          let list = result.data
+          return list
+        }
       },
 
       //登录
       login: {
-        type: FeedbackType,
+        type: LoginfeedbackType,
         args: {
           username: {
             type: GraphQLString,
@@ -145,19 +258,58 @@ const schema = new GraphQLSchema({
           },
         },
         async resolve(obj, args) {
-          let { username, createpwd } = args;
-          let name = encodeURI(username);
-          let pwd = encodeURI(createpwd);
-          let result = await axios.get(
-            `http://localhost:9000/register?username=${name}&createpwd=${pwd}`
-          );
+          let { username, createpwd } = args
+          let name = encodeURI(username) 
+          let pwd = encodeURI(createpwd)
+
+          let result = await axios.get(`http://localhost:9000/register?username=${name}&createpwd=${pwd}`)
+
           return {
             ret: result.data[0] === undefined ? false : true,
             msg: result.data[0] === undefined ? "登录失败" : "登录成功",
-          };
-        },
+            id: result.data[0] === undefined ? null : result.data[0].id,
+          }
+        }
       },
 
+      //获取用户id
+      forid: {
+        type: LoginfeedbackType,
+        args: {
+          username: {
+            type: GraphQLString
+          }
+        },
+        async resolve(obj, args) {
+          let { username } = args
+          let name = encodeURI(username)
+          let result = await axios.get(`http://localhost:9000/register?username=${name}`)
+          return {
+            ret: result.data[0] === undefined ? false : true,
+            msg: result.data[0] === undefined ? "查询用户id失败" : "查询用户id成功",
+            id: result.data[0] === undefined ? null : result.data[0].id,
+          }
+        }
+      },
+
+      //查询一个用户
+      userInfoOne: {
+        type: userInfoType,
+        args: {
+          id: {
+            type: GraphQLInt,
+          },
+        },
+        async resolve(obj, args) {
+          let { id } = args;
+          let result = await axios.get(
+            `http://localhost:9000/register?id=${id}`
+          );
+          console.log(result);
+          return result.data[0];
+        },
+      },
+    
       //注册验证（用户名是否重复）
       registerconfirm: {
         type: FeedbackType,
@@ -193,6 +345,39 @@ const schema = new GraphQLSchema({
           );
           console.log(result);
           return result.data;
+        },
+      },
+      //查询地址
+      userAddressList: {
+        type: new GraphQLList(userAddressType),
+        args: {
+          userid: {
+            type: GraphQLInt,
+          },
+        },
+        async resolve(obj, args) {
+          let { userid } = args;
+          let result = await axios.get(
+            `http://localhost:9000/userAddress?userid=${userid}`
+          );
+          return result.data;
+        },
+      },
+      //查询单个地址
+      userAddressOne: {
+        type: userAddressType,
+        args: {
+          id: {
+            type: GraphQLInt,
+          },
+        },
+        async resolve(obj, args) {
+          let { id } = args;
+          let result = await axios.get(
+            `http://localhost:9000/userAddress?id=${id}`
+          );
+          console.log(result);
+          return result.data[0];
         },
       },
     },
@@ -260,9 +445,44 @@ const schema = new GraphQLSchema({
           };
         },
       },
+      //插入地址
+      insertAddress: {
+        type: FeedbackType,
+        args: {
+          userid: {
+            type: GraphQLString,
+          },
+          name: {
+            type: GraphQLString,
+          },
+          tel: {
+            type: GraphQLString,
+          },
+          state: {
+            type: GraphQLString,
+          },
+          location: {
+            type: GraphQLString,
+          },
+          officeId: {
+            type: GraphQLString,
+          },
+        },
+        async resolve(obj, args) {
+          console.log(args);
+          let res = await axios.post("http://localhost:9000/userAddress", {
+            ...args,
+          });
+          console.log(res);
+          return {
+            ret: true,
+            msg: "注册成功",
+          };
+        },
+      },
     },
   }),
-  
 });
+
 
 export default schema;

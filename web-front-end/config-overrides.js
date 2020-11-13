@@ -7,6 +7,21 @@ const {
   addDecoratorsLegacy
 } = require("customize-cra");
 
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
+const customize = () => (config, env) => {
+  config.resolve.alias['@'] = resolve('src')
+  if (env === 'production') {
+      config.externals = {
+          'react': 'React',
+          'react-dom': 'ReactDOM'
+      }
+  }
+  return config
+};
+
 module.exports = override(
   fixBabelImports("import ", {
     libraryName: "antd-mobile",
@@ -20,7 +35,9 @@ module.exports = override(
     "@a":path.resolve(__dirname,"src/assets/"),
     "@c":path.resolve(__dirname,"src/components/"),
     "@h":path.resolve(__dirname,"src/home/"),
-    "@u":path.resolve(__dirname,"src/utils/"),
+    "@u":path.resolve(__dirname,"src/utils/")
   }),
-  addDecoratorsLegacy()
+  addDecoratorsLegacy(),
+  customize()
+
 );

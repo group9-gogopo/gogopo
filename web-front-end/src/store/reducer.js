@@ -1,25 +1,46 @@
-import { combineReducers } from "redux";
 
-import { reducer as changepwd } from "../changepwd/index";
+import { combineReducers } from 'redux'
 
-import { reducer as product } from "../product/index";
+import {
+  reducer as changepwd
+} from '../changepwd/index'
 
-import { reducer as profile } from "../profile/index";
 
-import { reducer as clearAccount} from '../clearAccount/index'
+import {
+    reducer as product
+} from '../product/index'
+
+import {
+  reducer as profile
+} from '../profile/index'
+
+import {
+  reducer as home
+} from '../home/index/index'
 
 import { reducer as detail } from "../detail/index";
 
 import { reducer as shoppingCart } from "../shoppingCart/index";
+import { reducer as story } from "../story/index";
+import { reducer as clearAccount} from '../clearAccount/index'
 
-const reducer = combineReducers({
-  profile,
-  product,
-  changepwd,
-  detail,
-  clearAccount,
-  shoppingCart,
-  
-});
+import {
+  reducer as login
+} from '../login/index'
 
-export default reducer;
+const reducer=combineReducers({
+    profile,
+    product,
+    changepwd,
+    home,
+    detail,
+    shoppingCart,
+    story,
+    login,
+    clearAccount
+
+})
+
+export default reducer
+
+

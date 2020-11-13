@@ -5,22 +5,18 @@ import { get } from '@u/http.js'
 
 //这是同步请求的action构造函数
 const loadDataSync=list=>{
+
     return{
         type:LOADDATA,
         list
     }
 }
 // 这是异步请求的action构造函数
-const loadDataAsync = ()=>{
+const loadDataAsync = (userid)=>{
     return async (dispatch) =>{
-        // let result = await get({
-        //     //在mock中配置好的json接口
-        //     // 这里已经用了代理了
-        //     url: '/api/list'
-        // })
-        let result = await get("/api/address")
+        let result = await get("http://localhost:4400/api/useraddressquery",{userid})
         // 异步完成之后在同步派发
-        dispatch(loadDataSync(result))
+        dispatch(loadDataSync(result.userAddressList))
     }
 }
 

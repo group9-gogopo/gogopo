@@ -16,7 +16,7 @@ const StyledModal = styled.div`
         font-size:16px;
         input{
             width:336px;
-            min-height:30px;
+            min-height:40px;
             border-radius:2px;
             border:1px solid #000;
         }
@@ -47,7 +47,7 @@ const StyledModal = styled.div`
             width:500px;
             background:#fff;
             margin:0 auto;
-            margin-top:18px;
+            margin-top:8px;
             overflow:hidden;
             zoom:1;
             .new{
@@ -103,7 +103,7 @@ const StyledModal = styled.div`
                     color:#ffbbc6;
                 }
                 .Num{
-                    width:210px;
+                    width:200px;
                     margin-left:10px;
                 }
             }
@@ -111,6 +111,12 @@ const StyledModal = styled.div`
                 margin:18px 0 0 104px;
                 height:30px;
                 line-height:30px;
+                .state{
+                    display:block;
+                    float:left;
+                    width:16px;
+                    height:16px;
+                }
                 >div{
                     float:left;
                     margin-left:20px;
