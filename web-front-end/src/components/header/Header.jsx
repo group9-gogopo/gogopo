@@ -15,6 +15,7 @@ const onSearch = value => console.log(value);
 @connect(
     (state) => {
         return {
+            list: state.shoppingCart.list,
             num:state.home.num
         }
     },
@@ -62,7 +63,7 @@ class header extends Component {
                         <span>山竹</span>
                     </p>
 
-                    <div className="cart"><Link to="/shoppingCart">购物车(&nbsp;<span>{this.props.num}</span>&nbsp;)</Link></div>                   
+                    <div className="cart"><Link to="/shoppingCart">购物车(&nbsp;<span>{this.props.list.length}</span>&nbsp;)</Link></div>                   
                 </div>
 
               </Header>

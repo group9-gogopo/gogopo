@@ -30,7 +30,6 @@ class ShowInfo extends Component {
         
     }
     render() {
-        console.log(this.props)
         let str=(item,index)=>{
             if(index===0){
                 return (

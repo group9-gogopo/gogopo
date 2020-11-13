@@ -18,7 +18,9 @@ import actionCreator from '../actionCreator'
 
 )
 class Home extends Component {
+
     render() {
+        console.log(this.props);
         return (
             <IndexUi 
              num={this.props.num}

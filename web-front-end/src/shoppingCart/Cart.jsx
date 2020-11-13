@@ -8,7 +8,6 @@ import Footer from "../components/footer/Footer";
 import {
   loadDataAsync,
   checkShopNumber,
-  operationAllShop,
 } from "./actionCreators";
 
 import {patch} from "@u/http"
@@ -26,9 +25,6 @@ import {patch} from "@u/http"
     },
     handSelectClick(id) {
       dispatch(checkShopNumber(id));
-    },
-    selectStatus(selectStatus) {
-      dispatch(operationAllShop(selectStatus));
     },
   })
 )
@@ -53,7 +49,7 @@ class Cart extends Component {
    this.props.loadData(userid)
   }
   render() {
-      console.log(this.props.selectList);
+    
     return (
       <Container>
         <Header></Header>
@@ -64,7 +60,6 @@ class Cart extends Component {
           handleDescClick={this.handleDescClick}
           handleDelete={this.props.handleDelete}
           handSelectClick={this.props.handSelectClick}
-          selectStatus={this.props.selectStatus}
         ></ContentIndex>
         <Footer
           totalPrice={this.props.totalPrice}

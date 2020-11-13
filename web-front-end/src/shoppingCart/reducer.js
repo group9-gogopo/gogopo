@@ -1,7 +1,8 @@
 import {
-    SELECT_ALL_SHOP,
     GET_USERS_CART,
     TOGGLE_SHOP,
+    NO_All_SELECT,
+    All_SELECT
 
 } from './actionTypes'
 
@@ -32,23 +33,17 @@ const reducer = (state = defaultState ,action ) => {
             }
 
 
-        case SELECT_ALL_SHOP:
-            console.log(action.seleStatus)
-            if(action.seleStatus === 'SELECTED_S') {
-               let newList = state.list.map(item => {
-                  item.checked= true;
-                  return newList
-                });
-              }
-              if(action.seleStatus === 'CANCEL_S') {
-                let newList = state.list.map(item => {
-                  item.checked = false;
-                  return newList
-                });
-              }
-              return {
-                list:state.list
-              }
+        case NO_All_SELECT:
+            return{
+                ...state,
+                selectList:action.list
+            }
+        
+        case All_SELECT:
+            return{
+                ...state,
+                selectList:action.list
+            }
         default:
             return state
     } 

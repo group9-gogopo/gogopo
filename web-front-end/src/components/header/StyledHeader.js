@@ -98,9 +98,11 @@ const Header = styled.div`
                 font-size: 17px;
                 font-family: Microsoft YaHei;
                 font-weight: 300;
-                color: #F3F3F3;
                 text-align:center;
                 line-height:55px;
+                a{
+                    color:#fff;
+                }
             }
 
         }
