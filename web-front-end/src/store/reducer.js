@@ -22,6 +22,7 @@ import { reducer as detail } from "../detail/index";
 
 import { reducer as shoppingCart } from "../shoppingCart/index";
 import { reducer as story } from "../story/index";
+import { reducer as clearAccount} from '../clearAccount/index'
 
 import {
   reducer as login
@@ -35,7 +36,8 @@ const reducer=combineReducers({
     detail,
     shoppingCart,
     story,
-    login
+    login,
+    clearAccount
 
 })
 
