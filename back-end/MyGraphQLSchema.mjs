@@ -615,6 +615,47 @@ const schema = new GraphQLSchema({
           };
         },
       },
+      //修改地址
+      changeAddress: {
+        type: FeedbackType,
+        args: {
+          id: {
+            type: new GraphQLNonNull(GraphQLInt),
+          },
+          name: {
+            type: new GraphQLNonNull(GraphQLString),
+          },
+          tel: {
+            type: new GraphQLNonNull(GraphQLString),
+          },
+          state: {
+            type: new GraphQLNonNull(GraphQLString),
+          },
+          location: {
+            type: new GraphQLNonNull(GraphQLString),
+          },
+          officeId: {
+            type: new GraphQLNonNull(GraphQLString),
+          },
+        },
+        async resolve(obj, args) {
+          let result = await axios.patch(
+            `http://localhost:9000/userAddress/${args.id}`,
+            { name: args.name,
+              tel: args.tel,
+              state: args.state,
+              location: args.location,
+              officeId: args.officeId }
+          );
+          return {
+            ret: result.data.createpwd === "null" ? false : true,
+            msg:
+              result.data.createpwd === "null"
+                ? "修改密码失败"
+                : "修改密码成功",
+          };
+        },
+      },
     },
   }),
 });

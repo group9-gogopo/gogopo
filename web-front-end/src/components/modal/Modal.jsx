@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react'
+import React, { useCallback,  useState } from 'react'
 import { StyledModal } from './StyleModal'
 import { Cascader } from "antd";
 import { post } from '@u/http'
-import { useSelector, useDispatch } from 'react-redux'
+import {  useDispatch } from 'react-redux'
 import { changeShow } from '../../clearAccount/actionCreator';
 
 function Modal(props) {
@@ -46,7 +46,7 @@ function Modal(props) {
   }, []);
 
   const handlerCommit = useCallback(async () => {
-    if (!location || !officeId || !name || !tel)
+     if (!location || !officeId || !name || !tel)
       return alert("请完整填写表单");
     let data = {
       "userid": 1001,
@@ -57,9 +57,10 @@ function Modal(props) {
       "state": state
     }
     let result = await post('http://localhost:4400/api/useraddressins', data)
-    if (result) {
+    if (result) { 
       close()
-    }
+      
+     }
   }, [location, officeId, name, tel, state]);
 
 

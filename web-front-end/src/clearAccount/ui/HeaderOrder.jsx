@@ -9,7 +9,7 @@ const HeaderOrder = (props) =>  {
         <HeaderO>
             <OrderHeader>确认订单</OrderHeader>
             <Address ></Address>
-            <OrderMessage></OrderMessage>
+            <OrderMessage clearAc={props.clearAc}></OrderMessage>
         </HeaderO>
     )
 }

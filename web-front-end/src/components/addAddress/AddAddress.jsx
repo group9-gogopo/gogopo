@@ -2,6 +2,9 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Cascader } from "antd";
 import { StyledAddAddress } from "./StyledAddAddress";
 import { get } from "@u/http"
+import { useDispatch } from "react-redux"
+import { closeShow } from "../../profile/actionCreater"
+import { patch } from '@u/http'
  
 const AddAddress = (props) => {
   let [addressInfo, setAddressInfo] = useState("");
@@ -10,7 +13,7 @@ const AddAddress = (props) => {
   let [getGoods, setGetGoods] = useState("");
   let [inputIphone, setInputIphone] = useState("");
   let [inputDefault, setInputDefault] = useState(false);
-
+  let usedispatch=useDispatch()
 
   const handlerChange = useCallback((e) => {
     let value = e.target.value;
@@ -35,15 +38,18 @@ const AddAddress = (props) => {
         return;
     }
   }, []);
-  const handlerCommit = useCallback(() => {
+  const handlerCommit = useCallback(async() => {
     if (!addressInfo || !textArea || !officeId || !getGoods || !inputIphone)
       return alert("请完整填写表单");
-    console.log(addressInfo);
-    console.log(textArea);
-    console.log(officeId);
-    console.log(getGoods);
-    console.log(inputIphone);
-    console.log(inputDefault);
+     let res=patch("/api/useraddressupdate",{
+      id:props.addShowID,
+      name:getGoods,
+      tel:inputIphone,
+      state:inputDefault,
+      location:textArea,
+      officeId:officeId
+     })
+    usedispatch(closeShow())
   }, [addressInfo, textArea, officeId, getGoods, inputIphone, inputDefault]);
 
   const options = [

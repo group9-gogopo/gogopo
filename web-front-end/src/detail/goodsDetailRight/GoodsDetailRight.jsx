@@ -52,12 +52,9 @@ const GoodsDetailRight = (props) => {
       shoppingCartPrice,
       shoppingCartNum,
     }
-    console.log(data);
+    let allPrice=shoppingCartPrice*shoppingCartNum
     if(e.target.className==="detailBuy"){
-      let res =await post("http://localhost:4400/api/shoppingCartsIns",data)
-      if(!res)return  alert("不好意思，添加购物车失败")
-     
-      history.push("/shoppingCart");
+      history.push("/clearAccount",{data:[data],allPrice});
     }else{
      let res= await post("http://localhost:4400/api/shoppingCartsIns",data)
 

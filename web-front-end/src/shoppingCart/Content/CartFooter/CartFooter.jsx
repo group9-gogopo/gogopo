@@ -35,10 +35,10 @@ import { withRouter } from 'react-router-dom';
             let i=this.props.list.filter(item=>{
                 return item.id===ele
             })
-            arr.push(i)
+            arr.push(i[0])
         })
         let allPrice=arr.reduce((value,item)=>{
-            return value+item[0].shoppingCartNum*item[0].shoppingCartPrice
+            return value+item.shoppingCartNum*item.shoppingCartPrice
         },0)
         return allPrice
       } 
@@ -49,12 +49,12 @@ import { withRouter } from 'react-router-dom';
             let i=this.props.list.filter(item=>{
                 return item.id===ele
             })
-            countArr.push(i)
+            countArr.push(i[0])
         })
         let allPrice=countArr.reduce((value,item)=>{
-            return value+item[0].shoppingCartNum*item[0].shoppingCartPrice
+            return value+item.shoppingCartNum*item.shoppingCartPrice
         },0)
-        this.props.history.push({ pathname: "/home", state: { countArr,allPrice} })
+        this.props.history.push( "/clearAccount",  { data:countArr,allPrice} )
       }
     handleAllClick=()=>{
         return()=>{

@@ -23,6 +23,7 @@ import changepwdRouter from './routes/changepwd.mjs'
 import changegoodsnumRouter from './routes/changegoodslist.mjs'
 import addorderinfoRouter from './routes/addorderinfo.mjs'
 import searchorderinfoRouter from './routes/searchorderinfo.mjs'
+import userAddressUpdateRouter from './routes/userAddressUpdate.mjs'
 
 const app = express()
 
@@ -66,7 +67,8 @@ app.use('/api',
     changepwdRouter,
     changegoodsnumRouter,
     addorderinfoRouter,
-    searchorderinfoRouter
+    searchorderinfoRouter,
+    userAddressUpdateRouter
     )
 
 app.listen(4400)

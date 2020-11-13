@@ -3104,6 +3104,13 @@
       "email": "123456a@qq.com",
       "createpwd": "111aaaAAA",
       "id": 5
+    },
+    {
+      "username": "马兆权",
+      "tel": "15254129801",
+      "email": "mzqquan@qq.com",
+      "createpwd": "quan0801",
+      "id": 6
     }
   ],
   "goodsCart": [
@@ -3133,6 +3140,15 @@
       "shoppingCartPrice": 390,
       "shoppingCartNum": 7,
       "id": 3
+    },
+    {
+      "userid": 1,
+      "goodsid": 1001,
+      "shoppingCartName": "【匠心】优级实建褚橙6斤装*1箱 99好评率的传奇橙",
+      "shoppingCartImage": "https://image.missfresh.cn/fe994eb5464b424e80a8ad63c43cdbca.jpg?mryxw=200&mryxh=200",
+      "shoppingCartPrice": 390,
+      "shoppingCartNum": 1,
+      "id": 4
     }
   ],
   "userAddress": [
@@ -3157,20 +3173,11 @@
     {
       "id": 3,
       "userid": "1001",
-      "name": "檀旭",
-      "tel": "15022584567",
-      "state": false,
-      "location": "北京市 昌平区 北京科技职业学院",
-      "officeId": "445789"
-    },
-    {
-      "userid": "2",
-      "name": "嘘嘘嘘",
-      "tel": "15254544",
+      "name": "檀旭旭",
+      "tel": "15555555555",
       "state": "false",
-      "location": "山东济南",
-      "officeId": "14445",
-      "id": 4
+      "location": "北京 海淀 中关村",
+      "officeId": "11111"
     },
     {
       "userid": 1001,
@@ -3180,6 +3187,15 @@
       "location": "山东济南天桥",
       "officeId": "11011",
       "id": 5
+    },
+    {
+      "userid": 1001,
+      "name": "王鹏",
+      "tel": "144545458858",
+      "state": "false",
+      "location": "山东泰安",
+      "officeId": "11221",
+      "id": 6
     }
   ],
   "knowledge": [

@@ -12,7 +12,7 @@ const ClearAccountUI = (props) => {
         <Container>  
             <Header></Header>
             <Nav></Nav>
-            <HeaderOrder></HeaderOrder>
+            <HeaderOrder clearAc={props.clearAc}></HeaderOrder>
             <Footer></Footer>
         </Container>
     )

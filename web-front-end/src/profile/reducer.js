@@ -1,4 +1,4 @@
-import {LOADDATA,CHANGESHOW} from './actionTypes'
+import {LOADDATA,CHANGESHOW,CLOSESHOW} from './actionTypes'
 const defaultState={
     // profileMsg:{},
     list:[],
@@ -18,6 +18,11 @@ const reducer=(state=defaultState,action)=>{
                 ...state,
                 addShow:action.id
             }
+        case CLOSESHOW:
+            return{
+                ...state,
+                addShow:action.addShow
+            }  
         default:
             return state
     }

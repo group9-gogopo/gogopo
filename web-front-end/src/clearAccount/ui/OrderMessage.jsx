@@ -3,50 +3,33 @@ import {Message} from './StyleAccount'
 import { useSelector } from 'react-redux'
 
 const OrderMessage = (props) => {
+    let clearAcList=props.clearAc.data
     const value = useSelector((state) => state.clearAccount.data)
-
     return (
         <Message>
             <span className='confirm'>确认订单信息</span>
             <div className='contain'>
                 <ul className='prod'>
                         <span className='time'>下单时间：<span className='realTime'>2019-03-25</span></span>
-                    <li>
+                    
+                   {
+                       clearAcList.map((item)=>{
+                        return(
+                            <li key ={item.goodsid}>
                         <div className='pic'>
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2798791900,2905206626&fm=26&gp=0.jpg" alt=""/>
+                            <img src={item.shoppingCartImage} alt=""/>
                         </div>
-                        <div className='desc'>产品描述产品描述产品描述产品描述产品描述产品描述产品描述
+                        <div className='desc'>{item.shoppingCartName}
                         </div>
                         <div className="right">
-                            <span className='price'>￥<span>200.00</span></span>
-                            <p className="num">x <span>2</span></p>
-                            <p className="all">合计：￥<span>400.00</span></p>
+                        <span className='price'>￥<span>{item.shoppingCartPrice}</span></span>
+                            <p className="num">x <span>{item.shoppingCartNum}</span></p>
+                            <p className="all">合计：￥<span>{item.shoppingCartPrice*item.shoppingCartNum}</span></p>
                         </div>
                     </li>
-                    <li>
-                        <div className='pic'>
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2798791900,2905206626&fm=26&gp=0.jpg" alt=""/>
-                        </div>
-                        <div className='desc'>产品描述产品描述产品描述产品描述产品描述产品描述产品描述
-                        </div>
-                        <div className="right">
-                            <span className='price'>￥<span>200.00</span></span>
-                            <p className="num">x <span>2</span></p>
-                            <p className="all">合计：￥<span>400.00</span></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div className='pic'>
-                            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2798791900,2905206626&fm=26&gp=0.jpg" alt=""/>
-                        </div>
-                        <div className='desc'>产品描述产品描述产品描述产品描述产品描述产品描述产品描述
-                        </div>
-                        <div className="right">
-                            <span className='price'>￥<span>200.00</span></span>
-                            <p className="num">x <span>2</span></p>
-                            <p className="all">合计：￥<span>400.00</span></p>
-                        </div>
-                    </li>
+                        )
+                       })
+                   }
                 
                 </ul>
                 <div className='blank'></div>
@@ -56,7 +39,7 @@ const OrderMessage = (props) => {
                 <div className="submit">
                     <div className="compute">
                         <div className='detail'>
-                            <p className='pay'>实付款：￥<span>400</span></p>
+                            <p className='pay'>实付款：￥<span>{props.clearAc.allPrice}</span></p>
                             <p className='To'>寄送至：<span>{JSON.stringify(value) == "{}"?'请选择收货地址！':(value.location)}</span></p>
                             <p className='user'>收货人：<span>{JSON.stringify(value) == "{}"?'请选择收货地址！':(value.name + ' ' + value.tel)}</span></p>
                         </div>

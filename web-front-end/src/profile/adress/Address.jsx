@@ -1,8 +1,9 @@
 import React, { useCallback } from "react";
 import { AddressStyled } from "./AddressStyled";
-import { useDispatch } from "react-redux";
+import { useDispatch ,useSelector} from "react-redux";
 import { changeShow } from "../actionCreater";
 const Address = (props) => {
+  const addShow=useSelector((state)=>state.profile.addShow)
   const dispatch = useDispatch();
   const handlerClick = useCallback(
     (id) => {
@@ -13,10 +14,11 @@ const Address = (props) => {
     [dispatch]
   );
   return (
+   
     <AddressStyled>
       <header>地址管理</header>
       <ul>
-        {props.list &&
+        {props.list && 
           props.list.map((value) => {
             return (
               <li key={value.id}>
