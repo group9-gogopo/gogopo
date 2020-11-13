@@ -9,14 +9,14 @@ import Footer from "@c/footer/Footer"
 import {StyledGoodsDetail} from "./StyledGoodsDetail"
 import DetaliBottom from "./detailBottom/DetaliBottom"
 
-import { detailLoadData}  from "./actionCreater"
+import { detailLoadDataAsync}  from "./actionCreater"
 
 const GoodsDetail = (props) => {
-  const goodsID=props.location.state.id;
+  const goodsID=props.location.state?props.location.state.id :1001;
   let detailList=useSelector((state)=>state.detail.list)
   const dispatch=useDispatch()
   useEffect(()=>{
-    dispatch(detailLoadData( goodsID ))
+    dispatch(detailLoadDataAsync( goodsID ))
   },[dispatch])
 
   return (
@@ -28,7 +28,7 @@ const GoodsDetail = (props) => {
         <GoodsDetailRight detailList={detailList}></GoodsDetailRight>
       </StyledGoodsDetail>
       <DetaliBottom detailList={detailList}></DetaliBottom>
-      <Footer></Footer>
+      <Footer></Footer> 
     </>
   );
 };

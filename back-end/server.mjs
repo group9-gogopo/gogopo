@@ -8,8 +8,20 @@ import goodslistRouter from './routes/goodslist.mjs'
 import registerRouter from './routes/register.mjs'
 import loginRouter from './routes/login.mjs'
 import registerconfirmRouter from './routes/registerconfirm.mjs'
-import changepwdRouter from './routes/changepwd.mjs'
+
+import shoppingCartsRouter from './routes/shoppingCarts.mjs'
+import shoppingCartQueryRouter from './routes/shoppingcartquery.mjs'
+import userAddressQueryRouter from './routes/userAddressQuery.mjs'
+import userAddressOneRouter from './routes/userAddressOne.mjs'
+import userInfoOneRouter from './routes/userInfoOne.mjs'
+import userAddressInsRouter from './routes/userAddressIns.mjs'
+import goodslistLikeRouter from './routes/goodslistLike.mjs'
+import storyRouter from './routes/story.mjs'
 import foridRouter from './routes/forid.mjs'
+import changepwdRouter from './routes/changepwd.mjs'
+import changegoodsnumRouter from './routes/changegoodslist.mjs'
+import addorderinfoRouter from './routes/addorderinfo.mjs'
+import searchorderinfoRouter from './routes/searchorderinfo.mjs'
 
 const app = express()
 
@@ -34,6 +46,25 @@ app.use(
   }),
 )
 
-app.use('/api', goodRouter, goodslistRouter, registerRouter, loginRouter, registerconfirmRouter, changepwdRouter,foridRouter)
+app.use('/api', 
+    goodRouter, 
+    goodslistRouter, 
+    registerRouter,
+    loginRouter, 
+    registerconfirmRouter,
+    shoppingCartsRouter,
+    shoppingCartQueryRouter,
+    userAddressQueryRouter,
+    userAddressOneRouter,
+    userInfoOneRouter,
+    userAddressInsRouter,
+    goodslistLikeRouter,
+    storyRouter,
+    foridRouter,
+    changepwdRouter,
+    changegoodsnumRouter,
+    addorderinfoRouter,
+    searchorderinfoRouter
+    )
 
 app.listen(4400)

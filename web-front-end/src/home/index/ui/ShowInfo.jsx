@@ -22,7 +22,15 @@ class ShowInfo extends Component {
             mg
         ]
     }
+
+    handleAddNum = (num)=>{
+        return ()=>{
+            this.props.addNum(num)
+        }
+        
+    }
     render() {
+        console.log(this.props)
         let str=(item,index)=>{
             if(index===0){
                 return (
@@ -31,7 +39,7 @@ class ShowInfo extends Component {
                                 海南小台农芒果
                         <p className="name_info">海南小台农芒果 1.5kg装 单果50g以上 新鲜水果 </p>
                         <p className='price'>¥69.90</p>
-                        <span>立即抢购</span>
+                        <span onClick={this.handleAddNum(this.props.num)}>立即抢购</span>
                     </div>
                     <img src={item} alt=""/>
                 </h3>

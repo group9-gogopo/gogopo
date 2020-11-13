@@ -4,7 +4,7 @@ import Personaldata from "./personaldata/Personaldata";
 import Address from "./adress/Address";
 import { ProfileStyled } from "./ProfileStyled";
 import Footer from "@c/footer/Footer";
-import { loadDataAsync,changeShow } from "./actionCreater";
+import { loadDataAsync,changeShow} from "./actionCreater";
 import AddAddress from "@c/addAddress/AddAddress"
 
 const Profile = (props) => {
@@ -17,7 +17,8 @@ const Profile = (props) => {
   }
 
   useEffect(() => {
-    dispatch(loadDataAsync());
+    let userid=1001
+    dispatch(loadDataAsync(userid));
   }, [dispatch]);
   return (
     <>

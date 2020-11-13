@@ -5,6 +5,8 @@ import { actionCreator as ac } from '../../changepwd/index'
 
 import { get } from '@u/http'
 
+import _ from 'underscore'
+
 import {
   ConfirmWrap
 } from './StyledChangePwd'
@@ -15,7 +17,7 @@ function Confirm(props) {
   let [username, setUserName] = useState(null)
 
   const current = useSelector(state => state.changepwd.current)
-  // const userid = useSelector(state => state.changepwd.userid)
+  const userid = useSelector(state => state.changepwd.userid)
 
   let name = username && username.username
 
@@ -38,15 +40,16 @@ function Confirm(props) {
     }
   }, [dispatch,history])
 
+  const handleChangeUsername = _.debounce((e) => {
+    setUserName({username: e.target.value})
+  },1000)
 
   const handleSubmit = () => {
     return (e) => {
       e.preventDefault()
-      
     }
   }
   
-
   return (
     <>
       <ConfirmWrap onSubmit={handleSubmit()}>
@@ -57,9 +60,10 @@ function Confirm(props) {
             defaultValue={username}
             autoComplete="off" 
             onBlur={regUserName("regUserName", username && username.username)}
-            onChange={(e) => setUserName({
-              username: e.target.value
-            })}
+            onChange={e => {
+              e.persist()
+              handleChangeUsername(e)
+            }}
           />
           <span id="regUserName"></span>
         </p>

@@ -1,6 +1,8 @@
 import React,{ Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import {DetailStyled} from './DetailStyled'
 
+@withRouter
 class Detail extends Component{
     render(){
         return(
@@ -10,17 +12,17 @@ class Detail extends Component{
                     </div>
                     <div className='imagebox'>
                         <div>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
+                            <img src={this.props.history.location.state.msg.storyImages[0]} alt=""/>
+                            <img src={this.props.history.location.state.msg.storyImages[2]} alt=""/>
+                            <img src={this.props.history.location.state.msg.storyImages[3]} alt=""/>
                         </div>
                         <div>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
+                            <img src={this.props.history.location.state.msg.storyImages[4]} alt=""/>
+                            <img src={this.props.history.location.state.msg.storyImages[5]} alt=""/>
+                            <img src={this.props.history.location.state.msg.storyImages[6]} alt=""/>
                         </div>
                     </div>
-                    <div><p></p></div>
+                    <div><p>{this.props.history.location.state.msg.storyText}</p></div>
                 </DetailStyled>
         )
     }

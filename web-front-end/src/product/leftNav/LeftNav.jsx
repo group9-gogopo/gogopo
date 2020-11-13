@@ -3,26 +3,13 @@ import { Component } from 'react';
 import { LeftNavStyled } from './leftNavStyled'
 
 class LeftNav extends Component{
-    state={
-        List:[],
-        // active:3,
-        // showList:{}
-    }
-    componentDidMount(){
-        let keys=Object.keys(this.props.data)
-        console.log(keys)
-        this.setState({
-            List:keys
-        })
-    }
-
     render(){
         return (
             <LeftNavStyled>
                 <p>所有果果</p>
                 <ul>
                     {
-                        this.state.List.map( (item,index)=>{
+                        this.props.titles.map( (item,index)=>{
                             return (
                                 <li className={
                                     this.props.active===index?'active':''} 

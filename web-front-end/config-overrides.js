@@ -1,5 +1,4 @@
 const path =require('path') 
-
 const {
   override,
   fixBabelImports,
@@ -8,13 +7,28 @@ const {
   addDecoratorsLegacy
 } = require("customize-cra");
 
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
+const customize = () => (config, env) => {
+  config.resolve.alias['@'] = resolve('src')
+  if (env === 'production') {
+      config.externals = {
+          'react': 'React',
+          'react-dom': 'ReactDOM'
+      }
+  }
+  return config
+};
+
 module.exports = override(
   fixBabelImports("import ", {
     libraryName: "antd-mobile",
     style: "css",
   }),
   addWebpackResolve({
-    extensions: [".js", ".json", ".jsx"],
+    extensions: [".js", ".json", ".jsx",".css"],
   }),
   addWebpackAlias({
     "@": path.resolve(__dirname, "src/"),
@@ -23,5 +37,7 @@ module.exports = override(
     "@h":path.resolve(__dirname,"src/home/"),
     "@u":path.resolve(__dirname,"src/utils/")
   }),
-  addDecoratorsLegacy()
+  addDecoratorsLegacy(),
+  customize()
+
 );

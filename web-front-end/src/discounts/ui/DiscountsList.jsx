@@ -12,7 +12,7 @@ function DiscountsList(props) {
   const [list, setList] = useState(null)
   
   useEffect(() => {
-    let goodslist = props.goodslist && props.goodslist.slice(5,19)
+    let goodslist = props.goodslist && props.goodslist.slice(4,19)
     setList(goodslist)
   },[props])
 
