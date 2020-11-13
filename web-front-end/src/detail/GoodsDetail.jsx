@@ -12,7 +12,7 @@ import DetaliBottom from "./detailBottom/DetaliBottom"
 import { detailLoadDataAsync}  from "./actionCreater"
 
 const GoodsDetail = (props) => {
-  const goodsID=props.location.state?props.location.state.id :1001;
+  const goodsID=props.location.id?(props.location.id.id):(props.location.state?props.location.state.id :1001);
   let detailList=useSelector((state)=>state.detail.list)
   const dispatch=useDispatch()
   useEffect(()=>{

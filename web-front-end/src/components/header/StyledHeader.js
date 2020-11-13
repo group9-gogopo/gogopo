@@ -75,12 +75,13 @@ const Header = styled.div`
                 font-family: Microsoft YaHei;
                 font-weight: 300;
                 color: #999999;
-                margin-left:950px;
+                margin-left:970px;
                 
                 span{   
                     font-size: 16px;
                     font-family: Microsoft YaHei;
                     font-weight: 300;
+                    /* margin-left:10px; */
                 }
                 span.active{
                     color: #009A44;
@@ -93,11 +94,10 @@ const Header = styled.div`
                 float:right;
                 position:absolute;
                 top:50px;
-                right:310px;
-                
+                right:310px;              
                 font-size: 17px;
                 font-family: Microsoft YaHei;
-                font-weight: 300;
+                font-weight: 300;              
                 text-align:center;
                 line-height:55px;
                 a{

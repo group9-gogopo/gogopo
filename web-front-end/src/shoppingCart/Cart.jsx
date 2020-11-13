@@ -70,7 +70,7 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    let userid = 1;
+    let userid=sessionStorage.getItem('userId')
     this.props.loadData(userid);
   }
 }

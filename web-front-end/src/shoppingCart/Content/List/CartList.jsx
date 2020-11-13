@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {StyleCartList} from './StyleCartList'
-
+import { deleter } from '@u/http'
+import Axios from 'axios';
 @connect(
     (state) => {
       return {
@@ -22,9 +23,7 @@ class CartList extends Component {
          } 
      }
     handleDelete = (id) => {
-        return () => {
-            this.props.handleDelete(id)
-        }
+        
     }
     handSelectClick = (id) => {
         return () => {

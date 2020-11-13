@@ -34,7 +34,6 @@ class AllProduct extends Component {
         currentPage: 1,
         pageSize: 12,
         pages: 3,
-        currentList: []
     }
 
     handleChange = (item, index) => {
@@ -57,7 +56,7 @@ class AllProduct extends Component {
             //跳转路由到详情页面
             let { history } = this.props
             history.push("/detail", { id })
-            console.log("到详情页面")
+
         }
     }
 
@@ -90,23 +89,24 @@ class AllProduct extends Component {
                 this.props.loadData(this.state.goodtype, page, this.state.pageSize)
             }
 
-            console.log('修改页数')
+
         }
     }
 
     componentDidMount() {
-        if(this.props.location.state){
+        if(this.props.location.index){
             this.setState({
-                active:this.props.location.state.index,
-                goodtype:this.state.goodstype[this.props.location.state.index]
+                active:this.props.location.index,
+                goodtype:this.state.goodstype[this.props.location.index]
             })
-            this.props.loadData(this.state.goodstype[this.props.location.state.index], this.state.currentPage, this.state.pageSize)
+            this.props.loadData(this.state.goodstype[this.props.location.index], this.state.currentPage, this.state.pageSize)
         }else{
             //这里做数据请求
             this.props.loadData(this.state.goodtype, this.state.currentPage, this.state.pageSize)
         }
     }
-    render() {
+
+    render(){
         return (
             <div>
                 <Header></Header>
@@ -117,7 +117,7 @@ class AllProduct extends Component {
                         <Products showList={this.props.showList} title={this.state.title} handleToDetail={this.handleClick} onAddCart={this.handleCart}></Products>
                         <div className='pagesbar'>
                         <Pages
-                            currentList={this.state.currentList}
+                            
                             pages={this.state.pages}
                             currentPage={this.state.currentPage}
                             onToPage={this.handleChangePage}

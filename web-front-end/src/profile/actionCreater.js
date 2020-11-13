@@ -14,7 +14,7 @@ const loadDataSync=list=>{
 // 这是异步请求的action构造函数
 const loadDataAsync = (userid)=>{
     return async (dispatch) =>{
-        let result = await get("http://localhost:4400/api/useraddressquery",{userid})
+        let result = await get("/api/useraddressquery",{userid})
         // 异步完成之后在同步派发
         dispatch(loadDataSync(result.userAddressList))
     }

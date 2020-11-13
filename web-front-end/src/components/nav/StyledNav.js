@@ -7,7 +7,7 @@ const Nav = styled.div `
         margin-left:347px;
         li{
             float:left;
-            width:176px;
+            width:190px;
             height:80px;
             font-size: 30px;
             font-family: Adobe Heiti Std;
@@ -20,8 +20,12 @@ const Nav = styled.div `
                 background: #009A44;
             }
             a{
+                display:inline-block;
                 color:#ffffff;
+                width:190px;
+                height:80px;
             }
+            
         }
         li:first-child{
             width:200px;

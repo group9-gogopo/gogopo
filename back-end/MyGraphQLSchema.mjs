@@ -248,12 +248,9 @@ const schema = new GraphQLSchema({
         },
         async resolve(obj, args) {
           let { like } = args;
-          console.log(like);
-          let likeName = encodeURL("好");
-          console.log(likeName);
-          let result = await axios.get(
-            `http://localhost:9000/allproduct?nm_like=%E8%8B%B9`
-          );
+          let likeName = encodeURI(like);
+          let result = await axios.get(`http://localhost:9000/allproduct?nm_like=${likeName}`);
+          // console.log(result)
           return result.data;
         },
       },
@@ -614,6 +611,23 @@ const schema = new GraphQLSchema({
                 : "修改密码成功",
           };
         },
+      },
+      //删除购物车
+      deleteShopCart: {
+        type: FeedbackType,
+        args: {
+          id: {
+            type: new GraphQLNonNull(GraphQLInt)
+          }
+        },
+        async resolve(obj, args) {
+          let a=await axios.delete(`http://localhost:9000/goodsCart/${args.id}`)
+          console.log(a);
+          return {
+            ret: true,
+            msg: '删除购物车成功'
+          }
+        }
       },
       //修改地址
       changeAddress: {

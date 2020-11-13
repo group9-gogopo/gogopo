@@ -5,13 +5,15 @@ class AllOrder extends Component {
 
     onGoToComment=(time,img)=>{
         return ()=>{
-            this.props.history.push('/comment',{time,img})
+            this.props.history.push('/comment',{ time,img })
         }
     }
     render() {
-        console.log(this.props)
         return (
-            <AllOrderUi handleOnGoToComment={this.onGoToComment}></AllOrderUi>
+            <AllOrderUi 
+                handleOnGoToComment={this.onGoToComment}
+                index={this.props.location.state}
+            ></AllOrderUi>
         );
     }
 }

@@ -39,10 +39,7 @@ function Security(props) {
   const handleSubmit = () => {
     return (e) => {
       e.preventDefault()
-      console.log(tel)
-      console.log(email)
-      // console.log(data.tel)
-      // console.log(data.code)
+ 
     }
   }
   

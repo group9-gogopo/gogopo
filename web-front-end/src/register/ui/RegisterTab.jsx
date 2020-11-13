@@ -42,7 +42,7 @@ class RegisterTab extends Component {
           tel: tel,
           email: email,
           createpwd: createpwd})
-      // console.log(result.insert)
+
       let { ret, msg } = result.insert
       if(ret) {
         alert(`${msg}，是否直接跳转到登录页面`)

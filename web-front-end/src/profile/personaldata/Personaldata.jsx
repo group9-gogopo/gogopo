@@ -9,7 +9,7 @@ const PersonalData = (props) => {
   useEffect(() => {
     let userID = 1;
     (async () => {
-      let result = await get("http://localhost:4400/api/userinfoone", {
+      let result = await get("/api/userinfoone", {
         id: userID,
       });
       setUserDetail(() => result.userInfoOne);

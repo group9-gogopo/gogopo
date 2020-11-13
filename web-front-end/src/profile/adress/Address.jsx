@@ -3,7 +3,7 @@ import { AddressStyled } from "./AddressStyled";
 import { useDispatch ,useSelector} from "react-redux";
 import { changeShow } from "../actionCreater";
 const Address = (props) => {
-  const addShow=useSelector((state)=>state.profile.addShow)
+  const addShow = useSelector((state) => state.profile.addShow);
   const dispatch = useDispatch();
   const handlerClick = useCallback(
     (id) => {
@@ -13,9 +13,10 @@ const Address = (props) => {
     },
     [dispatch]
   );
+
   return (
    
-    <AddressStyled>
+    <AddressStyled addShow={addShow}>
       <header>地址管理</header>
       <ul>
         {props.list && 

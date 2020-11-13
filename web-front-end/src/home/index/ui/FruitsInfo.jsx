@@ -28,20 +28,20 @@ class FruitsInfo extends Component {
                                 <dt><img src={fruitinfo3} alt=""/></dt>
                                 <dd>
                                     <p>¥46.90</p>
-                                    <p>新疆阿克苏冰糖心苹果</p>
+                                    <p>青皮蜜橘孕妇水果当季柑橘</p>
                                 </dd>
                             </dl>
                             <dl>
                                 <dt><img src={fruitinfo3} alt=""/></dt>
                                 <dd>
-                                    <p>¥46.90</p>
-                                    <p>新疆阿克苏冰糖心苹果</p>
+                                    <p>¥110.00</p>
+                                    <p>双苑  广西正宗砂糖橘 5斤装 </p>
                                 </dd>
                             </dl>
                             <dl>
                                 <dt><img src={fruitinfo4} alt=""/></dt>
                                 <dd>
-                                    <p>¥46.90</p>
+                                    <p>¥55.80</p>
                                     <p>新疆阿克苏冰糖心苹果</p>
                                 </dd>
                             </dl>
@@ -52,15 +52,15 @@ class FruitsInfo extends Component {
                         <dl>
                             <dt><img src={fruitinfo6} alt=""/></dt>
                             <dd>
-                                <p>¥46.90</p>
-                                <p>新疆阿克苏冰糖心苹果</p>
+                                <p>¥1314.00</p>
+                                <p>苹果山东烟台红富士当季</p>
                             </dd>
                         </dl>
                         <dl>
                             <dt><img src={fruitinfo5} alt=""/></dt>
                             <dd>
-                                <p>¥46.90</p>
-                                <p>新疆阿克苏冰糖心苹果</p>
+                                <p>¥134.01</p>
+                                <p>雪梨水果新鲜正宗雪花梨赵县整箱</p>
                             </dd>
                         </dl>
                     </div>

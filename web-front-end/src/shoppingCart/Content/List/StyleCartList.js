@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyleCartList = styled.div`
      width:1300px;
-     height:1300px;
+     height:1000px;
      background:#fff;
      overflow:scroll;
      margin:0 auto;

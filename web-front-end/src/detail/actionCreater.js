@@ -12,7 +12,7 @@ const detailLoadData = (list) => {
 
 const detailLoadDataAsync =(id)=>{
  return async(dispatch)=>{
-   let result=await get(`http://localhost:4400/api/good?id=${id}`)
+   let result=await get(`/api/good?id=${id}`)
 
    dispatch(detailLoadData(result.good))
  }

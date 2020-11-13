@@ -93,7 +93,7 @@ const AddAddress = (props) => {
 
   useEffect(()=>{
     (async ()=>{
-      let result=await get ("http://localhost:4400/api/useraddressone",{id:props.addShowID})
+      let result=await get ("/api/useraddressone",{id:props.addShowID})
       let {name,location,officeId,tel}=result.userAddressOne
       seTtextArea(() => location);
       setOfficeId(() => officeId);

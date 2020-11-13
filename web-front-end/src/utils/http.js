@@ -66,9 +66,28 @@ const patch = (url, data) => {
       })
   })
 }
+
+/**
+ * 封装delete请求
+ * @param url
+ * @param data
+ * @returns {Promise}
+ */
+const deleter = (url, data) => {
+  return new Promise((resolve, reject) => {
+    axios.delete(url, data)
+      .then(response => {
+        resolve(response.data)
+      }, err => {
+        reject(err)
+      })
+  })
+}
+
 export {
 
   get,
   post,
-  patch
+  patch,
+  deleter
 }

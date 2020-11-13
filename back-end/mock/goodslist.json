@@ -3116,29 +3116,11 @@
   "goodsCart": [
     {
       "userid": 1,
-      "goodsid": 1001,
-      "shoppingCartName": "【匠心】优级实建褚橙6斤装*1箱 99好评率的传奇橙",
-      "shoppingCartImage": "https://image.missfresh.cn/fe994eb5464b424e80a8ad63c43cdbca.jpg?mryxw=200&mryxh=200",
-      "shoppingCartPrice": 390,
-      "shoppingCartNum": 4,
-      "id": 1
-    },
-    {
-      "userid": 1,
-      "goodsid": 1003,
-      "shoppingCartName": "【礼盒装】农夫山泉农夫鲜果阿克苏苹果15个2.4kg起",
-      "shoppingCartImage": "https://image.missfresh.cn/7b4f09488c5549aeba76f750ef39d956.jpg?mryxw=750&mryxh=750",
-      "shoppingCartPrice": 590,
-      "shoppingCartNum": 6,
-      "id": 2
-    },
-    {
-      "userid": 1,
       "goodsid": 1042,
       "shoppingCartName": "【2盒装】Driscoll蓝莓125g/盒 蓝莓界的小巨蛋 果大肉多",
       "shoppingCartImage": "https://image.missfresh.cn/34807158d4e1421e9524a3c11fde76a8.jpg?mryxw=640&mryxh=640",
       "shoppingCartPrice": 390,
-      "shoppingCartNum": 7,
+      "shoppingCartNum": 6,
       "id": 3
     },
     {
@@ -3149,38 +3131,74 @@
       "shoppingCartPrice": 390,
       "shoppingCartNum": 1,
       "id": 4
+    },
+    {
+      "userid": 1,
+      "goodsid": 1002,
+      "shoppingCartName": "【箱装】御麒麟西瓜6斤起 轻弹表皮 听那嘭嘭的脆响声",
+      "shoppingCartImage": "https://image.missfresh.cn/a8612d88b4ea432e8d5a36d0877eda40.jpg?mryxw=750&mryxh=750",
+      "shoppingCartPrice": 499,
+      "shoppingCartNum": 1,
+      "id": 5
+    },
+    {
+      "userid": 6,
+      "goodsid": 1002,
+      "shoppingCartName": "【箱装】御麒麟西瓜6斤起 轻弹表皮 听那嘭嘭的脆响声",
+      "shoppingCartImage": "https://image.missfresh.cn/a8612d88b4ea432e8d5a36d0877eda40.jpg?mryxw=750&mryxh=750",
+      "shoppingCartPrice": 499,
+      "shoppingCartNum": 2,
+      "id": 6
+    },
+    {
+      "userid": 6,
+      "goodsid": 1007,
+      "shoppingCartName": "湖南高山脐橙1袋1250g起 像湖南妹子一样水灵灵的甜",
+      "shoppingCartImage": "https://image.missfresh.cn/product_images/77e2dcda9ce75c412f546f6b9ee655e2.jpg?mryxw=300&mryxh=300",
+      "shoppingCartPrice": 290,
+      "shoppingCartNum": 1,
+      "id": 7
+    },
+    {
+      "userid": 6,
+      "goodsid": 1005,
+      "shoppingCartName": "北京印象 门头沟京白梨9粒装 京味儿十足 越放越甜",
+      "shoppingCartImage": "https://image.missfresh.cn/f97cb5057f15486ebc0b0fbb16a65160.jpg?mryxw=750&mryxh=750",
+      "shoppingCartPrice": 380,
+      "shoppingCartNum": 1,
+      "id": 8
     }
   ],
   "userAddress": [
     {
       "id": 1,
-      "userid": "1001",
+      "userid": 1,
       "name": "李云祥",
-      "tel": "15022581580",
-      "state": true,
+      "tel": "11414445444",
+      "state": "false",
       "location": "北京市 昌平区 北京科技职业学院",
       "officeId": "122211"
     },
     {
       "id": 2,
-      "userid": "1001",
+      "userid": 1,
       "name": "李腾飞",
-      "tel": "13822587784",
-      "state": false,
+      "tel": "188888888",
+      "state": "false",
       "location": "北京市 昌平区 北京科技职业学院",
       "officeId": "223322"
     },
     {
       "id": 3,
-      "userid": "1001",
+      "userid": 1,
       "name": "檀旭旭",
-      "tel": "15555555555",
+      "tel": "1878888888",
       "state": "false",
       "location": "北京 海淀 中关村",
       "officeId": "11111"
     },
     {
-      "userid": 1001,
+      "userid": 6,
       "name": "王泽",
       "tel": "15254129988",
       "state": "false",
@@ -3189,9 +3207,9 @@
       "id": 5
     },
     {
-      "userid": 1001,
+      "userid": 6,
       "name": "王鹏",
-      "tel": "144545458858",
+      "tel": "17755755777",
       "state": "false",
       "location": "山东泰安",
       "officeId": "11221",

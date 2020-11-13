@@ -3,7 +3,15 @@ import { Component } from 'react';
 import { LeftNavStyled } from './leftNavStyled'
 
 class LeftNav extends Component{
+    state={
+        List:[],
+        // active:3,
+        // showList:{}
+    }
+
+
     render(){
+
         return (
             <LeftNavStyled>
                 <p>所有果果</p>

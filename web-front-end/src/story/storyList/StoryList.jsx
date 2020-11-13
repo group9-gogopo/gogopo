@@ -4,16 +4,6 @@ import { StoryListStyled } from './StoryListStyled'
 
 class StoryList extends Component{
 
-    // 跳转到详情页
-    // handleToDetail(active,id){
-    //     return()=>{
-    //         let { history } = this.props
-    //         active===0?history.push('/story/storyList/detail'):history.push('/story/newsList/detail)')
-    //         history.push('/story/detail')
-    //     console.log("跳转到新闻详情")
-    //     }
-    // }
-
     render(){
         return(
             <div>

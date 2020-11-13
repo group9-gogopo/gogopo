@@ -5,7 +5,32 @@ const AllContainer = styled.div`
     overflow:hidden;
 `
 const AllOrderNav = styled.div`
-    width: 1300px;
+    .ant-tabs{
+        width: 1300px;
+        height: 700px;
+        background: #fff;
+        margin:0 auto;
+        .ant-tabs-nav-wrap{
+            background: #FF861B;
+          .ant-tabs-nav-list{
+            margin-left:200px;
+            width: 1300px;
+            height: 61px;
+            .ant-tabs-tab{
+                font-size:30px;
+                line-height:61px;
+                margin-right:86px; 
+                font-size: 18px;
+                color:#fff;
+            }
+            .ant-tabs-tab-active{
+                color:#000 !important;
+            }
+        }
+    }
+    }
+
+    /* width: 1300px;
     height: 61px;
     background: #FF861B;
     margin:0 auto;
@@ -27,9 +52,12 @@ const AllOrderNav = styled.div`
                 font-size: 18px;
                 font-family: Adobe Heiti Std;
                 font-weight: normal;
+                &.active{
+                    color:#000;
+                }
             }
     }
-    }
+    } */
     
 `
 
@@ -52,10 +80,11 @@ const OrderListInfo= styled.div`
         div:first-child{
             width:300px;
             p{     
-                font-size: 14px;
+                font-size: 18px;
                 font-family: Adobe Heiti Std;
                 font-weight: normal;
                 color: #171414;
+                margin-bottom:10px;
             }
             img{
                 width: 297px;

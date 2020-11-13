@@ -16,9 +16,10 @@ export function loadDataSync(list) {
 
 export function loadDataAsync(userid) {
   return async (dispatch) => {
-    let result = await get("http://localhost:4400/api/shoppingcartquery", {
+    let result = await get("/api/shoppingcartquery", {
       userid,
     });
+
     dispatch(loadDataSync(result.shoppingCartList));
   };
 }

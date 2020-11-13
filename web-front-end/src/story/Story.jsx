@@ -13,7 +13,6 @@ import Footer from '../components/footer/Footer'
 
 @connect(
     state => {
-        console.log('映射', state)
         return {
             showList: state.story.showList
         }
@@ -114,11 +113,9 @@ class Story extends Component {
     handleClick = (item, index) => {
         return () => {
             
-            // let showList = this.state.data[item]
-            // console.log(showList)
             this.setState({
                 active: index
-                // showList
+
             })
             let { history } = this.props
             index === 0 ? history.push('/story/storyList') : history.push('/story/newsList')
@@ -130,7 +127,6 @@ class Story extends Component {
     // 跳转到详情页
     handleToDetail = (active, id) => {
         return () => {
-            console.log(this.props.showList[id])
             let { history } = this.props
             history.push('/story/detail',{msg:this.props.showList[id]})
         }
@@ -142,7 +138,6 @@ class Story extends Component {
         this.props.loadData(this.state.storytypes[0])
     }
     componentDidUpdate(){
-        console.log(this.props.showList)
     }
     render() {
         return (

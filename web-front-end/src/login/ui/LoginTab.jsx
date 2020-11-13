@@ -30,6 +30,9 @@ class LoginTab extends Component {
       sessionStorage.removeItem('userId')
       //将用户id存入sessionStorage中
       sessionStorage.setItem('userId', id)
+      this.props.history.push('/home')
+    } else {
+      alert("用户名密码错误，请重新输入！")
     }
   }
 
@@ -63,7 +66,6 @@ class LoginTab extends Component {
   //点击登录按钮事件
   handleLogin = (isLogin) => {
     this.props.changeLoginTab(isLogin)
-    this.props.history.push('/home')
     this.login()
   }
   //路由跳转

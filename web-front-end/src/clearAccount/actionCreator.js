@@ -11,7 +11,7 @@ const loadDataSync = list => {
 
 const loadDataAsync = (userid) => {
     return async (dispatch) =>  {
-        let result = await get('http://localhost:4400/api/useraddressquery',{userid})
+        let result = await get('/api/useraddressquery',{userid})
         dispatch(loadDataSync(result))
     }
 }

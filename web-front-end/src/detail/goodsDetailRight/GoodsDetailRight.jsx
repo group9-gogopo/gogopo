@@ -4,11 +4,11 @@ import { useHistory } from "react-router-dom";
 import {post} from "@u/http"
 
 const GoodsDetailRight = (props) => {
-
+  let history =useHistory()
+  const userid =sessionStorage.getItem("userId")
+  if(!userid)history.push("/login") 
   const [imgNum, setImgNum] = useState(0);
   const [goodsNum, setGoodsNum] = useState(1);
-  
-  const history = useHistory();
 
   const handlerImgClick = useCallback((imgNumC) => {
     return () => {
@@ -45,7 +45,7 @@ const GoodsDetailRight = (props) => {
     } = props.detailList;
     let shoppingCartNum=goodsNum;
     let data={
-      userid:1,
+      userid,
       goodsid,
       shoppingCartName,
       shoppingCartImage,
@@ -56,7 +56,7 @@ const GoodsDetailRight = (props) => {
     if(e.target.className==="detailBuy"){
       history.push("/clearAccount",{data:[data],allPrice});
     }else{
-     let res= await post("http://localhost:4400/api/shoppingCartsIns",data)
+     let res= await post("/api/shoppingCartsIns",data)
 
      if(res)return alert("成功添加到购物车")
      alert("不好意思，添加购物车失败")

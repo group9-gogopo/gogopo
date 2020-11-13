@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import Modal from '@c/modal/Modal'
 import { AddressD } from './StyleAccount'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeShow, loadDataAsync,  pasData } from '../actionCreator'
+import { useHistory } from 'react-router-dom'
 const Address = (props) => {
     const list = useSelector((state) => state.clearAccount.list)
     const isShow = useSelector((state) => state.clearAccount.isShow)
-
+    const history=useHistory()
+    let userid=sessionStorage.getItem("userId")
+    if(!userid) history.push("/login")
 
     const dispatch = useDispatch()
 
@@ -15,7 +18,7 @@ const Address = (props) => {
         dispatch(changeShow(true))
     }
     useEffect(() => {
-        let userid = 1001
+         
         dispatch(loadDataAsync(userid))
     }, [dispatch])
     function handlerClick(value){

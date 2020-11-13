@@ -17,13 +17,7 @@ const loadDataSync=(list,showList)=>{
 const loadDataAsync = (sort,page,limit)=>{
 
     return async (dispatch) =>{
-        let resulttest=await get(`http://localhost:4400/api/goodslist`,{sort,page,limit})
-        // console.log(resulttest.goodslist)
-        // let result = await get({
-        //     //在mock中配置好的json接口
-        //     // 这里已经用了代理了
-        //     url: '/api/list'
-        // })
+        let resulttest=await get(`/api/goodslist`,{sort,page,limit})
         
         let result = {
             '国产水果':[

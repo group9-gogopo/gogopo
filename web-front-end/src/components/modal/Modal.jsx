@@ -1,22 +1,26 @@
-import React, { useCallback,  useState } from 'react'
-import { StyledModal } from './StyleModal'
+import React, { useCallback, useState } from "react";
+import { StyledModal } from "./StyleModal";
 import { Cascader } from "antd";
-import { post } from '@u/http'
-import {  useDispatch } from 'react-redux'
-import { changeShow } from '../../clearAccount/actionCreator';
+import { post } from "@u/http";
+import { useDispatch } from "react-redux";
+import { changeShow } from "../../clearAccount/actionCreator";
+import { useHistory } from "react-router-dom";
 
 function Modal(props) {
-  const dispatch = useDispatch()
+  let history = useHistory();
+  let userid = sessionStorage.getItem("userId");
+  if (!userid) history.push("/login");
+  const dispatch = useDispatch();
   const close = () => {
-    dispatch(changeShow(false))
-  }
+    dispatch(changeShow(false));
+  };
 
-  let [chooseCity, setChooseCity] = useState('')
-  let [location, setAddress] = useState('')
-  let [officeId, setPostcode] = useState('')
-  let [name, setName] = useState('')
-  let [tel, setNum] = useState('')
-  let [state, setDefaultAd] = useState(false)
+  let [chooseCity, setChooseCity] = useState("");
+  let [location, setAddress] = useState("");
+  let [officeId, setPostcode] = useState("");
+  let [name, setName] = useState("");
+  let [tel, setNum] = useState("");
+  let [state, setDefaultAd] = useState(false);
 
   const handlerChange = useCallback((e) => {
     let value = e.target.value;
@@ -36,9 +40,10 @@ function Modal(props) {
         break;
       case "Num":
         setNum(() => value);
-      case "state": {
-        setDefaultAd(() => checked)
-      }
+      case "state":
+        {
+          setDefaultAd(() => checked);
+        }
         break;
       default:
         return;
@@ -46,23 +51,20 @@ function Modal(props) {
   }, []);
 
   const handlerCommit = useCallback(async () => {
-     if (!location || !officeId || !name || !tel)
-      return alert("请完整填写表单");
+    if (!location || !officeId || !name || !tel) return alert("请完整填写表单");
     let data = {
-      "userid": 1001,
-      "location": location,
-      "officeId": officeId,
-      "name": name,
-      "tel": tel,
-      "state": state
+      userid: userid,
+      location: location,
+      officeId: officeId,
+      name: name,
+      tel: tel,
+      state: state,
+    };
+    let result = await post("/api/useraddressins", data);
+    if (result) {
+      close();
     }
-    let result = await post('http://localhost:4400/api/useraddressins', data)
-    if (result) { 
-      close()
-      
-     }
   }, [location, officeId, name, tel, state]);
-
 
   const options = [
     {
@@ -80,7 +82,7 @@ function Modal(props) {
             {
               value: "shayanglu",
               label: "沙阳路",
-            }
+            },
           ],
         },
       ],
@@ -119,90 +121,90 @@ function Modal(props) {
     },
   ];
 
-  const onChange = useCallback(value => {
-    setChooseCity(() => value)
-  }, [])
-
+  const onChange = useCallback((value) => {
+    setChooseCity(() => value);
+  }, []);
 
   return (
     <StyledModal>
-      <div className='Container'>
-        <div className='head'>
+      <div className="Container">
+        <div className="head">
           创建地址
-                    <div href="" className='delete' onClick={close}>X</div>
+          <div href="" className="delete" onClick={close}>
+            X
+          </div>
         </div>
-        <div className='address-real'>
-          <div className='new'>新增收货地址</div>
-          <div className='changeArea'>当前配送至
-                    <span>中国大陆</span>
-            <div className='tab'>切换&nbsp;</div>
+        <div className="address-real">
+          <div className="new">新增收货地址</div>
+          <div className="changeArea">
+            当前配送至
+            <span>中国大陆</span>
+            <div className="tab">切换&nbsp;</div>
           </div>
-          <div className='selectAddress'>
+          <div className="selectAddress">
             <span>*</span>地址信息：
-                <Cascader
-                  size="large"
-                  options={options}
-                  onChange={onChange}
-                  placeholder="请选择省/市/区/街道"
-                  className="chooseCity"
-                />
+            <Cascader
+              size="large"
+              options={options}
+              onChange={onChange}
+              placeholder="请选择省/市/区/街道"
+              className="chooseCity"
+            />
           </div>
-          <div className='detailAddress'>
+          <div className="detailAddress">
             <span>*</span>详细地址：
-                <input 
-                  className='Address' 
-                  value={location} 
-                  onChange={handlerChange} 
-                  type="text"
-                  placeholder='请输入详细地址信息，如道路，门牌号，小区，楼栋号，单元等信息' 
-                />
+            <input
+              className="Address"
+              value={location}
+              onChange={handlerChange}
+              type="text"
+              placeholder="请输入详细地址信息，如道路，门牌号，小区，楼栋号，单元等信息"
+            />
           </div>
           <div className="youbian">
             邮政编码：
-                <input 
-                  value={officeId} 
-                  className='postcode' 
-                  onChange={handlerChange} 
-                  type="text" 
-                  placeholder='请填写邮编' 
-                />
+            <input
+              value={officeId}
+              className="postcode"
+              onChange={handlerChange}
+              type="text"
+              placeholder="请填写邮编"
+            />
           </div>
-          <div className='userName'>
+          <div className="userName">
             <span>*</span>收货人姓名：
-                <input 
-                  value={name} 
-                  className='Name' 
-                  onChange={handlerChange} 
-                  type="text" 
-                  placeholder='长度不超过25个字符' 
-                />
+            <input
+              value={name}
+              className="Name"
+              onChange={handlerChange}
+              type="text"
+              placeholder="长度不超过25个字符"
+            />
           </div>
           <div className="phoneNum">
             <span>*</span>手机号码：
-                        <select name="" id="">
+            <select name="" id="">
               <option value="">中国大陆 +86</option>
             </select>
-                <input 
-                  value={tel} 
-                  onChange={handlerChange} 
-                  className='Num' 
-                  type="text"  
-                  placeholder='电话号码手机号码必须填一项' 
-                />
+            <input
+              value={tel}
+              onChange={handlerChange}
+              className="Num"
+              type="text"
+              placeholder="电话号码手机号码必须填一项"
+            />
           </div>
           <div className="default">
-                <input 
-                  onChange={handlerChange} 
-                  type="checkbox" 
-                  className='state' 
-                />
+            <input onChange={handlerChange} type="checkbox" className="state" />
             <div>设置为默认收货地址</div>
           </div>
-          <button className='save' onClick={handlerCommit}>保存</button>
+          <button className="save" onClick={handlerCommit}>
+            保存
+          </button>
         </div>
       </div>
     </StyledModal>
-  )
+  );
 }
 
-export default Modal
+export default Modal;
