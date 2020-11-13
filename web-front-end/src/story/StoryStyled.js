@@ -8,7 +8,7 @@ const StoryStyled = styled.div`
                 float:left;
                 margin-left:15px; */
             
-    }
+    /* } */
 `
 
 export {

@@ -45,21 +45,23 @@ const GoodsDetailRight = (props) => {
     } = props.detailList;
     let shoppingCartNum=goodsNum;
     let data={
-      userid:1001,
+      userid:1,
       goodsid,
       shoppingCartName,
       shoppingCartImage,
       shoppingCartPrice,
       shoppingCartNum,
     }
+    console.log(data);
     if(e.target.className==="detailBuy"){
       let res =await post("http://localhost:4400/api/shoppingCartsIns",data)
-      if(!res.insertCart.ret)return  alert("不好意思，添加购物车失败")
+      if(!res)return  alert("不好意思，添加购物车失败")
      
       history.push("/shoppingCart");
     }else{
      let res= await post("http://localhost:4400/api/shoppingCartsIns",data)
-     if(res.insertCart.ret)return alert("成功添加到购物车")
+
+     if(res)return alert("成功添加到购物车")
      alert("不好意思，添加购物车失败")
     }
   });

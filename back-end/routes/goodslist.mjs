@@ -5,11 +5,11 @@ import schema from '../MyGraphQLSchema.mjs'
 const router = express.Router()
 
 router.get('/goodslist', async (req, res, next) => {
-  let { sort, limit, start } = req.query
+  let { sort, page, limit } = req.query
 
   let query = `
     query {
-      goodslist(sort: "${sort}", limit: ${limit}, start: ${start}) {
+      goodslist(sort: "${sort}", page: ${page}, limit: ${limit}) {
         id,
         image,
         nm,
@@ -23,9 +23,10 @@ router.get('/goodslist', async (req, res, next) => {
       }
     }
   `
-  
+
   let result = await graphql(schema, query)
+
   res.json(result.data)
 })
-  
+
 export default router

@@ -6,12 +6,12 @@ const router = express.Router()
 
 router.get('/login', async (req, res, next) => {
   let { username, createpwd } = req.query
-
   let query = `
      query {
         login(username: "${username}", createpwd: "${createpwd}") {
           ret,
-          msg
+          msg,
+          id
         }
      }
   `

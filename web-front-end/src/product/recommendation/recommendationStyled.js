@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const RecommendationStyled =styled.div`
-height:485px;
+height:400px;
 width:988px;
     p{
         background-color:#ffc514;
@@ -16,7 +16,7 @@ width:988px;
         width:988px;
         padding:20px;
         min-height:310px;
-        background-color:pink;
+        /* background-color:pink; */
         li{
             width:220px;
             height:300px;

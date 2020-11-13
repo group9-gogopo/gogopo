@@ -1,9 +1,9 @@
+
 import { combineReducers } from 'redux'
 
 import {
   reducer as changepwd
 } from '../changepwd/index'
-
 
 import {
     reducer as product
@@ -20,6 +20,15 @@ import {
 import { reducer as detail } from "../detail/index";
 
 import { reducer as shoppingCart } from "../shoppingCart/index";
+import { reducer as story } from "../story/index";
+
+import {
+  reducer as login
+} from '../login/index'
+
+import {
+  reducer as order
+} from '../order/allOrder/index'
 
 const reducer=combineReducers({
     profile,
@@ -28,6 +37,12 @@ const reducer=combineReducers({
     home,
     detail,
     shoppingCart,
+    story,
+    login,
+    order
+
 })
 
 export default reducer
+
+

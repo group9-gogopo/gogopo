@@ -11,7 +11,7 @@ const menu = (
       <Menu.Item>   
         <Link to={{
                 pathname: '/allProduct',
-                index: 1,
+                index: 0,
                 }}>国产水果
         </Link> 
       </Menu.Item>
@@ -19,7 +19,7 @@ const menu = (
       <Menu.Item>
         <Link to={{
                   pathname: '/allProduct',
-                  index: 2,
+                  index: 1,
                   }}>进口水果
           </Link> 
       </Menu.Item>
@@ -27,7 +27,7 @@ const menu = (
       <Menu.Item>
           <Link to={{
                 pathname: '/allProduct',
-                index: 3,
+                index: 2,
                 }}>水果饮品
           </Link> 
       </Menu.Item>
@@ -35,7 +35,7 @@ const menu = (
       <Menu.Item>
           <Link to={{
                     pathname: '/allProduct',
-                    index: 4,
+                    index: 3,
                     }}>果肉制品
               </Link> 
       </Menu.Item>
@@ -43,7 +43,7 @@ const menu = (
       <Menu.Item>
                 <Link to={{
                       pathname: '/allProduct',
-                      index: 5,
+                      index: 4,
                       }}>礼品包装
                 </Link> 
       </Menu.Item>
@@ -63,7 +63,7 @@ class nav extends Component {
                        </Dropdown>
                     </li>
                     <li><Link to="/home">首页</Link></li>
-                    <li>今日限购</li>
+                    <li><Link to="/discounts">限时特惠</Link></li>
                     <li><Link to="/allProduct">所有果果</Link></li>
                     <li><Link to="/story">小果故事</Link></li>
                     <li><Link to="/about">关于我们</Link></li>

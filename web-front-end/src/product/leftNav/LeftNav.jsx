@@ -8,24 +8,24 @@ class LeftNav extends Component{
         // active:3,
         // showList:{}
     }
-    componentDidMount(){
-        console.log(this.props.data,"11111")
-        let keys=Object.keys(this.props.data)
-        console.log(keys)
-        this.setState({
-            List:keys
-        })
+    // componentDidMount(){
+    //     // console.log(this.props.data,"11111")
+    //     let keys=Object.keys(this.props.data)
+    //     console.log(keys)
+    //     this.setState({
+    //         List:keys
+    //     })
         
-    }
+    // }
 
     render(){
-        console.log(this.state.List,"22222")
+        // console.log(this.state.List,"22222")
         return (
             <LeftNavStyled>
                 <p>所有果果</p>
                 <ul>
                     {
-                        this.state.List.map( (item,index)=>{
+                        this.props.titles.map( (item,index)=>{
                             return (
                                 <li className={
                                     this.props.active===index?'active':''} 

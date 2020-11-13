@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 import LeftNav from './leftNav/LeftNav'
+import { loadDataAsync } from './actionCreater'
 import { StoryStyled } from './StoryStyled'
 import StoryList from './storyList/StoryList'
 import Detail from './detail/Detail'
@@ -9,8 +11,20 @@ import Nav from '../components/nav/Nav'
 import Footer from '../components/footer/Footer'
 
 
+@connect(
+    state => {
+        console.log('映射', state)
+        return {
+            showList: state.story.showList
+        }
+    },
+    dispatch => ({
+        loadData(storytype) {
+            dispatch(loadDataAsync(storytype))
+        }
+    })
+)
 class Story extends Component {
-
     state = {
         data: {
             '水果知识': [
@@ -94,57 +108,55 @@ class Story extends Component {
             }
         ],
         active: 0,
+        storytypes:["knowledge","news"],
     }
 
     handleClick = (item, index) => {
         return () => {
-            let showList = this.state.data[item]
-            console.log(showList)
+            
+            // let showList = this.state.data[item]
+            // console.log(showList)
             this.setState({
-                active: index,
-                showList
+                active: index
+                // showList
             })
             let { history } = this.props
             index === 0 ? history.push('/story/storyList') : history.push('/story/newsList')
-            // console.log('跳转二级路由')
+            this.props.loadData(this.state.storytypes[index])
         }
     }
 
 
-    // 跳转到详情页(三级路由)
+    // 跳转到详情页
     handleToDetail = (active, id) => {
         return () => {
+            console.log(this.props.showList[id])
             let { history } = this.props
-            active === 0 ? history.push('/story/detail') 
-                        : history.push('/story/detail')
-            console.log("跳转到新闻详情")
+            history.push('/story/detail',{msg:this.props.showList[id]})
         }
     }
 
 
-    // componentDidMount(){
-    //     //这里做数据请求
-    //     let first=Object.keys(this.state.data)
-    //     let showList=this.state.data[first[this.state.active]]
-    //     this.setState({
-    //         showList
-    //     })
-    // }
-
+    componentDidMount(){
+        //这里做数据请求
+        this.props.loadData(this.state.storytypes[0])
+    }
+    componentDidUpdate(){
+        console.log(this.props.showList)
+    }
     render() {
-        console.log(this.state.showList)
         return (
             <div>
                 <Header></Header>
                 <Nav></Nav>
                 <StoryStyled>
-                    <LeftNav {...this.state} clickOn={this.handleClick}></LeftNav>
+                    <LeftNav active={this.state.active} clickOn={this.handleClick}></LeftNav>
                     <Switch>
                         <Route path='/story/storyList'>
-                            <StoryList showList={this.state.showList} active={this.state.active} onToDetail={this.handleToDetail}></StoryList>
+                            <StoryList showList={this.props.showList} active={this.state.active} onToDetail={this.handleToDetail}></StoryList>
                         </Route>
                         <Route path='/story/newsList'>
-                            <StoryList showList={this.state.showList} active={this.state.active} onToDetail={this.handleToDetail}></StoryList>
+                            <StoryList showList={this.props.showList} active={this.state.active} onToDetail={this.handleToDetail}></StoryList>
                         </Route>
                         <Route path='/story/detail'>
                             <Detail></Detail>

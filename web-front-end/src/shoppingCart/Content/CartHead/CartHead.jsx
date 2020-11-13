@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {StyleCartHead} from './StyleCartHead'
-export class CartHead extends Component {
+const CartHead=()=> {
 
-    render() {
         return (
             <StyleCartHead >
                 <ul>
@@ -14,7 +13,6 @@ export class CartHead extends Component {
                 </ul>
             </StyleCartHead>
         )
-    }
 }
 
 export default CartHead

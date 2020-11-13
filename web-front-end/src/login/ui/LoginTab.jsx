@@ -1,27 +1,41 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import { actionCreator as ac } from '../../login'
 
 import { LoginTabWrap } from '../ui/StyledLogin'
 
 import { get } from '@u/http'
 
+@connect(
+  state => ({
+    isLogin: state.isLogin
+  }),
+
+  dispatch => ({
+    changeLoginTab(isLogin){
+      dispatch(ac.changeLoginTab(isLogin))
+    }
+  })
+)
 @withRouter
 class LoginTab extends Component {
 
   login = async () => {
     let { account, password } = this.state
     let result = await get(`api/login?username=${account}&createpwd=${password}`)
-    let { ret } = result.registerconfirm
-    console.log(ret)
-    // if(ret) {
-    //   const h2 = document.getElementById('warning')
-    //   h2.style = 'visibility : visible'
-    // }
+    let { ret, msg, id } = result.login
+    if(ret) {
+      //将用户id存入sessionStorage中
+      sessionStorage.setItem('userId', id)
+      this.handleLogin()
+    }
   }
 
   state = {
     account: '',
     password: '',
+    isLogin: true
   }
 
   handleChange1 = () => {
@@ -44,12 +58,15 @@ class LoginTab extends Component {
     return (e) => {
       e.preventDefault()
       this.login()
-      // console.log(this.state.account)
-      // console.log(this.state.password)
     }
   }
 
-  handleClick = () => {
+  handleLogin = (isLogin) => {
+    this.props.changeLoginTab(isLogin)
+    this.props.history.push('/home')
+  }
+
+  handleGotoRegister = () => {
     let { history } = this.props
     history.push('/register')
   }
@@ -74,7 +91,7 @@ class LoginTab extends Component {
           <p>
             密码：
             <input 
-              type="text"
+              type="password"
               onChange={this.handleChange2()}
             />
           </p>
@@ -82,15 +99,16 @@ class LoginTab extends Component {
             <p>用户名错误</p>
             <h2 onClick={this.gotoChangePwd}>忘记密码？</h2>
           </span>
-          <button type="submit">登录</button>
+          <button type="submit" onClick={this.handleLogin}>登录</button>
         </form>
         <div>
           还没有账号？
-          <span onClick={this.handleClick}>免费注册</span>
+          <span onClick={this.handleGotoRegister}>免费注册</span>
         </div>
       </LoginTabWrap>
     );
   }
+
 }
 
 export default LoginTab;
