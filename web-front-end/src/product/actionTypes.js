@@ -1,4 +1,6 @@
 const LOADDATA='./product'
+const CHANGEDATA='./change'
 export {
-    LOADDATA
+    LOADDATA,
+    CHANGEDATA
     }

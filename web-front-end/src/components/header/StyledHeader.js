@@ -97,11 +97,7 @@ const Header = styled.div`
                 right:310px;              
                 font-size: 17px;
                 font-family: Microsoft YaHei;
-<<<<<<< HEAD
                 font-weight: 300;              
-=======
-                font-weight: 300;
->>>>>>> master
                 text-align:center;
                 line-height:55px;
                 a{

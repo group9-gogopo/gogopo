@@ -17,7 +17,9 @@ function DiscountList(props) {
 
     const handleGotoDetail = useCallback((id) => {
       return () => {
-        history.push("/detail",{id:{id}})
+        history.push({pathname: "/detail",id:{id}})
+      // console.log(id)
+
       }
     }, [history])
   

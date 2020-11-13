@@ -10,8 +10,8 @@ function Specials(props) {
 
   const handleGotoDetail = useCallback((id) => {
     return () => {
-      console.log(id)
-      history.push({pathname: "/detail",state:{id}})
+      // console.log(id)
+      history.push({pathname: "/detail",id:{id}})
     }
   }, [history])
 
