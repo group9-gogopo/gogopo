@@ -29,6 +29,7 @@ import {
 import {
   reducer as order
 } from '../order/allOrder/index'
+import { reducer as clearAccount} from '../clearAccount/index'
 
 const reducer=combineReducers({
     profile,
@@ -39,7 +40,8 @@ const reducer=combineReducers({
     shoppingCart,
     story,
     login,
-    order
+    order,
+    clearAccount
 
 })
 

@@ -2,9 +2,8 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     width: 100%;
-    // height: 100%;
+    height: 40px;
     background: #e3e4e5;
-    position: fixed;
     .header-left {
         width: 300px;
         height: 40px;

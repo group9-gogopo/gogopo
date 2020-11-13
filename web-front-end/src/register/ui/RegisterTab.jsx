@@ -151,7 +151,7 @@ class RegisterTab extends Component {
           <p>
             <label htmlFor="">创建密码</label>
             <input 
-              type="text" 
+              type="password" 
               id="createpwd" 
               autoComplete="off" 
               defaultValue={this.state.createpwd}
@@ -171,7 +171,7 @@ class RegisterTab extends Component {
           <p>
             <label htmlFor="">确认密码</label>
             <input 
-              type="text" 
+              type="password" 
               id="repwd" 
               autoComplete="off" 
               defaultValue={this.state.repwd}

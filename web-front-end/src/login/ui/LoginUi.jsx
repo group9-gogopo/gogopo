@@ -6,7 +6,6 @@ import {
 } from './StyledLogin'
 
 import HeadNav from '@c/headnav/HeadNav'
-import Search from '@c/search/Search'
 import LoginTab from './LoginTab'
 
 const LoginUi = (props) => {
@@ -15,9 +14,9 @@ const LoginUi = (props) => {
         <Container>
             <HeadNav></HeadNav>
             <InfoWrap>
-                <Search
+                {/* <Search
                     margin='30px 0 0 800px'
-                ></Search>
+                ></Search> */}
                 <LoginTab></LoginTab>
             </InfoWrap>
         </Container>

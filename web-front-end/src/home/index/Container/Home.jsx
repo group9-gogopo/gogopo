@@ -27,10 +27,7 @@ class Home extends Component {
         );
     }
 
-    componentDidMount(){
-        // this.props.addNum()
-        // console.log(num)
-    }
+
 }
 
 export default Home;

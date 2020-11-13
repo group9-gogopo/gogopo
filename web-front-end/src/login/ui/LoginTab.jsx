@@ -26,9 +26,10 @@ class LoginTab extends Component {
     let result = await get(`api/login?username=${account}&createpwd=${password}`)
     let { ret, msg, id } = result.login
     if(ret) {
+      //先清除sessionStorage中的用户id
+      sessionStorage.removeItem('userId')
       //将用户id存入sessionStorage中
       sessionStorage.setItem('userId', id)
-      this.handleLogin()
     }
   }
 
@@ -53,19 +54,19 @@ class LoginTab extends Component {
       })
     }
   }
-
+  //提交表单
   handleSubmit = () => {
     return (e) => {
       e.preventDefault()
-      this.login()
     }
   }
-
+  //点击登录按钮事件
   handleLogin = (isLogin) => {
     this.props.changeLoginTab(isLogin)
     this.props.history.push('/home')
+    this.login()
   }
-
+  //路由跳转
   handleGotoRegister = () => {
     let { history } = this.props
     history.push('/register')

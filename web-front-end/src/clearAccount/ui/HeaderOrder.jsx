@@ -8,7 +8,7 @@ const HeaderOrder = (props) =>  {
     return (
         <HeaderO>
             <OrderHeader>确认订单</OrderHeader>
-            <Address></Address>
+            <Address ></Address>
             <OrderMessage></OrderMessage>
         </HeaderO>
     )

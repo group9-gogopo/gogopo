@@ -19,6 +19,10 @@ import goodslistLikeRouter from './routes/goodslistLike.mjs'
 import storyRouter from './routes/story.mjs'
 import foridRouter from './routes/forid.mjs'
 import shoppingCartsUpdate from './routes/shoppingCartsUpdate.mjs'
+import changepwdRouter from './routes/changepwd.mjs'
+import changegoodsnumRouter from './routes/changegoodslist.mjs'
+import addorderinfoRouter from './routes/addorderinfo.mjs'
+import searchorderinfoRouter from './routes/searchorderinfo.mjs'
 
 const app = express()
 
@@ -58,7 +62,11 @@ app.use('/api',
     goodslistLikeRouter,
     storyRouter,
     foridRouter,
-    shoppingCartsUpdate
+    shoppingCartsUpdate,
+    changepwdRouter,
+    changegoodsnumRouter,
+    addorderinfoRouter,
+    searchorderinfoRouter
     )
 
 app.listen(4400)

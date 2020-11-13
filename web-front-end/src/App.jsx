@@ -15,6 +15,7 @@ import Discounts from './discounts/container/Discounts'
 import Comment from './order/comments/containter/Comment'
 import Detail from './detail/GoodsDetail'
 import allOrder from './order/allOrder/container/AllOrder'
+import ClearAccount from './clearAccount/container/ClearAccount'
 
 export default class App extends Component {
     render() {
@@ -31,6 +32,7 @@ export default class App extends Component {
                 <Route path='/detail' component={Detail}></Route>
                 <Route path='/shoppingCart' component={Cart}></Route>
                 <Route path='/allOrder' component={allOrder}></Route> 
+                <Route path='/clearAccount' component={ClearAccount}></Route>
                 <Route path="/home">
                     <Home></Home>
                 </Route>

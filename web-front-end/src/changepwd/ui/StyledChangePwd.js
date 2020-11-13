@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   height: 100%;
-  margin-left: 1px;
   border-top: 2px solid #000;
   background: #fff;
   display: flex;
@@ -12,15 +11,17 @@ const Container = styled.div`
     border-bottom: 2px solid #000;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     img {
       width: 263px;
       height: 84px;
-      margin-left: 26px;
+      margin-left: 100px;
     }
     h1 {
-      margin-left: 800px;
+      margin-right: 150px;
       height: 91px;
       line-height: 91px;
+      font-size: 20px;
       span {
         color: #009a44;
         cursor:pointer;
@@ -33,17 +34,17 @@ const NavWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding-top: 15px;
+  padding-top: 35px;
   height: 50px;
   margin-bottom: 30px;
   li {
-    width: 120px;
-    height: 35px;
-    font-size: 20px;
+    width: 300px;
+    height: 50px;
+    font-size: 26px;
     border: 2px solid #000;
     border-radius: 5px;
     text-align: center;
-    line-height: 35px;
+    line-height: 50px;
   }
   .active{
       background: #009a44;
@@ -52,161 +53,196 @@ const NavWrap = styled.div`
 
 const ConfirmWrap = styled.form`
   flex: 1;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 550px;
   p {
-    padding-top: 100px;
-    margin-left: 10px;
+    margin-top: 150px;
     display: flex;
     label {
-      margin-right: 10px;
-      font-size: 20px;
-      height: 42px;
-      line-height: 42px;
-      margin-left: 400px;
+      margin-right: 20px;
+      font-size: 26px;
+      height: 60px;
+      line-height: 60px;
     }
     input {
-      width: 350px;
-      height: 42px;
+      width: 480px;
+      height: 60px;
       border: 2px solid #9d9797;
       border-radius: 2px;
-      padding-left: 10px;
+      padding-left: 20px;
       outline: none;
+      font-size: 22px;
     }
     span {
-      width: 120px;
-      height: 35px;
-      line-height: 35px;
+      width: 150px;
+      height: 60px;
+      font-size: 20px;
+      line-height: 60px;
+      margin-left: 20px;
     }
   }
   button {
-    width: 131px;
-    height: 42px;
+    width: 200px;
+    height: 50px;
     border: 0;
     border-radius: 5px;
     background: #009a44;
-    font-size: 16px;
+    font-size: 22px;
     color: #fff;
-    margin-top: 83px;
+    margin: 200px 0 0 240px;
     cursor:pointer;
     outline: none;
   }
 `
 
 const SecurityWrap = styled.form`
-  height: 425px;
-  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 550px;
   p {
-    padding-top: 50px;
+    margin-top: 150px;
     display: flex;
-    margin-left: 300px;
-    position: relative;
+    &: nth-of-type(3) {
+      margin: 80px 0 0 140px;
+    }
     label {
-      width: 180px;
-      height: 46px;
-      margin-right: 15px;
-      font-size: 18px;
-      line-height: 46px;
+      width: 210px;
+      height: 60px;
+      margin-right: 20px;
+      font-size: 26px;
+      line-height: 60px;
       text-align: right;
     }
     input {
-      width: 400px;
-      height: 42px;
+      width: 480px;
+      height: 60px;
       border: 2px solid #9d9797;
       border-radius: 2px;
       padding-left: 10px;
       outline: none;
+      padding-left: 20px;
+      font-size: 22px;
     }
     span {
-      width: 150px;
-      height: 35px;
-      margin-left: 5px;
-      line-height: 35px;
+      width: 180px;
+      height: 60px;
+      font-size: 20px;
+      line-height: 60px;
+      margin-left: 20px;
     }
   }
   button {
-    width: 131px;
-    height: 42px;
+    width: 200px;
+    height: 50px;
     border: 0;
     border-radius: 5px;
     background: #009a44;
-    font-size: 16px;
+    font-size: 22px;
     color: #fff;
-    margin-top: 60px;
     cursor:pointer;
     outline: none;
-    margin-left: 50px;
+    margin-right: 60px;
   }
 `
 
 const ResetWrap = styled.form`
-  height: 425px;
-  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 550px;
   h1 {
-    font-size: 24px;
-    font-weight: normal;
+    font-size: 28px;
+    font-weight: 500;
     padding-top: 58px;
+    margin-left: 350px;
   }
   p {
-      padding-top: 43px;
+      padding-top: 60px;
       display: flex;
-      margin-left: 350px;
+      &: nth-of-type(3) {
+        margin: 40px 0 0 140px;
+      }
       label {
-        width: 90px;
-        height: 46px;
-        margin-right: 10px;
-        font-size: 18px;
-        line-height: 46px;
+        width: 210px;
+        height: 60px;
+        margin-right: 20px;
+        font-size: 26px;
+        line-height: 60px;
         text-align: right;
     }
     input {
-      width: 400px;
-      height: 42px;
+      width: 480px;
+      height: 60px;
       border: 2px solid #9d9797;
       border-radius: 2px;
-      padding-left: 10px;
+      padding-left: 20px;
       outline: none;
+      font-size: 22px;
     }
     span {
-      width: 200px;
-      height: 35px;
-      margin-left: 5px;
-      line-height: 35px;
+      width: 240px;
+      height: 60px;
+      font-size: 20px;
+      line-height: 60px;
+      margin-left: 20px;
     }
   }
   button {
-    width: 131px;
-    height: 42px;
+    width: 200px;
+    height: 50px;
     border: 0;
     border-radius: 5px;
     background: #009a44;
-    font-size: 16px;
+    font-size: 22px;
     color: #fff;
     margin-top: 60px;
     cursor:pointer;
     outline: none;
-    margin-left: 50px;
+    margin-right: 60px;
   }
 `
 const AccomplishWrap = styled.form`
-  height: 425px;
-  text-align: center;
+  flex: 1;
+  disflex: flex;
+  flex-direcion: column;
+  margin-left: 700px;
   p {
-    font-size: 30px;
-    padding-top: 100px;
+    margin-top: 160px;
+    display: flex;
+    flex-direction: row;
+    &: nth-of-type(1) {
+      margin: 100px 0 0 50px;
+    }
+    svg {
+      width: 120px;
+      height: 120px;
+      path {
+        fill: #319a0a;
+      }
+    }
+    span {
+      height: 120px;
+      line-height: 120px;
+      font-size: 32px;
+      font-size: 600;
+      padding-left: 40px;
+    }
+    button {
+      width: 200px;
+      height: 50px;
+      border: 0;
+      border-radius: 6px;
+      background: #009a44;
+      font-size: 22px;
+      color: #fff;
+      cursor:pointer;
+      outline: none;
+      margin-right: 60px;
+    }
   }
-  button {
-    width: 120px;
-    height: 40px;
-    border: 0;
-    border-radius: 6px;
-    background: #009a44;
-    font-size: 20px;
-    color: #fff;
-    margin-top: 200px;
-    cursor:pointer;
-    outline: none;
-    margin-left: 50px;
-  }
+  
 `
 export {
   Container,

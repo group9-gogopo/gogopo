@@ -71,5 +71,4 @@ export {
   get,
   post,
   patch
-
 }

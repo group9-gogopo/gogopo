@@ -19,6 +19,7 @@ const  ContentIndex =(props)=> {
                     selectStatus={props.selectStatus}
                     totalPrice={props.totalPrice}
                     totalNum={props.totalNum}
+                    listLength={props.listLength}
                 ></CartFooter>
             </div>
         )

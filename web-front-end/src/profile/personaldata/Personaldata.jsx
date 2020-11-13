@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
 
-import { PersonalDataStyled } from "./PersonalDataStyled";
+import React ,{useHistory,useEffect, useState}from 'react'
+import { PersonalDataStyled } from './PersonalDataStyled'
+
 import { get } from "@u/http";
 
 const PersonalData = (props) => {
