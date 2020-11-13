@@ -18,9 +18,7 @@ import actionCreator from '../actionCreator'
 
 )
 class Home extends Component {
-
     render() {
-        console.log(this.props);
         return (
             <IndexUi 
              num={this.props.num}
@@ -29,10 +27,7 @@ class Home extends Component {
         );
     }
 
-    componentDidMount(){
-        // this.props.addNum()
-        // console.log(num)
-    }
+
 }
 
 export default Home;

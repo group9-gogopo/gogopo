@@ -10,7 +10,7 @@ function Discounts(props) {
 
     useEffect(() => {
       (async () => {
-        let result = await get('api/goodslist?sort=localfruit&page=1&limit=19')
+        let result = await get('api/goodslist?sort=localfruit&page=1&limit=14')
         setList(result.goodslist)
       })()
     },[])

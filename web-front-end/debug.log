@@ -22,13 +22,17 @@
 [1109/100636.267:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
 [1110/141457.489:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
 [1110/202514.219:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
-=======
 [1105/202753.912:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
 [1105/220913.687:ERROR:process_info.cc(359)] UncheckedAllocate
 [1105/220915.701:ERROR:process_info.cc(359)] UncheckedAllocate
 [1105/220930.016:ERROR:process_info.cc(359)] UncheckedAllocate
-<<<<<<< HEAD
->>>>>>> master
-=======
+
 [1111/091958.216:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
->>>>>>> zhuyaoru
+
+[1111/091958.216:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
+[1112/000302.794:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
+[1112/092331.075:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
+[1111/091958.216:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
+[1112/120451.261:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
+[1113/000701.845:ERROR:directory_reader_win.cc(43)] FindFirstFile: ϵͳ�Ҳ���ָ����·���� (0x3)
+

@@ -76,8 +76,10 @@ function Security(props) {
         />
         <span id="regCode"></span>
       </p>
-      <button type='submit' onClick={handleReducer(current)}>上一步</button>
-      <button type='submit' onClick={handleAdd(current)}>下一步</button>
+      <p>
+        <button type='submit' onClick={handleReducer(current)}>上一步</button>
+        <button type='submit' onClick={handleAdd(current)}>下一步</button>
+      </p>
     </SecurityWrap>
   );
 }
