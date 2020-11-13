@@ -1,4 +1,4 @@
-// import Order from './Container/AllOder'
+// import Order from './container/AllOder'
 // import reducer from './reducer'
 // import actionCreator from './actionCreator'
 

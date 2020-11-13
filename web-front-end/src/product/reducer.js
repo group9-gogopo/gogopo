@@ -1,4 +1,4 @@
-import {LOADDATA} from './actionTypes'
+import {LOADDATA,CHANGEDATA} from './actionTypes'
 const defaultState={
     // profileMsg:{},
     list:{},
@@ -11,6 +11,10 @@ const reducer=(state=defaultState,action)=>{
             return{
                 list:action.list,
                 showList:action.showList
+            }
+        case CHANGEDATA:
+            return{
+                showList:action.value 
             }
         default:
             return state

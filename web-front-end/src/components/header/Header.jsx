@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Header } from './StyledHeader'
 import img from '../../asset/img/index/logo.png'
 import { Input } from 'antd';
+import { withRouter } from 'react-router-dom'
 import { 
     Link
   } from 'react-router-dom'
@@ -9,6 +10,7 @@ import { connect } from 'react-redux'
 import actionCreator from '../../home/index/actionCreator'
 
 import { Menu, Dropdown } from 'antd';
+import { get } from "@u/http"
 
 
 
@@ -76,10 +78,24 @@ const menu = (
     })
 
 )
-
+@withRouter
 class header extends Component {
 
+    handlerClick=(id)=>{
+        return ()=>{
+            this.props.history.push('/detail',{id:id})
+        } 
+    }
+
+    onSearch = async(value) => {
+        let res = await get('http://localhost:4400/api/goodslistlike',{like:value})
+        console.log(res.goodslistLike)
+        this.props.history.push("/allProduct",{data:res.goodslistLike,id:res.goodslistLike[0].id})
+    
+    }
+
     render() {
+        console.log(this.props,"---")
         return (
               <Header>
                 <div className='top'>
@@ -108,16 +124,16 @@ class header extends Component {
                     <Search
                         placeholder="您今天想吃什么水果？搜下看看  有惊喜"
                         allowClear
-                        onSearch={onSearch}
+                        onSearch={this.onSearch}
                         style={{ width: 200, margin: '0 10px' }}
                     />
 
 
                     <p>
-                        <span className="active">芒果</span>   &nbsp;&nbsp;&nbsp;
-                        <span>樱桃</span>   &nbsp;&nbsp;&nbsp;
-                        <span>苹果</span>   &nbsp;&nbsp;&nbsp;
-                        <span>山竹</span>
+                        <span className="active" onClick={this.handlerClick(1066)}>芒果</span>   &nbsp;&nbsp;&nbsp;
+                        <span onClick={this.handlerClick(1010)}>柿子</span>   &nbsp;&nbsp;&nbsp;
+                        <span onClick={this.handlerClick(1012)}>冬枣</span>   &nbsp;&nbsp;&nbsp;
+                        <span onClick={this.handlerClick(1013)}>葡萄</span>
                     </p>
 
                     <div className="cart"><Link to="/shoppingCart">购物车(&nbsp;<span>{this.props.list.length}</span>&nbsp;)</Link></div>                   

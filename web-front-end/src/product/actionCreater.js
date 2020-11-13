@@ -1,4 +1,5 @@
-import { LOADDATA } from './actionTypes'
+import { LOADDATA,CHANGEDATA } from './actionTypes'
+
 import { get } from "@u/http.js";
 
 
@@ -196,7 +197,16 @@ const loadDataAsync = (sort,page,limit)=>{
     }
 }
 
+const changeData=(value)=>{
+    return{
+        type:CHANGEDATA,
+        value
+    }
+}
+
+
 export {
     loadDataSync,
-    loadDataAsync
+    loadDataAsync,
+    changeData
 }

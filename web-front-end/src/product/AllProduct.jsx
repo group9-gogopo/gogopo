@@ -10,6 +10,7 @@ import LeftNav from './leftNav/LeftNav'
 import { AllProductStyled } from './AllProductStyled'
 import Footer from '../components/footer/Footer'
 import { loadDataAsync } from './actionCreater'
+import { changeData } from './actionCreater'
 
 @connect(
     state => {
@@ -21,7 +22,11 @@ import { loadDataAsync } from './actionCreater'
     dispatch => ({
         loadData(sort, page, limit) {
             dispatch(loadDataAsync(sort, page, limit))
+        },
+        changeDataS(value){
+            dispatch(changeData(value))
         }
+
     })
 )
 class AllProduct extends Component {
@@ -94,19 +99,25 @@ class AllProduct extends Component {
     }
 
     componentDidMount() {
+
         if(this.props.location.index){
             this.setState({
                 active:this.props.location.index,
                 goodtype:this.state.goodstype[this.props.location.index]
             })
             this.props.loadData(this.state.goodstype[this.props.location.index], this.state.currentPage, this.state.pageSize)
-        }else{
+        }else if(this.props.location.state){
+            this.props.changeDataS(this.props.location.state.data)
+            
+        }
+        else{
             //这里做数据请求
             this.props.loadData(this.state.goodtype, this.state.currentPage, this.state.pageSize)
         }
     }
 
     render(){
+        console.log(this.props)
         return (
             <div>
                 <Header></Header>
