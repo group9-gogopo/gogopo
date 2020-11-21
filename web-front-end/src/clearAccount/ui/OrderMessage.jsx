@@ -2,8 +2,11 @@ import React from "react";
 import { Message } from "./StyleAccount";
 import { useSelector } from "react-redux";
 import { useCallback } from "react";
+import { post } from "@u/http";
+import{ useHistory } from "react-router-dom"
 
 const OrderMessage = (props) => {
+  const history=useHistory()
   let clearAcList = props.clearAc.data;
   const value = useSelector((state) => state.clearAccount.data);
 
@@ -36,8 +39,21 @@ const OrderMessage = (props) => {
   let orderTime = Time();
 
   //提交
-  const handlerCommit=useCallback(()=>{
-
+  const handlerCommit=useCallback(async()=>{
+    if(JSON.stringify(value) == "{}")return alert("请在上方选择用户地址！")
+    let userid=sessionStorage.getItem("userId")
+    let isEvaluate=false
+    let evaluateContent=''
+    let result=await post("http://localhost:4400/api/addorderinfo",{
+      userId:userid,
+      orderTime,
+      orderNumber:orderNum,
+      orderContent: encodeURIComponent(clearAcList),
+      isEvaluate,
+      evaluateContent
+    })
+    if(!result)return alert("购买失败！")
+    history.push("/allOrder")
   })
   return (
     <Message>

@@ -23,7 +23,7 @@ router.post('/useraddressins', async (req, res, next) => {
   `
  
   let result = await graphql(schema, query)
-  console.log(result);
+
   res.json(result.data)
 })
   

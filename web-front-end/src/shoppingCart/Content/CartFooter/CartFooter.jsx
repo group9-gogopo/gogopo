@@ -72,6 +72,8 @@ import { withRouter } from 'react-router-dom';
     }
 
     render() {
+        let userid=sessionStorage.getItem("userId")
+        if(!userid)this.props.history.push("login")
         return (
             <StyleCartFooter>
                 <div>

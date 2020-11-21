@@ -89,13 +89,12 @@ class header extends Component {
 
     onSearch = async(value) => {
         let res = await get('http://localhost:4400/api/goodslistlike',{like:value})
-        console.log(res.goodslistLike)
         this.props.history.push("/allProduct",{data:res.goodslistLike,id:res.goodslistLike[0].id})
     
     }
 
     render() {
-        console.log(this.props,"---")
+
         return (
               <Header>
                 <div className='top'>
@@ -136,7 +135,7 @@ class header extends Component {
                         <span onClick={this.handlerClick(1013)}>葡萄</span>
                     </p>
 
-                    <div className="cart"><Link to="/shoppingCart">购物车(&nbsp;<span>{this.props.list.length}</span>&nbsp;)</Link></div>                   
+                    <div className="cart"><Link to="/shoppingCart">购物车(&nbsp;<span>{/* {this.props.list.length} */}</span>&nbsp;)</Link></div>                   
                 </div>
 
               </Header>

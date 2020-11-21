@@ -6,7 +6,6 @@ const router = express.Router()
 
 router.post('/shoppingCartsIns', async (req, res, next) => {
   let { userid, goodsid, shoppingCartName, shoppingCartImage,shoppingCartPrice,shoppingCartNum } = req.body
-  console.log(userid, goodsid, shoppingCartName, shoppingCartImage,shoppingCartPrice,shoppingCartNum )
   let query = `
      mutation {
        insertCart(

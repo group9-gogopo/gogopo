@@ -143,6 +143,9 @@ const userInfoType = new GraphQLObjectType({
 const orderInfoType = new GraphQLObjectType({
   name: "orderInfoType",
   fields: {
+    id:{
+      type: GraphQLInt,
+    },
     userId: {
       type: GraphQLInt,
     },
@@ -209,7 +212,6 @@ const schema = new GraphQLSchema({
           let result = await axios.get(
             `http://localhost:9000/allproduct?id=${id}`
           );
-          console.log(result);
           return result.data[0];
         },
       },
@@ -250,7 +252,6 @@ const schema = new GraphQLSchema({
           let { like } = args;
           let likeName = encodeURI(like);
           let result = await axios.get(`http://localhost:9000/allproduct?nm_like=${likeName}`);
-          // console.log(result)
           return result.data;
         },
       },
@@ -337,7 +338,6 @@ const schema = new GraphQLSchema({
           let result = await axios.get(
             `http://localhost:9000/register?id=${id}`
           );
-          console.log(result);
           return result.data[0];
         },
       },
@@ -375,13 +375,12 @@ const schema = new GraphQLSchema({
           let result = await axios.get(
             `http://localhost:9000/goodsCart?userid=${userid}`
           );
-          console.log(result);
           return result.data;
         },
       },
       //查询订单信息
       searchOrderInfo: {
-        type: orderInfoType,
+        type: new GraphQLList(orderInfoType),
         args: {
           userId: {
             type: GraphQLInt,
@@ -389,11 +388,10 @@ const schema = new GraphQLSchema({
         },
         async resolve(obj, args) {
           let { userId } = args;
-          // console.log(userId)
           let result = await axios.get(
             `http://localhost:9000/orderinfo?userId=${userId}`
           );
-          return result.data[0];
+          return result.data;
         },
       },
       //查询地址
@@ -425,7 +423,6 @@ const schema = new GraphQLSchema({
           let result = await axios.get(
             `http://localhost:9000/userAddress?id=${id}`
           );
-          console.log(result);
           return result.data[0];
         },
       },
@@ -517,11 +514,9 @@ const schema = new GraphQLSchema({
           },
         },
         async resolve(obj, args) {
-          console.log(args);
           let res = await axios.post("http://localhost:9000/userAddress", {
             ...args,
           });
-          console.log(res);
           return {
             ret: true,
             msg: "注册成功",
@@ -532,7 +527,7 @@ const schema = new GraphQLSchema({
       updateShoopingCart: {
         type: FeedbackType,
         args: {
-          cartid: {
+          id: {
             type: new GraphQLNonNull(GraphQLInt),
           },
           shoppingCartNum: {
@@ -540,10 +535,13 @@ const schema = new GraphQLSchema({
           },
         },
         async resolve(obj, args) {
+          console.log(args.id)
+          console.log(args.shoppingCartNum)
           let result = await axios.patch(
-            `http://localhost:9000/goodsCart/${args.cartid}`,
+            `http://localhost:9000/goodsCart/${args.id}`,
             { shoppingCartNum: args.shoppingCartNum }
           );
+          
           return {
             ret: result.data.createpwd === "null" ? false : true,
             msg:
@@ -580,7 +578,6 @@ const schema = new GraphQLSchema({
           let res = await axios.post("http://localhost:9000/orderinfo", {
             ...args,
           });
-          // console.log(res)
           return {
             ret: true,
             msg: "添加订单成功",
@@ -622,7 +619,6 @@ const schema = new GraphQLSchema({
         },
         async resolve(obj, args) {
           let a=await axios.delete(`http://localhost:9000/goodsCart/${args.id}`)
-          console.log(a);
           return {
             ret: true,
             msg: '删除购物车成功'

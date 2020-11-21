@@ -24,6 +24,7 @@ router.post('/addorderinfo', async (req, res, next) => {
   
   let result = await graphql(schema, query)
   res.json(result.data)
+     console.log(result);
 })
   
 export default router

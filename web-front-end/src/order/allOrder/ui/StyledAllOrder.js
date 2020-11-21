@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 const AllContainer = styled.div`
     width: 100%;
-    overflow:hidden;
+    /* overflow:hidden; */
 `
 const AllOrderNav = styled.div`
     .ant-tabs{
         width: 1300px;
-        height: 700px;
+        min-height: 1000px;
         background: #fff;
         margin:0 auto;
         .ant-tabs-nav-wrap{
@@ -19,7 +19,7 @@ const AllOrderNav = styled.div`
             .ant-tabs-tab{
                 font-size:30px;
                 line-height:61px;
-                margin-right:86px; 
+                margin-right:300px; 
                 font-size: 18px;
                 color:#fff;
             }
@@ -63,75 +63,73 @@ const AllOrderNav = styled.div`
 
 const OrderListInfo= styled.div`
     width: 1260px;
-    min-height: 448px;
     margin:auto;
     margin-top:80px;
     margin-bottom:80px;
-    .top{
-        
+    .top{  
         background: #FFF3E4;
         padding-top:39px;
         padding-left:39px;
-        height:411px;
+        min-height:600px;
         margin-bottom:6px;
-        div{
-            float:left;
-        }
-        div:first-child{
-            width:300px;
-            p{     
-                font-size: 18px;
-                font-family: Adobe Heiti Std;
-                font-weight: normal;
-                color: #171414;
-                margin-bottom:10px;
+        .first{
+            clear:both;
+            p:first-child{
+                float:left;
             }
-            img{
-                width: 297px;
-                height: 306px;
+            p:last-child{
+                float:right;
+                margin-right:100px;
             }
         }
-        div:nth-child(2){
-            /* width:613px; */
-            margin-left:156px;
-            margin-top:95px;
-            p{     
+
+        .second{
+            clear:both;  
+            margin-top:80px;
+            min-height:320px;
+            div:nth-child(1){
+                float:left;
+                img{
+                    width: 297px;
+                    height: 306px;
+                    margin-bottom:80px;
+                }
+            }
+            div:nth-child(2){
+                float:left;
+                margin-left:100px;
+                margin-top:100px;
+            }
+            div:nth-child(3){
+                float:left;
+                margin-left:270px;
+                margin-top:30px;
+                p:last-child{
+                    margin-top:20px;
+                }
+            }
+            
+        }
+
+        .third{
+            clear:both;
+            /* float:right; */
+            margin-left:900px;
+            span{
                 font-size: 16px;
                 font-family: Adobe Heiti Std;
                 font-weight: normal;
-                color: #1D1A1A;
+                color: #1D1A1A; 
             }
-        }
-        div:nth-child(3){     
-            p:nth-of-type(1),p:nth-of-type(2),p:nth-of-type(3){
-                margin-bottom:40px;
-                margin-left:200px;    
-                font-size: 14px;
-                font-family: Adobe Heiti Std;
-                font-weight: normal;
-                color: #1D1A1A;
-
-            }
-            p:nth-of-type(3){
-                margin-left:235px;
-            }
-            .total{
-                margin-top:130px;
-                span{
-                    font-size: 16px;
-                    font-family: Adobe Heiti Std;
-                    font-weight: normal;
-                    color: #1D1A1A; 
-                }
-                span:nth-child(1){
-                    margin-left:20px;
-                    margin-right:40px;
-                }
+            span:nth-child(1){
+                margin-left:20px;
+                margin-right:40px;
             }
         }
     }
-    .bottom{
-        
+
+    .bottom{ 
+        clear:both;
         background: #FFF3E4;
         height:40px;
         line-height:40px;
@@ -150,6 +148,8 @@ const OrderListInfo= styled.div`
             margin-left:910px;
         }
     }
+
+    
 `
 
 

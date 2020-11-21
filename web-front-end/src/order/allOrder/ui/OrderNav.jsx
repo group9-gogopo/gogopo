@@ -13,19 +13,19 @@ const Demo = (props) => (
       <TabPane tab="全部" key="1">
           <OrderList handleOnGoToComments={props.handleOnGoToComments}></OrderList>
       </TabPane>
-      <TabPane tab="未发货" key="2">
+      {/* <TabPane tab="未发货" key="2">
           <Unshipped></Unshipped>
-      </TabPane>
-      <TabPane tab="待付款" key="3">
+      </TabPane> */}
+      {/* <TabPane tab="待付款" key="3">
           <Unpay></Unpay>
-      </TabPane>
-      <TabPane tab="待发货" key="4">
+      </TabPane> */}
+      {/* <TabPane tab="待发货" key="4">
          <Unshipped></Unshipped>
-      </TabPane>
-      <TabPane tab="已完成" key="5">
+      </TabPane> */}
+      <TabPane tab="未评价" key="2">
            <OrderList handleOnGoToComments={props.handleOnGoToComments}></OrderList>
       </TabPane>
-      <TabPane tab="评价" key="6">
+      <TabPane tab="评价" key="3">
           <Comment></Comment>
       </TabPane>
     </Tabs>

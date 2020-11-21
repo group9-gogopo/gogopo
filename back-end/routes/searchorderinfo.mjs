@@ -6,10 +6,10 @@ const router = express.Router()
 
 router.get('/searchorderinfo', async (req, res, next) => {
   let { userId } = req.query
-  // console.log(userId)
   let query = `
     query {
       searchOrderInfo(userId: ${userId}) {
+        id,
         userId,
         orderTime,
         orderNumber,
