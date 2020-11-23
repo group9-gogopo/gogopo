@@ -25,6 +25,7 @@ import addorderinfoRouter from './routes/addorderinfo.mjs'
 import searchorderinfoRouter from './routes/searchorderinfo.mjs'
 import userAddressUpdateRouter from './routes/userAddressUpdate.mjs'
 import deleteshopcartRouter from './routes/deleteshopcart.mjs'
+import changeOrderRouter from './routes/changeOrder.mjs'
 
 const app = express()
 
@@ -70,7 +71,8 @@ app.use('/api',
     addorderinfoRouter,
     searchorderinfoRouter,
     userAddressUpdateRouter,
-    deleteshopcartRouter
+    deleteshopcartRouter,
+    changeOrderRouter
     )
 
 app.listen(4400)

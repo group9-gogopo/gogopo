@@ -22,12 +22,14 @@ const Demo = (props) => (
       {/* <TabPane tab="待发货" key="4">
          <Unshipped></Unshipped>
       </TabPane> */}
-      <TabPane tab="未评价" key="2">
+      
+
+      {/* <TabPane tab="未评价" key="2">
            <OrderList handleOnGoToComments={props.handleOnGoToComments}></OrderList>
       </TabPane>
       <TabPane tab="评价" key="3">
           <Comment></Comment>
-      </TabPane>
+      </TabPane> */}
     </Tabs>
   );
 

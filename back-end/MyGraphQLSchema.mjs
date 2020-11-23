@@ -609,6 +609,33 @@ const schema = new GraphQLSchema({
           };
         },
       },
+
+      //修改订单
+      changeOrder: {
+        type: FeedbackType,
+        args: {
+          id: {
+            type: new GraphQLNonNull(GraphQLInt),
+          },
+          evaluateContent: {
+            type: new GraphQLNonNull(GraphQLString),
+          },
+        },
+        async resolve(obj, args) {
+          let result = await axios.patch(
+            `http://localhost:9000/orderinfo/${args.id}`,
+            { evaluateContent: args.evaluateContent }
+          );
+          return {
+            ret: result.data.createpwd === "null" ? false : true,
+            msg:
+              result.data.createpwd === "null"
+                ? "评论失败"
+                : "评论成功",
+          };
+        },
+      },
+
       //删除购物车
       deleteShopCart: {
         type: FeedbackType,

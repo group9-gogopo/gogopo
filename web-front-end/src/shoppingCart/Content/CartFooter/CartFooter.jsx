@@ -75,6 +75,7 @@ import { withRouter } from 'react-router-dom';
         let userid=sessionStorage.getItem("userId")
         if(!userid)this.props.history.push("login")
         return (
+            this.props.selectList.length?(
             <StyleCartFooter>
                 <div>
                     <a onClick={this.handleAllClick()}>
@@ -85,7 +86,7 @@ import { withRouter } from 'react-router-dom';
                 <span>已经选择<span>{this.props.selectList.length}</span>件商品</span>
                 <i>总价: ￥<span>{this.computed}</span></i>
                 <div onClick={this.handlerCommit} >结算({this.props.selectList.length})</div>
-            </StyleCartFooter>
+            </StyleCartFooter>):""
         )
     }
 }

@@ -48,7 +48,7 @@ const OrderMessage = (props) => {
       userId:userid,
       orderTime,
       orderNumber:orderNum,
-      orderContent: encodeURIComponent(clearAcList),
+      orderContent: encodeURIComponent(JSON.stringify(clearAcList)),
       isEvaluate,
       evaluateContent
     })

@@ -3,9 +3,10 @@ import AllOrderUi from '../ui/AllOrderUi'
 
 class AllOrder extends Component {
 
-    onGoToComment=(time,img)=>{
+    onGoToComment=(time,img,commentValue,id)=>{
+        
         return ()=>{
-            this.props.history.push('/comment',{ time,img })
+            this.props.history.push('/comment',{ time,img,commentValue,id})
         }
     }
     render() {

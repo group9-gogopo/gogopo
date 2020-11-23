@@ -135,7 +135,7 @@ class header extends Component {
                         <span onClick={this.handlerClick(1013)}>葡萄</span>
                     </p>
 
-                    <div className="cart"><Link to="/shoppingCart">购物车(&nbsp;<span>{/* {this.props.list.length} */}</span>&nbsp;)</Link></div>                   
+                    <div className="cart"><Link to="/shoppingCart">购物车(&nbsp;<span>{this.props.list?this.props.list.length:0} </span>&nbsp;)</Link></div>                   
                 </div>
 
               </Header>

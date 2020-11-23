@@ -1,14 +1,13 @@
 import {LOADDATA} from './actionTypes'
 const defaultState={
-
+    orderList:[]
 }
 
 const reducer=(state=defaultState,action)=>{
     switch(action.type){
         case LOADDATA:
             return{
-                // list:action.list,
-                // showList:action.showList
+                orderList:action.list
             }
         default:
             return state
