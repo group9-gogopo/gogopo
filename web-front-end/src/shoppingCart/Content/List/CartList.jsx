@@ -23,7 +23,11 @@ class CartList extends Component {
          } 
      }
     handleDelete = (id) => {
-        
+        return async()=>{
+            let result =await  Axios.delete("/api/deleteshopcart",{data:{id}})
+            this.forceUpdate()
+        }
+        ;
     }
     handSelectClick = (id) => {
         return () => {
@@ -57,7 +61,7 @@ class CartList extends Component {
                                             </div>
                                         </div>
                                         <em>{value.shoppingCartPrice*value.shoppingCartNum}</em>
-                                        <a className='delete' onClick={this.handleDelete(value.id)}>删除</a>
+                                        <span className='delete' onClick={this.handleDelete(value.id)}>删除</span>
                                     </li>
                                 )
                             })

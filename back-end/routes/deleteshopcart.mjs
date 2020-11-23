@@ -5,7 +5,7 @@ import schema from '../MyGraphQLSchema.mjs'
 const router = express.Router()
 
 router.delete('/deleteshopcart', async (req, res, next) => {
-  let { id } = req.query
+  let { id } = req.body
   let query = `
      mutation {
       deleteShopCart(
